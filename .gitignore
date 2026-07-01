@@ -1,4 +1,86 @@
+# ======================================
+# Environment Variables
+# ======================================
 .env
+.env.*
+
+# ======================================
+# Virtual Environment
+# ======================================
 .venv/
+venv/
+
+# ======================================
+# Python Cache
+# ======================================
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+
+# ======================================
+# IDE Settings
+# ======================================
+.vscode/
+.idea/
+
+# ======================================
+# Operating System Files
+# ======================================
+.DS_Store
+Thumbs.db
+
+# ======================================
+# Uploaded Files
+# ======================================
+uploads/resumes/*
+!uploads/resumes/.gitkeep
+
+uploads/job_descriptions/*
+!uploads/job_descriptions/.gitkeep
+
+# ======================================
+# Storage
+# ======================================
+storage/temp/*
+!storage/temp/.gitkeep
+
+storage/logs/*
+!storage/logs/.gitkeep
+
+storage/reports/*
+!storage/reports/.gitkeep
+
+storage/generated_resume/*
+!storage/generated_resume/.gitkeep
+
+storage/models/*
+!storage/models/.gitkeep
+
+# ======================================
+# Jupyter Notebook
+# ======================================
+.ipynb_checkpoints/
+
+# ======================================
+# Build Files
+# ======================================
+build/
+dist/
+*.egg-info/
+
+# ======================================
+# Testing
+# ======================================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ======================================
+# Logs
+# ======================================
+*.log
+
+# ======================================
+# Database
+# ======================================
+*.sqlite3
