@@ -1,0 +1,10 @@
+Python
+Java
+C++
+SQL
+MySQL
+FastAPI
+Django
+Flask
+Git
+Docker
