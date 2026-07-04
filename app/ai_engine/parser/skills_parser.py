@@ -8,6 +8,9 @@ class SkillsParser:
         skills_folder = "data/skills"
 
         all_skills = []
+        matched_skills = []
+
+        text = text.lower()
 
         files = os.listdir(skills_folder)
 
@@ -18,4 +21,9 @@ class SkillsParser:
                 skills = f.read().splitlines()
                 all_skills.extend(skills)
 
-        return all_skills
+        for skill in all_skills:
+
+            if skill.lower() in text:
+                matched_skills.append(skill)
+
+        return matched_skills

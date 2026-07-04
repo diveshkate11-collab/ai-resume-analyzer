@@ -1,6 +1,12 @@
 from app.ai_engine.parser.skills_parser import SkillsParser
 
-skills = SkillsParser.extract_skills("")
+resume_text = """
+Python
+FastAPI
+Docker
+"""
 
-print("Skills Found:")
+skills = SkillsParser.extract_skills(resume_text)
+
+print("Matched Skills:")
 print(skills)
