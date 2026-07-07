@@ -2,7 +2,7 @@
 
 An AI-powered Resume Analysis platform built with Python.
 
-The project extracts information from resumes, calculates an ATS (Applicant Tracking System) score, and lays the foundation for AI-powered resume recommendations, job matching, and career guidance.
+The project extracts information from resumes, calculates an ATS (Applicant Tracking System) score, recommends suitable job roles, identifies skill gaps, and lays the foundation for AI-powered career guidance.
 
 ---
 
@@ -19,14 +19,15 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 - Experience Extraction
 - Resume Parser Integration
 - ATS Scoring Engine
+- Job Recommendation Engine
 
 ## 🚧 In Progress
 
-- Job Recommendation Engine
+- Analytics Module
 
 ## 📅 Planned
 
-- Skill Gap Analysis
+- Resume Analytics Dashboard
 - Resume Improvement Suggestions
 - FastAPI REST API
 - React Frontend
@@ -64,6 +65,15 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 
 ---
 
+## Job Recommendation
+
+- Role Predictor
+- Skill Gap Analysis
+- Resume Recommendation Engine
+- Job Matcher
+
+---
+
 # Tech Stack
 
 ## Backend
@@ -88,12 +98,12 @@ AI_RESUME_COPILOT/
 ├── app/
 │   ├── ai_engine/
 │   │   ├── ats/
+│   │   ├── jobs/
 │   │   ├── parser/
 │   │   ├── analytics/
 │   │   ├── copilot/
 │   │   ├── explainability/
 │   │   ├── interview/
-│   │   ├── jobs/
 │   │   ├── training/
 │   │   └── utils/
 │   │
@@ -135,9 +145,13 @@ AI_RESUME_COPILOT/
 - [x] Experience Parser
 - [x] Resume Parser
 - [x] ATS Engine
-- [ ] Job Recommendation Engine
-- [ ] Skill Gap Analyzer
-- [ ] Resume Recommendation Engine
+- [x] Job Recommendation Engine
+- [x] Skill Gap Analyzer
+- [x] Resume Recommendation Engine
+- [ ] Analytics Module
+- [ ] Explainability Module
+- [ ] Interview Module
+- [ ] AI Copilot
 - [ ] FastAPI Backend
 - [ ] Database Integration
 - [ ] React Frontend
@@ -174,24 +188,34 @@ ATS Engine
    └── Grammar Checker
    │
    ▼
-ATS Score
+Job Recommendation Engine
+   ├── Role Predictor
+   ├── Skill Gap Analyzer
+   ├── Recommendation Engine
+   └── Job Matcher
+   │
+   ▼
+Recommended Roles & Suggestions
 ```
 
 ---
 
 # Future Roadmap
 
+- Resume Analytics Dashboard
 - AI-powered Resume Analysis
-- Job Role Prediction
 - Resume vs Job Description Matching
 - Skill Gap Detection
 - Resume Improvement Suggestions
 - Interview Question Generator
+- Explainable AI Recommendations
 - LLM Integration
 - RAG Integration
 - Vector Database
 - LangChain
 - LangGraph
+- FastAPI REST API
+- React Frontend
 - Docker Deployment
 - Kubernetes Deployment
 - AWS Cloud Deployment

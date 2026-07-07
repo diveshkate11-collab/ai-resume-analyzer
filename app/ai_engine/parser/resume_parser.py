@@ -10,6 +10,9 @@ from app.ai_engine.parser.skills_parser import SkillsParser
 
 from app.ai_engine.ats.ats_score import ATSScorer
 
+from app.ai_engine.jobs.role_predictor import RolePredictor
+from app.ai_engine.jobs.recommendation import Recommendation
+
 
 class ResumeParser:
     """
@@ -25,7 +28,7 @@ class ResumeParser:
             file_path (str): Resume file path.
 
         Returns:
-            dict: Parsed resume information.
+            dict
         """
 
         extension = os.path.splitext(file_path)[1].lower()
@@ -41,14 +44,27 @@ class ResumeParser:
 
         text = TextCleaner.clean(result["text"])
 
+        contact = ContactParser.extract_contact(text)
+        education = EducationParser.extract_education(text)
+        experience = ExperienceParser.extract_experience(text)
+        skills = SkillsParser.extract_skills(text)
+
         ats = ATSScorer.calculate(text)
 
+        roles = RolePredictor.predict(skills)
+
+        recommendation = Recommendation.generate(
+            ats["ats_score"],
+            roles,
+        )
+
         return {
-            "contact": ContactParser.extract_contact(text),
-            "education": EducationParser.extract_education(text),
-            "experience": ExperienceParser.extract_experience(text),
-            "skills": SkillsParser.extract_skills(text),
+            "contact": contact,
+            "education": education,
+            "experience": experience,
+            "skills": skills,
             "ats": ats,
+            "recommendation": recommendation,
             "text": text,
             "metadata": {
                 "pages": result.get("pages"),
