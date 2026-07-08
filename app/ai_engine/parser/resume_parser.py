@@ -13,6 +13,10 @@ from app.ai_engine.ats.ats_score import ATSScorer
 from app.ai_engine.jobs.role_predictor import RolePredictor
 from app.ai_engine.jobs.recommendation import Recommendation
 
+from app.ai_engine.analytics.resume_compare import ResumeCompare
+from app.ai_engine.analytics.improvement_tracker import ImprovementTracker
+from app.ai_engine.analytics.ats_history import ATSHistory
+
 
 class ResumeParser:
     """
@@ -23,12 +27,6 @@ class ResumeParser:
     def extract(file_path: str) -> dict:
         """
         Extracts complete resume information.
-
-        Args:
-            file_path (str): Resume file path.
-
-        Returns:
-            dict
         """
 
         extension = os.path.splitext(file_path)[1].lower()
@@ -58,6 +56,10 @@ class ResumeParser:
             roles,
         )
 
+        analytics = {
+            "ats_history": ATSHistory.save([], ats["ats_score"])
+        }
+
         return {
             "contact": contact,
             "education": education,
@@ -65,6 +67,7 @@ class ResumeParser:
             "skills": skills,
             "ats": ats,
             "recommendation": recommendation,
+            "analytics": analytics,
             "text": text,
             "metadata": {
                 "pages": result.get("pages"),

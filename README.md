@@ -2,7 +2,7 @@
 
 An AI-powered Resume Analysis platform built with Python.
 
-The project extracts information from resumes, calculates an ATS (Applicant Tracking System) score, recommends suitable job roles, identifies skill gaps, and lays the foundation for AI-powered career guidance.
+The project extracts information from resumes, calculates an ATS (Applicant Tracking System) score, recommends suitable job roles, tracks resume improvements, and lays the foundation for AI-powered career guidance.
 
 ---
 
@@ -20,15 +20,17 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 - Resume Parser Integration
 - ATS Scoring Engine
 - Job Recommendation Engine
+- Analytics Module
 
 ## 🚧 In Progress
 
-- Analytics Module
+- Explainability Module
 
 ## 📅 Planned
 
 - Resume Analytics Dashboard
 - Resume Improvement Suggestions
+- Interview Preparation Module
 - FastAPI REST API
 - React Frontend
 - Authentication
@@ -74,6 +76,14 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 
 ---
 
+## Analytics
+
+- Resume Comparison
+- Improvement Tracker
+- ATS History Tracker
+
+---
+
 # Tech Stack
 
 ## Backend
@@ -97,10 +107,10 @@ AI_RESUME_COPILOT/
 │
 ├── app/
 │   ├── ai_engine/
+│   │   ├── analytics/
 │   │   ├── ats/
 │   │   ├── jobs/
 │   │   ├── parser/
-│   │   ├── analytics/
 │   │   ├── copilot/
 │   │   ├── explainability/
 │   │   ├── interview/
@@ -148,7 +158,7 @@ AI_RESUME_COPILOT/
 - [x] Job Recommendation Engine
 - [x] Skill Gap Analyzer
 - [x] Resume Recommendation Engine
-- [ ] Analytics Module
+- [x] Analytics Module
 - [ ] Explainability Module
 - [ ] Interview Module
 - [ ] AI Copilot
@@ -195,7 +205,13 @@ Job Recommendation Engine
    └── Job Matcher
    │
    ▼
-Recommended Roles & Suggestions
+Analytics Module
+   ├── Resume Compare
+   ├── Improvement Tracker
+   └── ATS History
+   │
+   ▼
+Final Resume Analysis Report
 ```
 
 ---
