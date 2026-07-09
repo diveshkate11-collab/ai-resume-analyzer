@@ -2,7 +2,7 @@
 
 An AI-powered Resume Analysis platform built with Python.
 
-The project extracts information from resumes, calculates an ATS (Applicant Tracking System) score, recommends suitable job roles, tracks resume improvements, and lays the foundation for AI-powered career guidance.
+The project extracts information from resumes, calculates an ATS (Applicant Tracking System) score, recommends suitable job roles, tracks resume improvements, and provides explainable AI insights to help users build stronger resumes.
 
 ---
 
@@ -21,16 +21,16 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 - ATS Scoring Engine
 - Job Recommendation Engine
 - Analytics Module
+- Explainability Module
 
 ## 🚧 In Progress
 
-- Explainability Module
+- Interview Module
 
 ## 📅 Planned
 
 - Resume Analytics Dashboard
 - Resume Improvement Suggestions
-- Interview Preparation Module
 - FastAPI REST API
 - React Frontend
 - Authentication
@@ -84,6 +84,14 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 
 ---
 
+## Explainability
+
+- ATS Score Explanation
+- Job Recommendation Explanation
+- Skill Gap Explanation
+
+---
+
 # Tech Stack
 
 ## Backend
@@ -109,11 +117,11 @@ AI_RESUME_COPILOT/
 │   ├── ai_engine/
 │   │   ├── analytics/
 │   │   ├── ats/
+│   │   ├── explainability/
+│   │   ├── interview/
 │   │   ├── jobs/
 │   │   ├── parser/
 │   │   ├── copilot/
-│   │   ├── explainability/
-│   │   ├── interview/
 │   │   ├── training/
 │   │   └── utils/
 │   │
@@ -159,7 +167,7 @@ AI_RESUME_COPILOT/
 - [x] Skill Gap Analyzer
 - [x] Resume Recommendation Engine
 - [x] Analytics Module
-- [ ] Explainability Module
+- [x] Explainability Module
 - [ ] Interview Module
 - [ ] AI Copilot
 - [ ] FastAPI Backend
@@ -209,6 +217,12 @@ Analytics Module
    ├── Resume Compare
    ├── Improvement Tracker
    └── ATS History
+   │
+   ▼
+Explainability Module
+   ├── ATS Explanation
+   ├── Job Reason
+   └── Skill Reason
    │
    ▼
 Final Resume Analysis Report

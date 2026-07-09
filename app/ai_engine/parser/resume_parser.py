@@ -12,10 +12,13 @@ from app.ai_engine.ats.ats_score import ATSScorer
 
 from app.ai_engine.jobs.role_predictor import RolePredictor
 from app.ai_engine.jobs.recommendation import Recommendation
+from app.ai_engine.jobs.skill_gap import SkillGap
 
-from app.ai_engine.analytics.resume_compare import ResumeCompare
-from app.ai_engine.analytics.improvement_tracker import ImprovementTracker
 from app.ai_engine.analytics.ats_history import ATSHistory
+
+from app.ai_engine.explainability.ats_explanation import ATSExplanation
+from app.ai_engine.explainability.job_reason import JobReason
+from app.ai_engine.explainability.skill_reason import SkillReason
 
 
 class ResumeParser:
@@ -25,9 +28,6 @@ class ResumeParser:
 
     @staticmethod
     def extract(file_path: str) -> dict:
-        """
-        Extracts complete resume information.
-        """
 
         extension = os.path.splitext(file_path)[1].lower()
 
@@ -60,6 +60,25 @@ class ResumeParser:
             "ats_history": ATSHistory.save([], ats["ats_score"])
         }
 
+        skill_gap = SkillGap.analyze(
+            skills,
+            "Backend Developer",
+        )
+
+        explainability = {
+            "ats": ATSExplanation.explain(ats),
+
+            "jobs": JobReason.explain(
+                roles,
+                skills,
+            ),
+
+            "skills": SkillReason.explain(
+                skill_gap["matched"],
+                skill_gap["missing"],
+            ),
+        }
+
         return {
             "contact": contact,
             "education": education,
@@ -68,6 +87,7 @@ class ResumeParser:
             "ats": ats,
             "recommendation": recommendation,
             "analytics": analytics,
+            "explainability": explainability,
             "text": text,
             "metadata": {
                 "pages": result.get("pages"),
