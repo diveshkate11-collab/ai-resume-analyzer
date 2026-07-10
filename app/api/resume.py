@@ -1,21 +1,21 @@
-from fastapi import APIRouter, UploadFile, File
-import shutil
-from pathlib import Path
+from fastapi import APIRouter, File, UploadFile
 
-router = APIRouter()
-
-UPLOAD_DIR = Path("uploads/resumes")
-UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+from app.schemas.resume_schema import ResumeResponse
+from app.services.resume_service import ResumeService
 
 
-@router.post("/upload-resume")
+router = APIRouter(
+    prefix="/api/resume",
+    tags=["Resume"],
+)
+
+
+@router.post(
+    "/upload",
+    response_model=ResumeResponse,
+)
 async def upload_resume(file: UploadFile = File(...)):
-    file_path = UPLOAD_DIR / file.filename
-
-    with open(file_path, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
-
-    return {
-        "filename": file.filename,
-        "message": "Resume uploaded successfully"
-    }
+    """
+    Upload and analyze a resume.
+    """
+    return ResumeService.upload_and_analyze(file)
