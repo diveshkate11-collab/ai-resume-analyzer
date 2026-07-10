@@ -2,7 +2,7 @@
 
 An AI-powered Resume Analysis platform built with Python.
 
-The project extracts information from resumes, calculates an ATS (Applicant Tracking System) score, recommends suitable job roles, tracks resume improvements, and provides explainable AI insights to help users build stronger resumes.
+AI Resume Copilot analyzes resumes, calculates ATS (Applicant Tracking System) scores, recommends suitable job roles, tracks resume improvements, explains every recommendation, and exposes a production-ready REST API built with FastAPI.
 
 ---
 
@@ -22,24 +22,28 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 - Job Recommendation Engine
 - Analytics Module
 - Explainability Module
+- FastAPI Backend
+- Resume Upload API
+- Resume Service Layer
+- Pydantic Response Schemas
+- API Validation & Error Handling
 
 ## 🚧 In Progress
 
-- Interview Module
+- Interview Preparation Module
 
 ## 📅 Planned
 
 - Resume Analytics Dashboard
 - Resume Improvement Suggestions
-- FastAPI REST API
-- React Frontend
-- Authentication
+- Authentication & Authorization
 - Database Integration
+- React Frontend
+- AI Resume Copilot Chatbot (LLM)
+- RAG-based Resume Assistant
 - Docker Support
 - Kubernetes Deployment
 - AWS Deployment
-- AI Resume Copilot (LLM)
-- RAG-based Resume Assistant
 
 ---
 
@@ -49,21 +53,21 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 
 - Parse PDF resumes
 - Parse DOCX resumes
-- Clean extracted text
-- Extract Contact Information
-- Extract Skills
-- Extract Education
-- Extract Experience
+- Resume Text Cleaning
+- Contact Information Extraction
+- Skills Extraction
+- Education Extraction
+- Experience Extraction
 
 ---
 
 ## ATS Analysis
 
+- ATS Score Calculator
 - Section Checker
 - Keyword Matching
 - Resume Formatting Checker
 - Grammar Checker (V1)
-- ATS Score Calculator
 
 ---
 
@@ -79,7 +83,7 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 ## Analytics
 
 - Resume Comparison
-- Improvement Tracker
+- Resume Improvement Tracker
 - ATS History Tracker
 
 ---
@@ -92,11 +96,25 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 
 ---
 
+## REST API
+
+- FastAPI Backend
+- Resume Upload API
+- Resume Analysis API
+- Pydantic Response Models
+- Request Validation
+- HTTP Exception Handling
+- Interactive Swagger Documentation
+
+---
+
 # Tech Stack
 
 ## Backend
 
 - Python
+- FastAPI
+- Pydantic
 
 ## AI / NLP
 
@@ -114,6 +132,7 @@ The project extracts information from resumes, calculates an ATS (Applicant Trac
 AI_RESUME_COPILOT/
 │
 ├── app/
+│   │
 │   ├── ai_engine/
 │   │   ├── analytics/
 │   │   ├── ats/
@@ -168,9 +187,14 @@ AI_RESUME_COPILOT/
 - [x] Resume Recommendation Engine
 - [x] Analytics Module
 - [x] Explainability Module
+- [x] FastAPI Backend
+- [x] Resume Upload API
+- [x] Service Layer
+- [x] Pydantic Schemas
+- [x] HTTP Exception Handling
 - [ ] Interview Module
 - [ ] AI Copilot
-- [ ] FastAPI Backend
+- [ ] Authentication
 - [ ] Database Integration
 - [ ] React Frontend
 - [ ] Docker
@@ -185,6 +209,12 @@ AI_RESUME_COPILOT/
 Resume
    │
    ▼
+Upload API (FastAPI)
+   │
+   ▼
+Resume Service
+   │
+   ▼
 PDF / DOCX Parser
    │
    ▼
@@ -196,7 +226,7 @@ Resume Parser
    ├── Contact Parser
    ├── Skills Parser
    ├── Education Parser
-   ├── Experience Parser
+   └── Experience Parser
    │
    ▼
 ATS Engine
@@ -214,18 +244,33 @@ Job Recommendation Engine
    │
    ▼
 Analytics Module
-   ├── Resume Compare
+   ├── Resume Comparison
    ├── Improvement Tracker
    └── ATS History
    │
    ▼
 Explainability Module
    ├── ATS Explanation
-   ├── Job Reason
-   └── Skill Reason
+   ├── Job Recommendation Reason
+   └── Skill Gap Explanation
    │
    ▼
-Final Resume Analysis Report
+REST API Response
+```
+
+---
+
+# API Endpoints
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/` | API Status |
+| POST | `/api/resume/upload` | Upload and Analyze Resume |
+
+Interactive API Documentation:
+
+```text
+http://127.0.0.1:8000/docs
 ```
 
 ---
@@ -233,18 +278,20 @@ Final Resume Analysis Report
 # Future Roadmap
 
 - Resume Analytics Dashboard
-- AI-powered Resume Analysis
-- Resume vs Job Description Matching
-- Skill Gap Detection
 - Resume Improvement Suggestions
+- Resume vs Job Description Matching
+- AI Resume Copilot Chatbot
 - Interview Question Generator
+- Mock Interview Evaluation
 - Explainable AI Recommendations
+- Authentication
+- SQL Database Integration
+- User Dashboard
 - LLM Integration
 - RAG Integration
 - Vector Database
 - LangChain
 - LangGraph
-- FastAPI REST API
 - React Frontend
 - Docker Deployment
 - Kubernetes Deployment
