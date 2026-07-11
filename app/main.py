@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from app.api.interview import router as interview_router
 from app.api.resume import router as resume_router
 
 
@@ -9,8 +10,10 @@ app = FastAPI(
     version="1.0.0",
 )
 
+
 # Register API Routes
 app.include_router(resume_router)
+app.include_router(interview_router)
 
 
 @app.get("/", tags=["Home"])

@@ -1,0 +1,22 @@
+HR_QUESTIONS = [
+    "Tell me about yourself.",
+    "Why should we hire you?",
+    "What are your strengths?",
+    "What are your weaknesses?",
+    "Where do you see yourself in five years?",
+    "Why do you want to join our company?",
+    "Describe a challenging situation you faced.",
+    "How do you handle pressure?",
+    "How do you handle deadlines?",
+    "Describe your leadership experience.",
+    "How do you resolve conflicts?",
+    "What motivates you?",
+    "Tell me about your biggest achievement.",
+    "What are your career goals?",
+    "Why are you leaving your previous job?",
+    "How do you prioritize tasks?",
+    "Are you comfortable working in a team?",
+    "What is your biggest failure?",
+    "How do you learn new technologies?",
+    "Do you have any questions for us?"
+]
