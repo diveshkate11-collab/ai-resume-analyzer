@@ -1,45 +1,39 @@
-class Recommendation:
+class RecommendationEngine:
     """
-    Generates resume recommendations based on ATS score.
+    Generate recommendations for the predicted job role.
     """
 
     @staticmethod
-    def generate(ats_score: int, roles: list) -> dict:
-        """
-        Generates recommendations.
-
-        Args:
-            ats_score (int): Resume ATS score.
-            roles (list): Predicted job roles.
-
-        Returns:
-            dict
-        """
-
-        suggestions = []
-
-        if ats_score < 60:
-            suggestions.append(
-                "Improve resume to increase ATS score."
-            )
-
-        elif ats_score < 80:
-            suggestions.append(
-                "Resume is good but can be improved."
-            )
-
-        else:
-            suggestions.append(
-                "Resume is ATS friendly."
-            )
-
-        if not roles:
-            suggestions.append(
-                "Add more technical skills to unlock more job opportunities."
-            )
-
-        return {
-            "ats_score": ats_score,
-            "recommended_roles": roles,
-            "suggestions": suggestions,
+    def generate(role: str) -> list[str]:
+        recommendations = {
+            "Backend Developer": [
+                "Build REST APIs using FastAPI.",
+                "Learn Docker and containerization.",
+                "Practice SQL optimization."
+            ],
+            "Python Developer": [
+                "Strengthen Python fundamentals.",
+                "Practice object-oriented programming.",
+                "Build real-world Python projects."
+            ],
+            "AI/ML Engineer": [
+                "Learn deep learning with PyTorch.",
+                "Build machine learning projects.",
+                "Study model deployment."
+            ],
+            "Data Analyst": [
+                "Improve SQL skills.",
+                "Learn Power BI.",
+                "Practice data visualization."
+            ],
+            "Software Developer": [
+                "Improve DSA skills.",
+                "Build full-stack projects.",
+                "Contribute to open source."
+            ]
         }
+
+        return recommendations.get(
+            role,
+            ["Continue improving your technical skills."]
+        )

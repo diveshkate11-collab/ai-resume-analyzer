@@ -1,65 +1,22 @@
 class RolePredictor:
     """
-    Predicts suitable job roles based on resume skills.
+    Predict the most suitable job role.
     """
 
-    ROLE_SKILLS = {
-        "Python Developer": [
-            "Python",
-            "SQL",
-            "Git",
-            "FastAPI",
-            "Flask",
-            "Django",
-        ],
-
-        "Backend Developer": [
-            "Python",
-            "SQL",
-            "FastAPI",
-            "Docker",
-            "Git",
-        ],
-
-        "AI/ML Engineer": [
-            "Python",
-            "Machine Learning",
-            "NumPy",
-            "Pandas",
-            "Scikit-learn",
-            "TensorFlow",
-            "PyTorch",
-        ],
-
-        "Data Scientist": [
-            "Python",
-            "Machine Learning",
-            "Pandas",
-            "NumPy",
-            "SQL",
-            "Matplotlib",
-        ],
-    }
-
     @staticmethod
-    def predict(skills: list) -> list:
-        """
-        Predicts job roles from extracted skills.
+    def predict(resume_data: dict) -> str:
+        skills = [skill.lower() for skill in resume_data.get("skills", [])]
 
-        Args:
-            skills (list): Resume skills.
+        if "fastapi" in skills:
+            return "Backend Developer"
 
-        Returns:
-            list: Recommended job roles.
-        """
+        if "python" in skills:
+            return "Python Developer"
 
-        recommended_roles = []
+        if "machine learning" in skills:
+            return "AI/ML Engineer"
 
-        for role, required_skills in RolePredictor.ROLE_SKILLS.items():
+        if "sql" in skills:
+            return "Data Analyst"
 
-            matched = len(set(skills).intersection(required_skills))
-
-            if matched >= 2:
-                recommended_roles.append(role)
-
-        return recommended_roles
+        return "Software Developer"

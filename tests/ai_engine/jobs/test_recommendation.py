@@ -1,11 +1,5 @@
-from app.ai_engine.jobs.recommendation import Recommendation
+from app.ai_engine.jobs.recommendation import RecommendationEngine
 
-result = Recommendation.generate(
-    85,
-    [
-        "Python Developer",
-        "Backend Developer",
-    ],
-)
+result = RecommendationEngine.generate("Backend Developer")
 
 print(result)

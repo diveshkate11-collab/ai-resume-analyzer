@@ -11,14 +11,13 @@ from app.ai_engine.parser.skills_parser import SkillsParser
 from app.ai_engine.ats.ats_score import ATSScorer
 
 from app.ai_engine.jobs.role_predictor import RolePredictor
-from app.ai_engine.jobs.recommendation import Recommendation
-from app.ai_engine.jobs.skill_gap import SkillGap
+from app.ai_engine.jobs.recommendation import RecommendationEngine
+from app.ai_engine.jobs.skill_gap import SkillGapAnalyzer
 
 from app.ai_engine.analytics.ats_history import ATSHistory
 
 from app.ai_engine.explainability.ats_explanation import ATSExplanation
 from app.ai_engine.explainability.job_reason import JobReason
-from app.ai_engine.explainability.skill_reason import SkillReason
 
 
 class ResumeParser:
@@ -49,34 +48,37 @@ class ResumeParser:
 
         ats = ATSScorer.calculate(text)
 
-        roles = RolePredictor.predict(skills)
+        resume_data = {
+            "skills": skills
+        }
 
-        recommendation = Recommendation.generate(
-            ats["ats_score"],
-            roles,
-        )
+        role = RolePredictor.predict(resume_data)
+
+        recommendation = {
+            "ats_score": ats["ats_score"],
+            "recommended_roles": [role],
+            "suggestions": RecommendationEngine.generate(role),
+        }   
 
         analytics = {
             "ats_history": ATSHistory.save([], ats["ats_score"])
         }
 
-        skill_gap = SkillGap.analyze(
-            skills,
-            "Backend Developer",
+        skill_gap = SkillGapAnalyzer.analyze(
+            resume_data,
+            role,
         )
 
         explainability = {
             "ats": ATSExplanation.explain(ats),
 
             "jobs": JobReason.explain(
-                roles,
+                role,
                 skills,
             ),
 
-            "skills": SkillReason.explain(
-                skill_gap["matched"],
-                skill_gap["missing"],
-            ),
+            # Temporary until SkillReason is updated
+            "skills": skill_gap,
         }
 
         return {

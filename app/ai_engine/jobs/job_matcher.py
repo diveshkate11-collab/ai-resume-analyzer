@@ -1,41 +1,39 @@
 class JobMatcher:
     """
-    Matches a resume against a job description.
+    Match jobs based on the predicted role.
     """
 
+    JOBS = {
+        "Backend Developer": [
+            "Backend Developer Intern",
+            "Junior Backend Developer",
+            "Python Backend Developer"
+        ],
+        "Python Developer": [
+            "Python Developer",
+            "Junior Python Developer",
+            "Python Software Engineer"
+        ],
+        "AI/ML Engineer": [
+            "Machine Learning Engineer",
+            "AI Engineer",
+            "Data Science Intern"
+        ],
+        "Data Analyst": [
+            "Data Analyst",
+            "Business Analyst",
+            "Junior Data Analyst"
+        ],
+        "Software Developer": [
+            "Software Developer",
+            "Associate Software Engineer",
+            "Graduate Software Engineer"
+        ]
+    }
+
     @staticmethod
-    def match(resume_skills: list, job_skills: list) -> dict:
-        """
-        Matches resume skills with job skills.
-
-        Args:
-            resume_skills (list): Skills extracted from resume.
-            job_skills (list): Required job skills.
-
-        Returns:
-            dict
-        """
-
-        matched = []
-        missing = []
-
-        for skill in job_skills:
-
-            if skill in resume_skills:
-                matched.append(skill)
-
-            else:
-                missing.append(skill)
-
-        if job_skills:
-            match_percentage = (
-                len(matched) / len(job_skills)
-            ) * 100
-        else:
-            match_percentage = 0
-
-        return {
-            "matched_skills": matched,
-            "missing_skills": missing,
-            "match_percentage": round(match_percentage, 2),
-        }
+    def match(role: str) -> list[str]:
+        return JobMatcher.JOBS.get(
+            role,
+            ["Software Engineer"]
+        )

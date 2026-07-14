@@ -1,39 +1,28 @@
-from app.ai_engine.jobs.role_predictor import RolePredictor
-
-
-class SkillGap:
+class SkillGapAnalyzer:
     """
-    Finds missing skills for a selected job role.
+    Analyze missing skills for the predicted job role.
     """
+
+    ROLE_SKILLS = {
+        "Backend Developer": ["Python", "FastAPI", "SQL", "Docker", "Git"],
+        "Python Developer": ["Python", "OOP", "Git"],
+        "AI/ML Engineer": ["Python", "Machine Learning", "NumPy", "Pandas"],
+        "Data Analyst": ["SQL", "Excel", "Python", "Power BI"],
+        "Software Developer": ["Git", "Problem Solving"],
+    }
 
     @staticmethod
-    def analyze(skills: list, target_role: str) -> dict:
-        """
-        Compares resume skills with required job skills.
-
-        Args:
-            skills (list): Resume skills.
-            target_role (str): Desired job role.
-
-        Returns:
-            dict
-        """
-
-        required_skills = RolePredictor.ROLE_SKILLS.get(target_role, [])
-
-        matched = []
-        missing = []
-
-        for skill in required_skills:
-
-            if skill in skills:
-                matched.append(skill)
-
-            else:
-                missing.append(skill)
-
-        return {
-            "target_role": target_role,
-            "matched": matched,
-            "missing": missing,
+    def analyze(resume_data: dict, role: str) -> list[str]:
+        resume_skills = {
+            skill.lower() for skill in resume_data.get("skills", [])
         }
+
+        required_skills = SkillGapAnalyzer.ROLE_SKILLS.get(role, [])
+
+        missing_skills = [
+            skill
+            for skill in required_skills
+            if skill.lower() not in resume_skills
+        ]
+
+        return missing_skills
