@@ -55,8 +55,7 @@ class ResumeParser:
         role = RolePredictor.predict(resume_data)
 
         recommendation = {
-            "ats_score": ats["ats_score"],
-            "recommended_roles": [role],
+            "recommended_role": role,
             "suggestions": RecommendationEngine.generate(role),
         }   
 
