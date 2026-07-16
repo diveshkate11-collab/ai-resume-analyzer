@@ -18,8 +18,7 @@ class ExperienceSchema(BaseModel):
 
 
 class RecommendationSchema(BaseModel):
-    ats_score: int
-    recommended_roles: list[str]
+    recommended_role: str
     suggestions: list[str]
 
 
