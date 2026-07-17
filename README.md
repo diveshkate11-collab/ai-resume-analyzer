@@ -116,13 +116,41 @@ This project is being developed incrementally. Every module is implemented, test
 - Automated Backend API Testing
 - Sample Resume Test Dataset
 
+### AI Engine Unit Tests
+
+#### Jobs Module
+
+- Role Predictor Tests
+- Job Matcher Tests
+- Skill Gap Analyzer Tests
+- Recommendation Engine Tests
+
+#### Parser Module
+
+- PDF Parser Tests
+- DOCX Parser Tests
+- Resume Parser Tests
+- Contact Parser Tests
+- Skills Parser Tests
+- Education Parser Tests
+- Experience Parser Tests
+- Text Cleaner Tests
+
+#### Test Summary
+
+- API Tests: 2
+- Jobs Module Tests: 16
+- Parser Module Tests: 23
+- Total Automated Tests: 41
+
 ---
 
 ## 🚧 Currently Working On
 
 - AI Engine Unit Testing
-- Parser Module Testing
 - ATS Module Testing
+- Analytics Module Testing
+- Explainability Module Testing
 - Backend Refactoring
 - Codebase Optimization
 - Test Coverage Improvement
@@ -897,24 +925,60 @@ The backend includes automated API testing using **Pytest**, **HTTPX**, and **Fa
 
 ## Current Test Coverage
 
+### API Tests
+
 - Resume Upload API
 - Job Recommendation API
 
-## Test Directory
+### AI Engine Tests
 
-```text
-tests/
-├── api/
-│   ├── test_resume_api.py
-│   └── test_jobs_api.py
-└── uploads/
-    └── sample_resume.pdf
-```
+#### Jobs
 
-## Run All API Tests
+- Role Predictor
+- Job Matcher
+- Skill Gap Analyzer
+- Recommendation Engine
+
+#### Parser
+
+- PDF Parser
+- DOCX Parser
+- Resume Parser
+- Contact Parser
+- Skills Parser
+- Education Parser
+- Experience Parser
+- Text Cleaner
+
+### Test Statistics
+
+- API Tests: **2**
+- Jobs Tests: **16**
+- Parser Tests: **23**
+- **Total Passing Tests: 41**
+
+## Run API Tests
 
 ```bash
 python -m pytest tests/api -v
+```
+
+## Run Parser Tests
+
+```bash
+python -m pytest tests/ai_engine/parser -v
+```
+
+## Run Jobs Tests
+
+```bash
+python -m pytest tests/ai_engine/jobs -v
+```
+
+## Run All Tests
+
+```bash
+python -m pytest tests -v
 ```
 
 ## Sample Output
@@ -1090,7 +1154,7 @@ AI Resume Copilot is my first large-scale software engineering project.
 
 The objective of this project is to learn and apply modern backend development practices by building a production-style AI application using FastAPI. It follows a modular architecture with separate layers for APIs, services, schemas, AI modules, analytics, explainability, and automated testing.
 
-Current completed modules include:
+# Current completed modules include:
 
 - Resume Parsing
 - ATS Analysis
