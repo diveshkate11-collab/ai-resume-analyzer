@@ -1,6 +1,6 @@
 from docx import Document
 
-class DOCXParser:
+class DocxParser:
     """
     Extracts text from DOCX files.
     """

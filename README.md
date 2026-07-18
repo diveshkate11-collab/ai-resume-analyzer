@@ -1,205 +1,85 @@
-# AI Resume Copilot
+# 🚀 AI Resume Copilot
 
-An AI-powered Resume Analysis and Career Assistance platform built with **Python** and **FastAPI**.
+<div align="center">
 
-AI Resume Copilot helps users analyze resumes, calculate ATS (Applicant Tracking System) scores, identify strengths and weaknesses, recommend suitable job roles, analyze skill gaps, generate interview questions, evaluate interview answers, and prepare for technical interviews through a modular AI-powered backend.
+### AI-Powered Resume Analysis, ATS Optimization & Career Assistant
 
----
+Build smarter resumes, analyze ATS compatibility, identify skill gaps, receive job recommendations, and prepare for technical interviews using an AI-powered backend.
 
-# About This Project
+![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green?logo=fastapi)
+![Tests](https://img.shields.io/badge/Tests-71_Passed-success)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Status](https://img.shields.io/badge/Status-Active_Development-orange)
 
-AI Resume Copilot is my first end-to-end AI and FastAPI project.
-
-I built this project to learn:
-
-- Software Engineering
-- Backend Development
-- REST API Development
-- AI Application Architecture
-- Machine Learning Integration
-- Modular Project Design
-- API Testing
-- Backend Testing
-
-This project is being developed incrementally. Every module is implemented, tested, documented, integrated, and verified before moving to the next feature.
+</div>
 
 ---
 
-# Project Status
+# 📖 Table of Contents
 
-## ✅ Completed
-
-### Resume Parsing
-
-- PDF Resume Parser
-- DOCX Resume Parser
-- Resume Text Cleaner
-- Contact Information Extraction
-- Skills Extraction
-- Education Extraction
-- Experience Extraction
-- Resume Parser Integration
-
----
-
-### ATS Analysis
-
-- ATS Scoring Engine
-- ATS Response Validation
-
----
-
-### Job Recommendation
-
-- Role Prediction Engine
-- Recommendation Engine
-- Skill Gap Analyzer
-- Job Matcher
-- Job Recommendation Integration
+- About
+- Features
+- Screenshots
+- Demo
+- Technology Stack
+- System Architecture
+- Project Structure
+- Installation
+- Configuration
+- Running the Project
+- API Documentation
+- AI Engine
+- Testing
+- Roadmap
+- Version History
+- Future Enhancements
+- Contributing
+- License
+- Author
 
 ---
 
-### Resume Analysis
+# 📚 About
 
-- Resume Improvement Engine
-- Resume Strength Analysis
-- Resume Weakness Analysis
-- Resume Improvement Suggestions
-- Resume Upload Pipeline
-- End-to-End Resume Analysis Workflow
+AI Resume Copilot is a modular AI-powered backend application that analyzes resumes and provides actionable career insights.
 
----
+The application is designed to help users:
 
-### Explainability
+- Parse resumes
+- Calculate ATS scores
+- Detect resume weaknesses
+- Recommend suitable job roles
+- Identify missing technical skills
+- Explain AI-generated recommendations
+- Prepare for interviews
 
-- ATS Explanation
-- Job Recommendation Explanation
-
----
-
-### Analytics
-
-- ATS History Tracker
+The project is being developed using modern software engineering practices including modular architecture, automated testing, and incremental feature development.
 
 ---
 
-### Interview Preparation
+# 🎯 Objectives
 
-- Technical Interview Question Generator
-- HR Interview Question Generator
-- Interview Answer Evaluation
+The primary goals of this project are:
 
----
-
-### Backend
-
-- FastAPI Backend
-- Resume Upload API
-- Interview Question API
-- Interview Answer Evaluation API
-- Resume Improvement API
-- Job Recommendation API
-- Service Layer Architecture
-- Pydantic Request & Response Schemas
-- Request Validation
-- Response Validation
-- Swagger API Documentation
+- Build an industry-ready AI Resume Analyzer
+- Learn production-grade FastAPI development
+- Design reusable AI modules
+- Follow clean software architecture
+- Implement automated testing using Pytest
+- Build a deployment-ready backend
+- Create a portfolio-quality software engineering project
 
 ---
 
-### Testing
-
-- Pytest Configuration
-- HTTPX Test Client
-- Resume Upload API Test
-- Job Recommendation API Test
-- Automated Backend API Testing
-- Sample Resume Test Dataset
-
-### AI Engine Unit Tests
-
-#### Jobs Module
-
-- Role Predictor Tests
-- Job Matcher Tests
-- Skill Gap Analyzer Tests
-- Recommendation Engine Tests
-
-#### Parser Module
-
-- PDF Parser Tests
-- DOCX Parser Tests
-- Resume Parser Tests
-- Contact Parser Tests
-- Skills Parser Tests
-- Education Parser Tests
-- Experience Parser Tests
-- Text Cleaner Tests
-
-#### Test Summary
-
-- API Tests: 2
-- Jobs Module Tests: 16
-- Parser Module Tests: 23
-- Total Automated Tests: 41
-
----
-
-## 🚧 Currently Working On
-
-- AI Engine Unit Testing
-- ATS Module Testing
-- Analytics Module Testing
-- Explainability Module Testing
-- Backend Refactoring
-- Codebase Optimization
-- Test Coverage Improvement
-
----
-
-## 📅 Planned
-
-### Backend
-
-- Authentication
-- Authorization
-- SQL Database Integration
-- User Dashboard
-- Logging
-- Background Tasks
-
-### AI
-
-- AI Resume Copilot Chatbot
-- LLM Integration
-- RAG Integration
-- Vector Database
-- Resume vs Job Description Matching
-- Personalized Career Guidance
-
-### Frontend
-
-- React Frontend
-- Dashboard
-- User Authentication Pages
-
-### Deployment
-
-- Docker
-- Kubernetes
-- AWS Deployment
-- CI/CD Pipeline
-
----
-
-# Features
+# ✨ Current Features
 
 ## Resume Parsing
 
-- Upload PDF Resume
-- Upload DOCX Resume
+- PDF Resume Parsing
+- DOCX Resume Parsing
 - Resume Text Cleaning
-- Contact Extraction
+- Contact Information Extraction
 - Skills Extraction
 - Education Extraction
 - Experience Extraction
@@ -209,41 +89,19 @@ This project is being developed incrementally. Every module is implemented, test
 ## ATS Analysis
 
 - ATS Score Calculation
-- Resume Validation
-- Resume Quality Analysis
-
----
-
-## Resume Improvement
-
-- Strength Analysis
-- Weakness Detection
-- Resume Improvement Suggestions
+- Keyword Matching
+- Resume Section Validation
+- Formatting Analysis
+- Grammar Analysis
 
 ---
 
 ## Job Recommendation
 
-- Predict Suitable Job Role
-- Skill Gap Analysis
-- Learning Recommendations
+- Role Prediction
 - Job Matching
-
----
-
-## Interview Preparation
-
-- Technical Interview Questions
-- HR Interview Questions
-- Interview Answer Evaluation
-- Answer Feedback
-
----
-
-## Analytics
-
-- ATS Score History
-- Resume Analytics
+- Skill Gap Analysis
+- Career Recommendations
 
 ---
 
@@ -251,41 +109,83 @@ This project is being developed incrementally. Every module is implemented, test
 
 - ATS Score Explanation
 - Job Recommendation Explanation
+- Skill Gap Explanation
 
 ---
 
-## REST API
+## Current Project Status
 
-- Resume Upload API
-- Resume Improvement API
-- Job Recommendation API
-- Interview Question API
-- Interview Answer Evaluation API
-
----
-
-## Automated Testing
-
-- Resume Upload API Testing
-- Job Recommendation API Testing
-- Pytest Integration
-- HTTPX Test Client
-- Automated API Validation
+| Module | Status |
+|---------|--------|
+| Parser | ✅ Completed |
+| ATS | ✅ Completed |
+| Jobs | ✅ Completed |
+| Explainability | ✅ Completed |
+| Improvement | 🚧 In Progress |
+| Analytics | ⏳ Planned |
+| Interview | ⏳ Planned |
+| Training | ⏳ Planned |
+| AI Copilot | ⏳ Planned |
 
 ---
 
-# Tech Stack
+## 📊 Latest Milestone
 
-## Backend
+Current Version
 
-- Python
+```
+v0.4.0
+```
+
+Latest Achievement
+
+```
+71 Passing Unit Tests
+```
+
+Current Focus
+
+```
+Improvement Module
+```
+
+---
+
+## ⭐ Why This Project?
+
+Most resume analyzers only generate a score.
+
+AI Resume Copilot is designed to become a complete career assistance platform capable of resume analysis, career guidance, interview preparation, analytics, and AI-powered recommendations within a single application.
+
+---
+
+# 🛠️ Technology Stack
+
+AI Resume Copilot is built using modern backend technologies and follows a modular software architecture.
+
+## Programming Language
+
+- Python 3.14
+
+---
+
+## Backend Framework
+
 - FastAPI
+- Uvicorn
+
+---
+
+## Data Validation
+
 - Pydantic
 
 ---
 
-## AI / NLP
+## Resume Parsing
 
+- PyPDF2
+- python-docx
 - Regular Expressions (Regex)
 
 ---
@@ -300,668 +200,349 @@ This project is being developed incrementally. Every module is implemented, test
 
 ## Development Tools
 
-- VS Code
+- Visual Studio Code
 - Git
 - GitHub
-- Swagger UI
 
 ---
 
-## Future Technologies
+## Planned Technologies
 
-- SQL
-- React
+- PostgreSQL
+- SQLAlchemy
 - Docker
 - Kubernetes
 - AWS
+- React
 - LangChain
 - LangGraph
 - Vector Database
-- LLM
+- OpenAI API
+- Ollama
 - RAG
 
 ---
 
-# Project Structure
+# 🏛️ System Architecture
+
+The project follows a layered architecture to keep the application modular, scalable, and easy to maintain.
+
+```text
+                        Client
+                           │
+                           ▼
+                    FastAPI REST API
+                           │
+                           ▼
+                    Request Validation
+                           │
+                           ▼
+                      Service Layer
+                           │
+                           ▼
+                      AI Engine Core
+        ┌───────────┬───────────┬───────────┐
+        ▼           ▼           ▼           ▼
+     Parser        ATS        Jobs   Explainability
+        │
+        ▼
+   Structured Resume
+        │
+        ▼
+    JSON API Response
+```
+
+---
+
+# 📂 Project Structure
 
 ```text
 AI_RESUME_COPILOT/
-│
+
 ├── app/
-│   │
-│   ├── ai_engine/
-│   │   ├── analytics/
-│   │   ├── ats/
-│   │   ├── copilot/
-│   │   ├── explainability/
-│   │   ├── improvement/
-│   │   ├── interview/
-│   │   ├── jobs/
-│   │   ├── parser/
-│   │   ├── training/
-│   │   └── utils/
-│   │
-│   ├── api/
-│   ├── core/
-│   ├── database/
-│   ├── models/
-│   ├── prompts/
-│   ├── schemas/
-│   ├── services/
-│   └── utils/
-│
-├── data/
-├── deployment/
-├── docs/
-├── frontend/
-├── notebooks/
-├── storage/
-│
-├── tests/
-│   ├── ai_engine/
-│   ├── api/
-│   │   ├── test_jobs_api.py
-│   │   └── test_resume_api.py
-│   ├── frontend/
-│   ├── integration/
-│   └── uploads/
-│       └── sample_resume.pdf
-│
-├── uploads/
-├── README.md
-├── requirements.txt
-├── pyproject.toml
-├── LICENSE
-└── .gitignore
-```
-
----
-
-# Development Progress
-
-## Resume Parsing
-
-- [x] PDF Resume Parser
-- [x] DOCX Resume Parser
-- [x] Resume Text Cleaner
-- [x] Contact Parser
-- [x] Skills Parser
-- [x] Education Parser
-- [x] Experience Parser
-- [x] Resume Parser Integration
-
----
-
-## ATS
-
-- [x] ATS Scoring Engine
-- [x] ATS Response Validation
-
----
-
-## Resume Improvement
-
-- [x] Resume Strength Analysis
-- [x] Resume Weakness Analysis
-- [x] Resume Improvement Suggestions
-- [x] Resume Improvement API
-
----
-
-## Job Recommendation
-
-- [x] Role Prediction
-- [x] Recommendation Engine
-- [x] Skill Gap Analyzer
-- [x] Job Matcher
-- [x] Job Recommendation API
-- [x] Job Recommendation Integration
-
----
-
-## Interview
-
-- [x] Technical Interview Questions
-- [x] HR Interview Questions
-- [x] Interview Answer Evaluation
-- [x] Interview API
-
----
-
-## Explainability
-
-- [x] ATS Explanation
-- [x] Job Recommendation Explanation
-
----
-
-## Analytics
-
-- [x] ATS History
-
----
-
-## Backend
-
-- [x] FastAPI Backend
-- [x] Resume Upload API
-- [x] Resume Upload Pipeline
-- [x] Resume Analysis Workflow
-- [x] Service Layer
-- [x] Pydantic Schemas
-- [x] Request Validation
-- [x] Response Validation
-- [x] Swagger Documentation
-
----
-
-## Testing
-
-- [x] Pytest Configuration
-- [x] HTTPX Integration
-- [x] Resume Upload API Test
-- [x] Job Recommendation API Test
-- [x] Backend API Test Suite
-
----
-
-## Planned
-
-- [ ] Authentication
-- [ ] SQL Database
-- [ ] User Dashboard
-- [ ] AI Resume Copilot Chatbot
-- [ ] Resume vs Job Description Matching
-- [ ] React Frontend
-- [ ] Docker
-- [ ] Kubernetes
-- [ ] AWS Deployment
-
----
-
-# Current Workflow
-
-```text
-                           Resume
-                              │
-                              ▼
-                     Upload API (FastAPI)
-                              │
-                              ▼
-                     Resume Service Layer
-                              │
-                              ▼
-                   PDF / DOCX Resume Parser
-                              │
-                              ▼
-                     Resume Text Cleaner
-                              │
-                              ▼
-                    Resume Information Parser
-                              │
-      ┌───────────────────────┼────────────────────────┐
-      ▼                       ▼                        ▼
- Contact Parser       Education Parser       Experience Parser
-                              │
-                              ▼
-                      Skills Extraction
-                              │
-                              ▼
-                       ATS Scoring Engine
-                              │
-                              ▼
-                Resume Improvement Engine
-                              │
-                              ▼
-                  Role Prediction Engine
-                              │
-                              ▼
-                 Recommendation Engine
-                              │
-                              ▼
-                   Skill Gap Analyzer
-                              │
-                              ▼
-                 Explainability Module
-                              │
-                              ▼
-                    Analytics Module
-                              │
-                              ▼
-                 Resume Analysis Response
-                              │
-      ┌───────────────────────┼────────────────────────┐
-      ▼                       ▼                        ▼
-Interview Questions     Answer Evaluation      Future AI Copilot
-```
-
----
-
-# REST API Endpoints
-
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| GET | `/` | API Status |
-| POST | `/api/resume/upload` | Upload and Analyze Resume |
-| POST | `/api/improvement/analyze` | Resume Improvement Analysis |
-| POST | `/api/jobs/recommend` | Job Recommendation |
-| POST | `/api/interview/questions` | Generate Interview Questions |
-| POST | `/api/interview/evaluate` | Evaluate Interview Answers |
-
----
-
-# API Architecture
-
-```text
-                    Client
-                       │
-                       ▼
-                FastAPI Router
-                       │
-                       ▼
-              Request Validation
-                       │
-                       ▼
-                Service Layer
-                       │
-                       ▼
-                  AI Engine
-      ┌────────────┼─────────────┬─────────────┐
-      ▼            ▼             ▼             ▼
-   Parser         ATS      Improvement    Interview
-      │            │             │             │
-      └────────────┼─────────────┴─────────────┘
-                   ▼
-            Response Schema
-                   │
-                   ▼
-              JSON Response
-```
-
----
-
-# Module Architecture
-
-```text
-app/
-│
-├── api/
-│      Handles HTTP Requests
-│
-├── services/
-│      Business Logic Layer
-│
-├── schemas/
-│      Request & Response Models
 │
 ├── ai_engine/
-│      Core AI Modules
+│   ├── parser/
+│   ├── ats/
+│   ├── jobs/
+│   ├── explainability/
+│   ├── improvement/
+│   ├── analytics/
+│   ├── interview/
+│   ├── training/
+│   └── copilot/
 │
+├── api/
+├── core/
 ├── database/
-│      Future SQL Integration
+├── models/
+├── prompts/
+├── schemas/
+├── services/
+├── utils/
 │
 ├── tests/
-│      Automated API Tests
+│   ├── ai_engine/
+│   ├── api/
+│   └── integration/
 │
-└── core/
-       Project Configuration
+├── uploads/
+├── storage/
+├── docs/
+├── deployment/
+├── frontend/
+│
+├── requirements.txt
+├── pyproject.toml
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-# Backend Flow
+# ⚙️ Development Workflow
+
+Every feature follows the same development lifecycle.
 
 ```text
-Client Request
+Requirement
       │
       ▼
-FastAPI Endpoint
+Planning
       │
       ▼
-Pydantic Validation
+Design
       │
       ▼
-Service Layer
+Implementation
       │
       ▼
-AI Engine
+Unit Testing
       │
       ▼
-Response Schema
+Integration
       │
       ▼
-JSON Response
+Documentation
+      │
+      ▼
+Git Commit
 ```
 
 ---
 
-# Current Backend Modules
+# 📸 Screenshots
 
-## Parser
+The following screenshots will be added as development progresses.
 
-- PDF Parser
-- DOCX Parser
-- Resume Parser
-- Contact Parser
-- Skills Parser
-- Education Parser
-- Experience Parser
-
----
-
-## ATS
-
-- ATS Score
-- Resume Validation
+| Screenshot | Status |
+|------------|--------|
+| Home Page | 🚧 |
+| Resume Upload | 🚧 |
+| Resume Analysis | 🚧 |
+| ATS Report | 🚧 |
+| Job Recommendation | 🚧 |
+| Skill Gap Analysis | 🚧 |
+| API Documentation | 🚧 |
 
 ---
 
-## Resume Improvement
+# 🎥 Live Demo
 
-- Strength Analysis
-- Weakness Analysis
-- Resume Suggestions
+The live demo will be available after deployment.
 
----
-
-## Jobs
-
-- Role Predictor
-- Recommendation Engine
-- Skill Gap Analyzer
-- Job Matcher
+**Status:** 🚧 Coming Soon
 
 ---
 
-## Interview
+# 🌐 API Documentation
 
-- Question Generator
-- HR Questions
-- Technical Questions
-- Answer Evaluation
+Interactive API documentation will be available after running the FastAPI application.
 
----
+## Swagger UI
 
-## Analytics
-
-- ATS History
-
----
-
-## Explainability
-
-- ATS Explanation
-- Job Recommendation Explanation
-
----
-
-## Testing
-
-- Resume Upload API Test
-- Job Recommendation API Test
-- Pytest Test Suite
-- FastAPI TestClient
-
----
-
-# Example API Usage
-
-## Resume Upload API
-
-### Request
-
-```http
-POST /api/resume/upload
+```
+http://127.0.0.1:8000/docs
 ```
 
-Upload a PDF or DOCX resume using `multipart/form-data`.
+## ReDoc
 
----
-
-### Example Response
-
-```json
-{
-  "contact": {
-    "name": "John Doe",
-    "email": "john@example.com",
-    "phone": "+91 9876543210"
-  },
-  "education": {
-    "degree": "B.Tech Computer Engineering"
-  },
-  "experience": {
-    "experience": "1 Year Internship"
-  },
-  "skills": [
-    "Python",
-    "FastAPI",
-    "SQL"
-  ],
-  "ats": {
-    "ats_score": 85
-  },
-  "recommendation": {
-    "recommended_role": "Backend Developer",
-    "suggestions": [
-      "Build REST APIs using FastAPI.",
-      "Learn Docker and containerization.",
-      "Practice SQL optimization."
-    ]
-  }
-}
+```
+http://127.0.0.1:8000/redoc
 ```
 
 ---
 
-# Resume Improvement API
+# 🚀 Installation
 
-### Request
-
-```http
-POST /api/improvement/analyze
-```
-
-### Request Body
-
-```json
-{
-  "skills": [
-    "Python",
-    "FastAPI"
-  ],
-  "education": true,
-  "experience": false
-}
-```
-
-### Response
-
-```json
-{
-  "strengths": [
-    "Strong Python skills.",
-    "Backend development skills identified.",
-    "Education details are present."
-  ],
-  "weaknesses": [
-    "SQL skill is missing.",
-    "Docker skill is missing.",
-    "Git skill is missing.",
-    "Experience section is missing."
-  ],
-  "suggestions": [
-    "Learn SQL and add it to your resume.",
-    "Learn Docker for backend deployment.",
-    "Add Git and GitHub experience.",
-    "Include internships, projects, or freelance experience."
-  ]
-}
-```
+Follow the steps below to set up AI Resume Copilot on your local machine.
 
 ---
 
-# Job Recommendation API
+## Prerequisites
 
-### Request
+Before installing the project, make sure the following software is installed.
 
-```http
-POST /api/jobs/recommend
-```
-
-### Request Body
-
-```json
-{
-  "skills": [
-    "Python",
-    "FastAPI"
-  ],
-  "education": true,
-  "experience": false
-}
-```
-
-### Response
-
-```json
-{
-  "recommended_role": "Backend Developer",
-  "skill_gap": [
-    "SQL",
-    "Docker",
-    "Git"
-  ],
-  "recommendations": [
-    "Build REST APIs using FastAPI.",
-    "Learn Docker and containerization.",
-    "Practice SQL optimization."
-  ],
-  "matched_jobs": [
-    "Backend Developer Intern",
-    "Junior Backend Developer",
-    "Python Backend Developer"
-  ]
-}
-```
+| Software | Version |
+|----------|----------|
+| Python | 3.12+ |
+| Git | Latest |
+| VS Code | Recommended |
 
 ---
 
-# Interview Question API
-
-### Request
-
-```http
-POST /api/interview/questions
-```
-
-### Request Body
-
-```json
-{
-  "role": "python developer"
-}
-```
-
-### Response
-
-```json
-{
-  "role": "python developer",
-  "technical_questions": [
-    "What is Python?",
-    "Explain decorators.",
-    "What is FastAPI?"
-  ],
-  "hr_questions": [
-    "Tell me about yourself.",
-    "Why should we hire you?"
-  ]
-}
-```
-
----
-
-# Interview Answer Evaluation API
-
-### Request
-
-```http
-POST /api/interview/evaluate
-```
-
-### Request Body
-
-```json
-{
-  "question": "What is Python?",
-  "answer": "Python is a high-level interpreted programming language."
-}
-```
-
-### Response
-
-```json
-{
-  "score": 9,
-  "strengths": [
-    "Detailed explanation."
-  ],
-  "weaknesses": [
-    "Minor improvements possible."
-  ],
-  "improvements": [
-    "Use more technical terminology.",
-    "Add practical examples."
-  ]
-}
-```
-
----
-
-# Automated Testing
-
-The backend includes automated API testing using **Pytest**, **HTTPX**, and **FastAPI TestClient**.
-
-## Current Test Coverage
-
-### API Tests
-
-- Resume Upload API
-- Job Recommendation API
-
-### AI Engine Tests
-
-#### Jobs
-
-- Role Predictor
-- Job Matcher
-- Skill Gap Analyzer
-- Recommendation Engine
-
-#### Parser
-
-- PDF Parser
-- DOCX Parser
-- Resume Parser
-- Contact Parser
-- Skills Parser
-- Education Parser
-- Experience Parser
-- Text Cleaner
-
-### Test Statistics
-
-- API Tests: **2**
-- Jobs Tests: **16**
-- Parser Tests: **23**
-- **Total Passing Tests: 41**
-
-## Run API Tests
+## Clone Repository
 
 ```bash
-python -m pytest tests/api -v
+git clone https://github.com/diveshkate11-collab/ai-resume-analyzer.git
 ```
+
+Move into the project directory.
+
+```bash
+cd ai-resume-analyzer
+```
+
+---
+
+## Create Virtual Environment
+
+### Windows
+
+```bash
+python -m venv .venv
+```
+
+Activate the environment.
+
+```bash
+.venv\Scripts\activate
+```
+
+---
+
+### Linux / macOS
+
+```bash
+python3 -m venv .venv
+```
+
+Activate the environment.
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## Install Dependencies
+
+Install all required Python packages.
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Verify Installation
+
+Check the installed Python version.
+
+```bash
+python --version
+```
+
+Check installed packages.
+
+```bash
+pip list
+```
+
+---
+
+# ▶️ Running the Project
+
+Start the FastAPI development server.
+
+```bash
+uvicorn app.main:app --reload
+```
+
+If everything is configured correctly, the server will start successfully.
+
+---
+
+## Local Server
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Swagger Documentation
+
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## ReDoc Documentation
+
+```
+http://127.0.0.1:8000/redoc
+```
+
+---
+
+# 📁 Configuration
+
+The project currently requires minimal configuration.
+
+Future configuration options will include:
+
+- Database Connection
+- JWT Authentication
+- API Keys
+- Email Service
+- Logging
+- Cloud Storage
+
+---
+
+# 🔑 Environment Variables
+
+A sample environment file will be added in future releases.
+
+Example:
+
+```env
+DATABASE_URL=
+
+SECRET_KEY=
+
+OPENAI_API_KEY=
+
+JWT_SECRET_KEY=
+
+SMTP_USERNAME=
+
+SMTP_PASSWORD=
+```
+
+---
+
+# 🧪 Running Tests
+
+Run all tests.
+
+```bash
+python -m pytest tests -v
+```
+
+---
 
 ## Run Parser Tests
 
@@ -969,11 +550,618 @@ python -m pytest tests/api -v
 python -m pytest tests/ai_engine/parser -v
 ```
 
+---
+
+## Run ATS Tests
+
+```bash
+python -m pytest tests/ai_engine/ats -v
+```
+
+---
+
 ## Run Jobs Tests
 
 ```bash
 python -m pytest tests/ai_engine/jobs -v
 ```
+
+---
+
+## Run Explainability Tests
+
+```bash
+python -m pytest tests/ai_engine/explainability -v
+```
+
+---
+
+## Current Test Status
+
+| Module | Status |
+|---------|--------|
+| Parser | ✅ Passed |
+| ATS | ✅ Passed |
+| Jobs | ✅ Passed |
+| Explainability | ✅ Passed |
+
+---
+
+## Latest Test Summary
+
+```text
+Total Unit Tests Passed : 71
+
+Failed : 0
+
+Build Status : PASSING
+```
+
+---
+
+# 📦 Dependencies
+
+Core dependencies currently used in the project.
+
+| Package | Purpose |
+|----------|----------|
+| FastAPI | REST API Framework |
+| Pydantic | Data Validation |
+| Uvicorn | ASGI Server |
+| PyPDF2 | PDF Parsing |
+| python-docx | DOCX Parsing |
+| Pytest | Unit Testing |
+| HTTPX | API Testing |
+
+---
+
+# 🧠 AI Engine
+
+The AI Engine is the core component of AI Resume Copilot. It processes resumes, performs ATS analysis, predicts job roles, explains AI decisions, and generates actionable recommendations.
+
+The architecture is modular, allowing every component to be developed, tested, and maintained independently.
+
+---
+
+## AI Engine Modules
+
+| Module | Purpose | Status |
+|---------|---------|--------|
+| Parser | Resume Parsing | ✅ Completed |
+| ATS | ATS Score Calculation | ✅ Completed |
+| Jobs | Job Recommendation | ✅ Completed |
+| Explainability | AI Decision Explanation | ✅ Completed |
+| Improvement | Resume Improvement | 🚧 In Progress |
+| Analytics | Resume Analytics | ⏳ Planned |
+| Interview | Interview Preparation | ⏳ Planned |
+| Training | Learning Recommendation | ⏳ Planned |
+| Copilot | AI Career Assistant | ⏳ Planned |
+
+---
+
+# 🏗️ AI Engine Architecture
+
+```text
+Resume
+   │
+   ▼
+Parser
+   │
+   ▼
+Structured Resume Data
+   │
+   ├──────────────┬──────────────┬──────────────┐
+   ▼              ▼              ▼              ▼
+ ATS           Jobs      Explainability   Improvement
+   │              │              │              │
+   └──────────────┴──────────────┴──────────────┘
+                  │
+                  ▼
+            Final JSON Response
+```
+
+---
+
+# 📄 Resume Parser Module
+
+The Resume Parser extracts structured information from uploaded resumes.
+
+### Supported Formats
+
+- PDF
+- DOCX
+
+---
+
+### Components
+
+| Component | Description |
+|-----------|-------------|
+| PDF Parser | Extracts text from PDF resumes |
+| DOCX Parser | Extracts text from DOCX resumes |
+| Text Cleaner | Cleans extracted text |
+| Contact Parser | Extracts contact details |
+| Skills Parser | Extracts technical skills |
+| Education Parser | Extracts education details |
+| Experience Parser | Extracts work experience |
+| Resume Parser | Integrates all parser modules |
+
+---
+
+### Extracted Information
+
+```text
+Resume
+
+├── Contact Information
+
+├── Skills
+
+├── Education
+
+├── Experience
+
+└── Metadata
+```
+
+---
+
+### Parser Workflow
+
+```text
+Resume Upload
+      │
+      ▼
+PDF / DOCX Parser
+      │
+      ▼
+Text Cleaner
+      │
+      ▼
+Contact Parser
+      │
+      ▼
+Education Parser
+      │
+      ▼
+Experience Parser
+      │
+      ▼
+Skills Parser
+      │
+      ▼
+Structured Resume
+```
+
+---
+
+### Current Status
+
+```text
+Status
+
+Completed ✅
+
+Supported Formats
+
+✔ PDF
+
+✔ DOCX
+
+Unit Tests
+
+✔ Passed
+```
+
+---
+
+# 📊 Parser Output Example
+
+```json
+{
+  "contact": {},
+  "skills": [],
+  "education": {},
+  "experience": {},
+  "metadata": {
+    "characters": 1250
+  }
+}
+```
+
+---
+
+# 🎯 ATS Engine
+
+The ATS (Applicant Tracking System) Engine evaluates resumes based on commonly used ATS principles. It analyzes resume structure, technical keywords, formatting, grammar, and calculates an overall ATS score.
+
+---
+
+## ATS Components
+
+| Component | Description | Status |
+|-----------|-------------|--------|
+| ATS Scorer | Calculates overall ATS score | ✅ Completed |
+| Keyword Matcher | Matches technical keywords | ✅ Completed |
+| Section Checker | Detects required resume sections | ✅ Completed |
+| Formatting Checker | Validates formatting quality | ✅ Completed |
+| Grammar Checker | Performs basic grammar validation | ✅ Completed |
+
+---
+
+# ATS Workflow
+
+```text
+Structured Resume
+        │
+        ▼
+Section Checker
+        │
+        ▼
+Keyword Matcher
+        │
+        ▼
+Formatting Checker
+        │
+        ▼
+Grammar Checker
+        │
+        ▼
+ATS Score Calculation
+        │
+        ▼
+ATS Report
+```
+
+---
+
+# ATS Evaluation Criteria
+
+| Criteria | Purpose |
+|-----------|----------|
+| Resume Sections | Verify required sections exist |
+| Technical Keywords | Match important technical skills |
+| Formatting | Detect formatting issues |
+| Grammar | Identify basic grammar problems |
+| Overall Score | Generate ATS score |
+
+---
+
+# ATS Output Example
+
+```json
+{
+  "ats_score": 85,
+  "section": {
+    "education": true,
+    "skills": true,
+    "experience": true,
+    "projects": true
+  },
+  "keywords": {
+    "count": 4
+  },
+  "formatting": {
+    "empty": false,
+    "too_short": false
+  },
+  "grammar": {
+    "grammar_score": 90
+  }
+}
+```
+
+---
+
+# 💼 Job Recommendation Engine
+
+The Job Recommendation Engine predicts suitable job roles based on the candidate's skills and recommends areas for improvement.
+
+---
+
+## Components
+
+| Component | Description | Status |
+|-----------|-------------|--------|
+| Role Predictor | Predicts suitable job roles | ✅ Completed |
+| Job Matcher | Matches candidate to predefined roles | ✅ Completed |
+| Skill Gap Analyzer | Identifies missing skills | ✅ Completed |
+| Recommendation Engine | Generates career recommendations | ✅ Completed |
+
+---
+
+# Job Recommendation Workflow
+
+```text
+Resume Skills
+      │
+      ▼
+Role Predictor
+      │
+      ▼
+Job Matcher
+      │
+      ▼
+Skill Gap Analyzer
+      │
+      ▼
+Recommendation Engine
+      │
+      ▼
+Career Recommendations
+```
+
+---
+
+# Supported Job Roles
+
+- Backend Developer
+- Python Developer
+- AI/ML Engineer
+- Data Analyst
+- Software Developer
+
+---
+
+# Job Recommendation Example
+
+```json
+{
+  "predicted_role": "Backend Developer",
+  "matched_jobs": [
+    "Backend Developer"
+  ],
+  "skill_gap": [
+    "Docker",
+    "Git"
+  ],
+  "recommendations": [
+    "Build REST APIs using FastAPI.",
+    "Learn Docker and containerization.",
+    "Practice SQL optimization."
+  ]
+}
+```
+
+---
+
+# Current Status
+
+| Module | Status |
+|---------|--------|
+| ATS Engine | ✅ Completed |
+| Job Recommendation Engine | ✅ Completed |
+| Unit Tests | ✅ Passed |
+| Integration | ✅ Completed |
+
+---
+
+# 💡 Explainability Engine
+
+The Explainability Engine makes AI decisions transparent by providing clear, human-readable explanations for ATS scores, recommended job roles, and identified skill gaps.
+
+Instead of only returning predictions, the system explains **why** a recommendation was generated.
+
+---
+
+## Components
+
+| Component | Description | Status |
+|-----------|-------------|--------|
+| ATS Explanation | Explains ATS score | ✅ Completed |
+| Job Reason | Explains recommended job roles | ✅ Completed |
+| Skill Reason | Explains matched and missing skills | ✅ Completed |
+
+---
+
+# Explainability Workflow
+
+```text
+ATS Result
+      │
+      ▼
+ATS Explanation
+      │
+      ▼
+Job Recommendation
+      │
+      ▼
+Job Reason
+      │
+      ▼
+Skill Gap
+      │
+      ▼
+Skill Reason
+      │
+      ▼
+Final Explanation
+```
+
+---
+
+# Explainability Output Example
+
+```json
+{
+  "ats_score": 85,
+  "explanation": [
+    "Your resume has a strong ATS score.",
+    "Education section is present.",
+    "Skills section is present.",
+    "Experience section is present.",
+    "Projects section is present.",
+    "Matched 4 technical skills."
+  ]
+}
+```
+
+---
+
+# 🛠️ Resume Improvement Engine
+
+The Resume Improvement Engine analyzes resume quality and provides practical suggestions to strengthen the resume.
+
+This module is currently under active development.
+
+---
+
+## Planned Components
+
+| Component | Description | Status |
+|-----------|-------------|--------|
+| Strength Analyzer | Identifies resume strengths | 🚧 In Progress |
+| Weakness Analyzer | Detects missing areas | 🚧 In Progress |
+| Suggestion Generator | Generates improvement suggestions | 🚧 In Progress |
+| Improvement Engine | Combines all analyses | 🚧 In Progress |
+
+---
+
+# Planned Workflow
+
+```text
+Resume Analysis
+       │
+       ▼
+Strength Analyzer
+       │
+       ▼
+Weakness Analyzer
+       │
+       ▼
+Suggestion Generator
+       │
+       ▼
+Improvement Engine
+       │
+       ▼
+Resume Improvement Report
+```
+
+---
+
+# Planned Output
+
+```json
+{
+  "strengths": [
+    "Strong Python skills."
+  ],
+  "weaknesses": [
+    "Docker skill is missing."
+  ],
+  "suggestions": [
+    "Learn Docker for backend deployment.",
+    "Add Git and GitHub experience."
+  ]
+}
+```
+
+---
+
+# 📊 Analytics Module
+
+The Analytics Module will enable users to monitor resume improvements across multiple analyses.
+
+---
+
+## Planned Features
+
+- ATS Score History
+- Resume Comparison
+- Improvement Tracking
+- Resume Progress Analytics
+- Performance Dashboard
+
+---
+
+# 🎤 Interview Module
+
+The Interview Module will assist users in preparing for technical and HR interviews.
+
+---
+
+## Planned Features
+
+- Technical Interview Questions
+- HR Interview Questions
+- Coding Questions
+- Answer Evaluation
+- Feedback Generation
+- Interview Performance Analysis
+
+---
+
+# 🎓 Training Module
+
+The Training Module will recommend learning resources based on identified skill gaps.
+
+---
+
+## Planned Features
+
+- Personalized Learning Roadmap
+- Recommended Courses
+- Skill Progress Tracking
+- Learning Recommendations
+- Career Growth Suggestions
+
+---
+
+# 🤖 AI Copilot
+
+AI Copilot is the long-term vision of the project.
+
+It will function as an AI career assistant capable of helping users throughout the placement journey.
+
+---
+
+## Planned Features
+
+- Resume Chat Assistant
+- Resume Review
+- Resume Rewrite
+- Job Description Analysis
+- Resume vs Job Matching
+- Career Guidance
+- Interview Coaching
+- AI Career Mentor
+- LLM Integration
+- RAG Pipeline
+
+---
+
+# 🧪 Testing
+
+AI Resume Copilot follows a test-driven development approach. Every completed module includes unit tests to verify correctness and reduce regressions during development.
+
+---
+
+## Testing Framework
+
+| Tool | Purpose |
+|------|---------|
+| Pytest | Unit Testing |
+| HTTPX | API Testing |
+| FastAPI TestClient | Endpoint Testing |
+
+---
+
+# Current Test Coverage
+
+| Module | Status |
+|---------|--------|
+| Parser | ✅ Tested |
+| ATS | ✅ Tested |
+| Jobs | ✅ Tested |
+| Explainability | ✅ Tested |
+| Improvement | 🚧 In Progress |
+| Analytics | ⏳ Planned |
+| Interview | ⏳ Planned |
+
+---
+
+# Test Commands
 
 ## Run All Tests
 
@@ -981,196 +1169,365 @@ python -m pytest tests/ai_engine/jobs -v
 python -m pytest tests -v
 ```
 
-## Sample Output
+---
 
-```text
-============================= test session starts =============================
+## Parser Tests
 
-tests/api/test_jobs_api.py     PASSED
-tests/api/test_resume_api.py   PASSED
-
-============================== 2 passed ==============================
+```bash
+python -m pytest tests/ai_engine/parser -v
 ```
 
 ---
 
-# Project Goals
+## ATS Tests
 
-The objective of AI Resume Copilot is to build a complete AI-powered career assistant capable of:
+```bash
+python -m pytest tests/ai_engine/ats -v
+```
 
-- Resume Parsing
-- ATS Score Analysis
+---
+
+## Jobs Tests
+
+```bash
+python -m pytest tests/ai_engine/jobs -v
+```
+
+---
+
+## Explainability Tests
+
+```bash
+python -m pytest tests/ai_engine/explainability -v
+```
+
+---
+
+# Current Test Result
+
+```text
+=================================
+
+Parser Tests          Passed
+
+ATS Tests             Passed
+
+Jobs Tests            Passed
+
+Explainability Tests  Passed
+
+---------------------------------
+
+Total Passing Tests : 71
+
+Failed Tests : 0
+
+=================================
+```
+
+---
+
+# 📌 API Overview
+
+The backend exposes REST APIs using FastAPI.
+
+| Endpoint | Description | Status |
+|----------|-------------|--------|
+| Resume Upload | Upload Resume | 🚧 |
+| Resume Parser | Parse Resume | 🚧 |
+| ATS Analysis | Analyze ATS Score | 🚧 |
+| Job Recommendation | Recommend Jobs | 🚧 |
+| Resume Improvement | Improve Resume | 🚧 |
+| Interview | Interview Preparation | ⏳ |
+
+---
+
+# Sample Response
+
+```json
+{
+  "contact": {},
+  "skills": [],
+  "education": {},
+  "experience": {},
+  "ats": {},
+  "recommendation": {},
+  "analytics": {},
+  "explainability": {},
+  "metadata": {}
+}
+```
+
+---
+
+# 📅 Version History
+
+| Version | Description |
+|----------|-------------|
+| v0.1.0 | Initial Project Structure |
+| v0.2.0 | Resume Parser Module |
+| v0.3.0 | ATS Engine |
+| v0.4.0 | Jobs & Explainability Modules |
+| v0.5.0 | Resume Improvement *(Upcoming)* |
+
+---
+
+# 🛣️ Roadmap
+
+## Phase 1 ✅
+
+- Resume Parser
+- ATS Engine
+- Job Recommendation
+- Explainability
+
+---
+
+## Phase 2 🚧
+
 - Resume Improvement
-- Skill Gap Detection
-- Job Role Recommendation
-- Interview Preparation
-- AI-powered Career Guidance
-- Explainable AI Recommendations
 - Resume Analytics
-- Automated API Testing
-- Production-ready Backend
+- Interview Module
 
 ---
 
-# Learning Objectives
+## Phase 3 ⏳
 
-This project is helping me gain practical experience with:
-
-- Python
-- FastAPI
-- REST API Development
-- Software Engineering
-- Backend Development
-- AI/NLP Fundamentals
-- Resume Parsing
-- Service Layer Architecture
-- Pydantic Models
-- Modular Software Design
-- API Design
-- Automated Testing
-- Pytest
-- HTTPX
-- FastAPI TestClient
-- Git & GitHub
-- Project Documentation
+- AI Copilot
+- Authentication
+- Database
+- React Frontend
+- Docker
+- Cloud Deployment
 
 ---
 
-# Future Roadmap
+# 📈 Repository Status
 
-The next planned features for AI Resume Copilot are grouped into the following phases.
-
----
-
-## Resume Analysis
-
-- Resume Strength Analysis
-- Resume Weakness Detection
-- Resume Improvement Suggestions
-- Resume vs Job Description Matching
-- ATS Keyword Optimization
-- Resume Version Comparison
+| Category | Status |
+|----------|--------|
+| Development | 🟢 Active |
+| Current Version | v0.4.0 |
+| Build Status | Passing |
+| Latest Milestone | 71 Unit Tests Passed |
+| License | MIT |
 
 ---
 
-## Career Assistance
+# 🚀 Future Enhancements
 
-- Direct Job Application Links
-- Resume Analytics Dashboard
-- Personalized Career Roadmap
-- Learning Recommendations
-- Skill Progress Tracking
-
----
-
-## Interview Preparation
-
-- AI-powered Interview Question Generation
-- Mock Interview Simulator
-- Interview Performance Analytics
-- Personalized Interview Feedback
-- Coding Interview Preparation
+The following features are planned for future releases of AI Resume Copilot.
 
 ---
 
 ## AI Features
 
-- AI Resume Copilot Chatbot
-- LLM Integration
-- RAG-based Resume Assistant
-- Explainable AI Recommendations
+- AI Resume Chat Assistant
+- Resume Rewrite Assistant
+- Resume Optimization
+- Resume Summary Generator
+- Resume vs Job Description Matching
 - AI Career Mentor
-- Resume Optimization using LLMs
+- Personalized Career Roadmap
+- Skill Recommendation System
+- Resume Quality Prediction
+- AI Resume Builder
+
+---
+
+## Machine Learning
+
+- Resume Classification
+- Job Role Classification
+- Resume Ranking
+- Skill Recommendation Model
+- ATS Score Prediction Model
+- Learning Recommendation Model
 
 ---
 
 ## Backend
 
-- Authentication & Authorization
-- SQL Database Integration
-- User Dashboard
+- JWT Authentication
+- OAuth Login
+- User Management
+- Resume History
+- Resume Versioning
 - Background Tasks
-- Logging
-- Monitoring
 - Email Notifications
-- Rate Limiting
-- Dockerized Deployment
-- CI/CD Pipeline
+- Logging
+- Caching
+- Database Optimization
 
 ---
 
 ## Frontend
 
-- React Frontend
-- Responsive Dashboard
-- User Authentication
-- Resume History
-- Analytics Visualization
-- Dark / Light Theme
-- Resume Upload Dashboard
+- React Dashboard
+- Resume Upload Portal
+- User Profile
+- Resume Analytics Dashboard
+- Interview Dashboard
+- Dark Mode
+- Responsive Design
 
 ---
 
 ## Deployment
 
 - Docker
+- Docker Compose
 - Kubernetes
-- AWS Deployment
+- AWS
+- Nginx
 - GitHub Actions
-- CI/CD Automation
-- Production Monitoring
+- CI/CD Pipeline
+- Monitoring
+- Production Logging
 
 ---
 
-# Contributing
+# 🤝 Contributing
 
-This project is currently under active development.
+Contributions are welcome.
 
-Suggestions, improvements, bug reports, and feature requests are welcome.
-
-If you would like to contribute:
+If you would like to contribute to this project:
 
 1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Push your branch.
-5. Open a Pull Request.
+2. Create a new branch.
+3. Implement your changes.
+4. Run all tests.
+5. Commit your changes.
+6. Push the branch.
+7. Open a Pull Request.
 
 ---
 
-# License
+# 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
----
-
-# Author
-
-## Divesh Kate
-
-**B.Tech – Artificial Intelligence & Machine Learning**
-
-AI Resume Copilot is my first large-scale software engineering project.
-
-The objective of this project is to learn and apply modern backend development practices by building a production-style AI application using FastAPI. It follows a modular architecture with separate layers for APIs, services, schemas, AI modules, analytics, explainability, and automated testing.
-
-# Current completed modules include:
-
-- Resume Parsing
-- ATS Analysis
-- Resume Improvement
-- Job Recommendation
-- Interview Preparation
-- Explainability
-- Analytics
-- REST APIs
-- Resume Upload Workflow
-- Automated API Testing
-
-The project will continue to evolve with authentication, databases, frontend development, AI integrations, and cloud deployment.
+See the LICENSE file for more details.
 
 ---
 
-⭐ **If you found this project useful, consider giving it a star on GitHub.**
+# 👨‍💻 Author
 
-Thank you for visiting the project! 
+**Divesh Kate**
+
+Artificial Intelligence & Machine Learning Undergraduate
+
+Mumbai, India
+
+### GitHub
+
+https://github.com/diveshkate11-collab
+
+### Repository
+
+https://github.com/diveshkate11-collab/ai-resume-analyzer
+
+---
+
+# ⭐ Support
+
+If you found this project useful:
+
+- ⭐ Star the repository
+- 🍴 Fork the project
+- 🐞 Report bugs
+- 💡 Suggest improvements
+
+---
+
+# 📌 Current Development Status
+
+```text
+Project Name
+
+AI Resume Copilot
+
+Version
+
+v0.4.0
+
+Status
+
+Active Development
+
+Completed Modules
+
+✔ Resume Parser
+
+✔ ATS Engine
+
+✔ Job Recommendation
+
+✔ Explainability
+
+Current Module
+
+▶ Improvement Engine
+
+Next Milestone
+
+▶ Analytics Module
+
+Backend
+
+FastAPI
+
+Programming Language
+
+Python
+
+Testing
+
+71 Unit Tests Passing
+
+License
+
+MIT
+```
+
+---
+
+# 📅 Changelog
+
+## v0.4.0
+
+### Added
+
+- Resume Parser Integration
+- ATS Engine
+- Job Recommendation Engine
+- Explainability Engine
+- Recommendation Engine
+- Role Predictor
+- Skill Gap Analyzer
+
+### Improved
+
+- Resume Parsing Accuracy
+- Project Architecture
+- Unit Testing
+- Documentation
+
+### Fixed
+
+- Resume Parser Integration
+- DOCX Parser
+- Import Errors
+- Parser Method Naming
+- Resume Parser Tests
+- Job Recommendation Integration
+
+---
+
+# 🙌 Final Note
+
+AI Resume Copilot is an actively developed software engineering project focused on building a production-ready AI-powered career assistance platform.
+
+The project is continuously evolving with new AI modules, backend features, and deployment capabilities to provide an end-to-end resume analysis and career guidance solution.
+
+---

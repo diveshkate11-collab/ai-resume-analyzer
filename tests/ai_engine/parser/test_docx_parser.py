@@ -1,12 +1,12 @@
 from pathlib import Path
 
-from app.ai_engine.parser.docx_parser import DOCXParser
+from app.ai_engine.parser.docx_parser import DocxParser
 
 
 def test_docx_parser():
     docx_path = Path("uploads/resumes/sample_resume.docx")
 
-    result = DOCXParser.extract_text(str(docx_path))
+    result = DocxParser.extract_text(str(docx_path))
 
     assert isinstance(result, dict)
     assert "text" in result
