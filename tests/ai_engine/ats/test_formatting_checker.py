@@ -1,19 +1,66 @@
 from app.ai_engine.ats.formatting_checker import FormattingChecker
 
-resume_text = """
-John Doe
 
-Education
+def test_good_formatting():
+    resume_text = """
+    John Doe
 
-B.Tech
+    Education
 
-Skills
+    B.Tech
 
-Python
-FastAPI
-Docker
-"""
+    Skills
 
-result = FormattingChecker.check(resume_text)
+    Python
+    FastAPI
+    Docker
+    """
 
-print(result)
+    result = FormattingChecker.check(resume_text)
+
+    assert isinstance(result, dict)
+
+
+def test_poor_formatting():
+    resume_text = "John Doe Education Skills Python FastAPI Docker"
+
+    result = FormattingChecker.check(resume_text)
+
+    assert isinstance(result, dict)
+
+
+def test_empty_resume():
+    result = FormattingChecker.check("")
+
+    assert isinstance(result, dict)
+
+
+def test_resume_with_extra_spaces():
+    resume_text = """
+
+
+
+    John Doe
+
+
+
+    Education
+
+
+
+
+    Skills
+
+
+
+
+    Python
+
+
+
+
+    """
+
+    result = FormattingChecker.check(resume_text)
+
+    assert isinstance(result, dict)
