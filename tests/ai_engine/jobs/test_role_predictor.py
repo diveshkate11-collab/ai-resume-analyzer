@@ -11,9 +11,11 @@ def test_backend_developer_prediction():
         ]
     }
 
-    role = RolePredictor.predict(resume_data)
+    result = RolePredictor.predict(resume_data)
 
-    assert role == "Backend Developer"
+    assert isinstance(result, dict)
+    assert "roles" in result
+    assert "Backend Developer" in result["roles"]
 
 
 def test_python_developer_prediction():
@@ -23,9 +25,10 @@ def test_python_developer_prediction():
         ]
     }
 
-    role = RolePredictor.predict(resume_data)
+    result = RolePredictor.predict(resume_data)
 
-    assert role == "Python Developer"
+    assert isinstance(result, dict)
+    assert "Python Developer" in result["roles"]
 
 
 def test_ai_ml_prediction():
@@ -35,16 +38,19 @@ def test_ai_ml_prediction():
         ]
     }
 
-    role = RolePredictor.predict(resume_data)
+    result = RolePredictor.predict(resume_data)
 
-    assert role == "AI/ML Engineer"
+    assert isinstance(result, dict)
+    assert "AI/ML Engineer" in result["roles"]
 
 
 def test_default_prediction():
     resume_data = {
-        "skills": []
+        "skills": [],
     }
 
-    role = RolePredictor.predict(resume_data)
+    result = RolePredictor.predict(resume_data)
 
-    assert role == "Software Developer"
+    assert isinstance(result, dict)
+    assert result["roles"] == ["Software Developer"]
+    assert result["count"] == 1
