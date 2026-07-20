@@ -5,11 +5,21 @@ from app.ai_engine.improvement.suggestions import SuggestionGenerator
 
 class ImprovementEngine:
     """
-    Resume Improvement Engine
+    Resume Improvement Engine.
     """
 
     @staticmethod
     def analyze(data: dict) -> dict:
+        """
+        Analyze the resume and generate improvement insights.
+
+        Args:
+            data (dict): Parsed resume data.
+
+        Returns:
+            dict
+        """
+
         return {
             "strengths": StrengthAnalyzer.analyze(data),
             "weaknesses": WeaknessAnalyzer.analyze(data),
