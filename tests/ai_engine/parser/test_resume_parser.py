@@ -16,6 +16,7 @@ def test_resume_parser():
     assert "skills" in result
     assert "ats" in result
     assert "recommendation" in result
+    assert "improvement" in result
     assert "analytics" in result
     assert "explainability" in result
     assert "text" in result
@@ -24,6 +25,7 @@ def test_resume_parser():
     assert isinstance(result["skills"], list)
     assert isinstance(result["ats"], dict)
     assert isinstance(result["recommendation"], dict)
+    assert isinstance(result["improvement"], dict)
     assert isinstance(result["analytics"], dict)
     assert isinstance(result["explainability"], dict)
     assert isinstance(result["metadata"], dict)

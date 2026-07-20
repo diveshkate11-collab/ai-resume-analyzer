@@ -8,6 +8,7 @@ from app.ai_engine.parser.contact_parser import ContactParser
 from app.ai_engine.parser.skills_parser import SkillsParser
 from app.ai_engine.parser.education_parser import EducationParser
 from app.ai_engine.parser.experience_parser import ExperienceParser
+from app.ai_engine.improvement.improvement_engine import ImprovementEngine
 
 from app.ai_engine.jobs.role_predictor import RolePredictor
 from app.ai_engine.jobs.job_matcher import JobMatcher
@@ -63,6 +64,7 @@ class ResumeParser:
             "education": education,
             "experience": experience,
         }
+        improvement = ImprovementEngine.analyze(resume_data)
 
         # Predict role
         role_result = RolePredictor.predict(resume_data)
@@ -85,6 +87,8 @@ class ResumeParser:
                "role": predicted_role,
                "recommendations": RecommendationEngine.generate(predicted_role),
             },
+
+            "improvement": improvement,
 
             "analytics": {},
 

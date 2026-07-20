@@ -11,13 +11,29 @@ class JobService:
 
     @staticmethod
     def recommend(resume_data: dict) -> dict:
-        role = RolePredictor.predict(resume_data)
-        skill_gap = SkillGapAnalyzer.analyze(resume_data, role)
-        recommendations = RecommendationEngine.generate(role)
+
+        role_result = RolePredictor.predict(resume_data)
+
+        predicted_role = (
+            role_result["roles"][0]
+            if role_result.get("roles")
+            else "Software Developer"
+        )
+
+        skill_gap = SkillGapAnalyzer.analyze(
+            resume_data,
+            predicted_role,
+        )
+
+        recommendations = RecommendationEngine.generate(
+            predicted_role,
+        )
 
         return {
-            "recommended_role": role,
+            "recommended_role": predicted_role,
             "skill_gap": skill_gap,
             "recommendations": recommendations,
-            "matched_jobs": JobMatcher.match(role),
+            "matched_jobs": JobMatcher.match(
+                predicted_role,
+            ),
         }

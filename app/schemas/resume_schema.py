@@ -18,8 +18,8 @@ class ExperienceSchema(BaseModel):
 
 
 class RecommendationSchema(BaseModel):
-    recommended_role: str
-    suggestions: list[str]
+    role: str
+    recommendations: list[str]
 
 
 class ResumeAnalysisSchema(BaseModel):
