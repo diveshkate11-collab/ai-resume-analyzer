@@ -9,6 +9,7 @@ from app.ai_engine.parser.skills_parser import SkillsParser
 from app.ai_engine.parser.education_parser import EducationParser
 from app.ai_engine.parser.experience_parser import ExperienceParser
 from app.ai_engine.improvement.improvement_engine import ImprovementEngine
+from app.services.analytics_service import AnalyticsService
 
 from app.ai_engine.jobs.role_predictor import RolePredictor
 from app.ai_engine.jobs.job_matcher import JobMatcher
@@ -90,7 +91,7 @@ class ResumeParser:
 
             "improvement": improvement,
 
-            "analytics": {},
+            "analytics": AnalyticsService.generate([ats["ats_score"]]),
 
             "explainability": {},
 

@@ -1,34 +1,22 @@
 class ResumeCompare:
     """
-    Compares two parsed resumes.
+    Compare two ATS scores and determine improvement.
     """
 
     @staticmethod
-    def compare(old_resume: dict, new_resume: dict) -> dict:
-        """
-        Compares two resumes.
+    def compare(previous_score: int, current_score: int) -> dict:
+        difference = current_score - previous_score
 
-        Args:
-            old_resume (dict): Previous resume.
-            new_resume (dict): Updated resume.
-
-        Returns:
-            dict
-        """
-
-        old_skills = set(old_resume["skills"])
-        new_skills = set(new_resume["skills"])
-
-        added_skills = list(new_skills - old_skills)
-        removed_skills = list(old_skills - new_skills)
-
-        old_score = old_resume["ats"]["ats_score"]
-        new_score = new_resume["ats"]["ats_score"]
+        if difference > 0:
+            status = "Improved"
+        elif difference < 0:
+            status = "Declined"
+        else:
+            status = "Unchanged"
 
         return {
-            "old_ats_score": old_score,
-            "new_ats_score": new_score,
-            "ats_difference": new_score - old_score,
-            "added_skills": added_skills,
-            "removed_skills": removed_skills,
+            "previous_score": previous_score,
+            "current_score": current_score,
+            "difference": difference,
+            "status": status,
         }

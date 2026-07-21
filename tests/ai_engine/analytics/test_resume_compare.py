@@ -1,30 +1,22 @@
 from app.ai_engine.analytics.resume_compare import ResumeCompare
 
-old_resume = {
-    "skills": [
-        "Python",
-        "SQL",
-    ],
-    "ats": {
-        "ats_score": 70,
-    },
-}
 
-new_resume = {
-    "skills": [
-        "Python",
-        "SQL",
-        "Docker",
-        "Git",
-    ],
-    "ats": {
-        "ats_score": 85,
-    },
-}
+def test_resume_improved():
+    result = ResumeCompare.compare(70, 85)
 
-result = ResumeCompare.compare(
-    old_resume,
-    new_resume,
-)
+    assert result["difference"] == 15
+    assert result["status"] == "Improved"
 
-print(result)
+
+def test_resume_declined():
+    result = ResumeCompare.compare(90, 80)
+
+    assert result["difference"] == -10
+    assert result["status"] == "Declined"
+
+
+def test_resume_unchanged():
+    result = ResumeCompare.compare(75, 75)
+
+    assert result["difference"] == 0
+    assert result["status"] == "Unchanged"

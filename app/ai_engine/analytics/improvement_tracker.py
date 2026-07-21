@@ -1,47 +1,20 @@
 class ImprovementTracker:
     """
-    Tracks improvements between two resume analyses.
+    Tracks ATS score improvement over time.
     """
 
     @staticmethod
-    def track(comparison: dict) -> dict:
+    def track(history: list[int]) -> dict:
         """
-        Generates improvement summary.
-
-        Args:
-            comparison (dict): Output from ResumeCompare.
-
-        Returns:
-            dict
+        Analyze ATS score history.
         """
-
-        improvements = []
-
-        if comparison["ats_difference"] > 0:
-            improvements.append(
-                f"ATS score improved by {comparison['ats_difference']} points."
-            )
-
-        elif comparison["ats_difference"] < 0:
-            improvements.append(
-                f"ATS score decreased by {abs(comparison['ats_difference'])} points."
-            )
-
-        else:
-            improvements.append(
-                "ATS score remained unchanged."
-            )
-
-        if comparison["added_skills"]:
-            improvements.append(
-                f"Added skills: {', '.join(comparison['added_skills'])}."
-            )
-
-        if comparison["removed_skills"]:
-            improvements.append(
-                f"Removed skills: {', '.join(comparison['removed_skills'])}."
-            )
+        if not history:
+            return {
+                "total_attempts": 0,
+                "improvement": 0,
+            }
 
         return {
-            "improvements": improvements
+            "total_attempts": len(history),
+            "improvement": history[-1] - history[0],
         }

@@ -1,21 +1,22 @@
 class ATSHistory:
     """
-    Stores ATS score history.
+    Stores ATS score history for resume analyses.
     """
 
     @staticmethod
-    def save(history: list, ats_score: int) -> list:
+    def save(history: list[int], score: int) -> list[int]:
         """
-        Saves ATS score.
-
-        Args:
-            history (list): Existing history.
-            ats_score (int): Current ATS score.
-
-        Returns:
-            list
+        Save a new ATS score.
         """
-
-        history.append(ats_score)
-
+        history.append(score)
         return history
+
+    @staticmethod
+    def latest(history: list[int]) -> int | None:
+        """
+        Return the latest ATS score.
+        """
+        if not history:
+            return None
+
+        return history[-1]
