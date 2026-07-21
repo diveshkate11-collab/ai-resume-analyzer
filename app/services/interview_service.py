@@ -1,21 +1,21 @@
-from app.ai_engine.interview.question_generator import QuestionGenerator
+from app.ai_engine.interview.interview_analyzer import InterviewAnalyzer
+from app.ai_engine.interview.roadmap import InterviewRoadmap
 
 
 class InterviewService:
     """
-    Service layer for interview-related operations.
+    Service layer for interview preparation.
     """
 
     @staticmethod
-    def generate_questions(role: str) -> dict:
+    def analyze(role: str, answer: str) -> dict:
         """
-        Generate interview questions for a given job role.
-
-        Args:
-            role (str): Target job role.
-
-        Returns:
-            dict: Technical and HR interview questions.
+        Generate interview analysis and learning roadmap.
         """
+        report = InterviewAnalyzer.analyze(role, answer)
 
-        return QuestionGenerator.generate(role)
+        report["roadmap"] = InterviewRoadmap.generate(
+            report["evaluation"]["score"]
+        )
+
+        return report
