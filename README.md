@@ -1114,6 +1114,36 @@ The following enhancements are planned after the AI Copilot module is completed:
 
 ---
 
+# 📋 Coding Standards
+
+This project follows the following development principles:
+
+- Follow PEP 8
+- Write modular, reusable code
+- Keep functions focused on a single responsibility
+- Prefer composition over duplication
+- Add tests for every new feature
+- Keep business logic inside services and AI engines
+- Maintain clear project structure
+
+---
+
+# 👨‍💻 Author
+
+**Divesh Kate**
+
+B.Tech Artificial Intelligence & Machine Learning 
+
+### GitHub
+
+https://github.com/diveshkate11-collab
+
+### Repository
+
+https://github.com/diveshkate11-collab/ai-resume-analyzer
+
+---
+
 # 🤝 Contributing
 
 Contributions are welcome.
@@ -1130,20 +1160,6 @@ If you would like to improve AI Resume Copilot:
 
 ---
 
-# 📋 Coding Standards
-
-This project follows the following development principles:
-
-- Follow PEP 8
-- Write modular, reusable code
-- Keep functions focused on a single responsibility
-- Prefer composition over duplication
-- Add tests for every new feature
-- Keep business logic inside services and AI engines
-- Maintain clear project structure
-
----
-
 # 📄 License
 
 This project is licensed under the **MIT License**.
@@ -1154,36 +1170,10 @@ See the **LICENSE** file for complete details.
 
 ---
 
-# 👨‍💻 Author
-
-**Divesh Kate**
-
-B.Tech Artificial Intelligence & Machine Learning Student
-
-### GitHub
-
-https://github.com/diveshkate11-collab
-
-### Repository
-
-https://github.com/diveshkate11-collab/ai-resume-analyzer
-
----
-
-# 🙏 Acknowledgements
-
-This project is built for learning, experimentation, and portfolio development while exploring modern backend engineering, AI application design, and software architecture.
-
-Special thanks to the open-source Python ecosystem and the FastAPI community for providing excellent tools and documentation.
-
----
-
 <div align="center">
 
 ### ⭐ If you find this project useful, consider giving it a star on GitHub.
 
 Thank you for visiting **AI Resume Copilot**.
-
-🚀 Happy Coding!
 
 </div>
