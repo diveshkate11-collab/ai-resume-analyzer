@@ -30,6 +30,7 @@ class ResumeAnalysisSchema(BaseModel):
     ats: dict[str, Any]
     recommendation: RecommendationSchema
     analytics: dict[str, Any]
+    training: dict[str, Any]
     explainability: dict[str, Any]
     text: str
     metadata: dict[str, Any]

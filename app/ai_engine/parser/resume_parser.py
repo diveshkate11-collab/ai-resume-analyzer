@@ -11,6 +11,7 @@ from app.ai_engine.parser.experience_parser import ExperienceParser
 from app.ai_engine.improvement.improvement_engine import ImprovementEngine
 from app.services.analytics_service import AnalyticsService
 
+from app.ai_engine.training.training_engine import TrainingEngine
 from app.ai_engine.jobs.role_predictor import RolePredictor
 from app.ai_engine.jobs.job_matcher import JobMatcher
 from app.ai_engine.jobs.skill_gap import SkillGapAnalyzer
@@ -76,6 +77,11 @@ class ResumeParser:
             else "Software Developer"
         )
 
+        training = TrainingEngine.generate(
+            predicted_role,
+            skills,
+        )
+
         return {
             "contact": contact,
             "education": education,
@@ -92,6 +98,8 @@ class ResumeParser:
             "improvement": improvement,
 
             "analytics": AnalyticsService.generate([ats["ats_score"]]),
+
+            "training": training,
 
             "explainability": {},
 
