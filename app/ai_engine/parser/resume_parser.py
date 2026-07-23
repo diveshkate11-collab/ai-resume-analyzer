@@ -8,14 +8,16 @@ from app.ai_engine.parser.contact_parser import ContactParser
 from app.ai_engine.parser.skills_parser import SkillsParser
 from app.ai_engine.parser.education_parser import EducationParser
 from app.ai_engine.parser.experience_parser import ExperienceParser
-from app.ai_engine.improvement.improvement_engine import ImprovementEngine
-from app.services.analytics_service import AnalyticsService
 
-from app.ai_engine.training.training_engine import TrainingEngine
+from app.ai_engine.improvement.improvement_engine import ImprovementEngine
 from app.ai_engine.jobs.role_predictor import RolePredictor
-from app.ai_engine.jobs.job_matcher import JobMatcher
-from app.ai_engine.jobs.skill_gap import SkillGapAnalyzer
 from app.ai_engine.jobs.recommendation import RecommendationEngine
+from app.ai_engine.training.training_engine import TrainingEngine
+
+from app.ai_engine.copilot.resume_improver import ResumeImprover
+from app.ai_engine.copilot.career_advisor import CareerAdvisor
+
+from app.services.analytics_service import AnalyticsService
 
 
 class ResumeParser:
@@ -47,7 +49,7 @@ class ResumeParser:
         else:
             raise ValueError("Unsupported file format.")
 
-        # Extract only the text
+        # Extract raw text
         raw_text = raw_result["text"]
 
         # Clean text
@@ -58,6 +60,7 @@ class ResumeParser:
         skills = SkillsParser.extract_skills(clean_text)
         education = EducationParser.extract_education(clean_text)
         experience = ExperienceParser.extract_experience(clean_text)
+
         ats = ATSScorer.calculate(clean_text)
 
         resume_data = {
@@ -66,7 +69,13 @@ class ResumeParser:
             "education": education,
             "experience": experience,
         }
+
+        # Resume improvement (Rule-Based)
         improvement = ImprovementEngine.analyze(resume_data)
+
+        # AI Copilot
+        copilot_improvement = ResumeImprover().improve(clean_text)
+        career_advice = CareerAdvisor().advise(clean_text)
 
         # Predict role
         role_result = RolePredictor.predict(resume_data)
@@ -77,9 +86,15 @@ class ResumeParser:
             else "Software Developer"
         )
 
+        # Training recommendations
         training = TrainingEngine.generate(
             predicted_role,
             skills,
+        )
+
+        # Resume analytics
+        analytics = AnalyticsService.generate(
+            [ats["ats_score"]]
         )
 
         return {
@@ -91,21 +106,28 @@ class ResumeParser:
             "ats": ats,
 
             "recommendation": {
-               "role": predicted_role,
-               "recommendations": RecommendationEngine.generate(predicted_role),
+                "role": predicted_role,
+                "recommendations": RecommendationEngine.generate(
+                    predicted_role
+                ),
             },
 
             "improvement": improvement,
 
-            "analytics": AnalyticsService.generate([ats["ats_score"]]),
+            "analytics": analytics,
 
             "training": training,
+
+            "copilot": {
+                "resume_improvement": copilot_improvement,
+                "career_advice": career_advice,
+            },
 
             "explainability": {},
 
             "text": clean_text,
 
             "metadata": {
-                "characters": len(clean_text)
-                }
-}
+                "characters": len(clean_text),
+            },
+        }
