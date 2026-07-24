@@ -8,7 +8,7 @@ Analyze resumes, evaluate ATS compatibility, identify skill gaps, recommend care
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green?logo=fastapi)
-![Tests](https://img.shields.io/badge/Tests-127_Passed-success)
+![Tests](https://img.shields.io/badge/Tests-153_Passed-success)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Status](https://img.shields.io/badge/Status-Active_Development-orange)
 
@@ -20,7 +20,7 @@ Analyze resumes, evaluate ATS compatibility, identify skill gaps, recommend care
 
 AI Resume Copilot is a modular backend platform that helps job seekers analyze resumes, improve ATS compatibility, identify missing skills, receive career recommendations, prepare for interviews, generate personalized learning plans, and leverage AI-assisted resume guidance.
 
-The application accepts resumes in **PDF** and **DOCX** formats, extracts structured information, evaluates Applicant Tracking System (ATS) compatibility, predicts suitable technical roles, recommends resume improvements, tracks resume progress, generates interview preparation material, creates learning roadmaps, and introduces an extensible AI Copilot layer for intelligent career assistance.
+The application accepts resumes in **PDF** and **DOCX** formats, extracts structured information, evaluates Applicant Tracking System (ATS) compatibility, predicts suitable technical roles, recommends resume improvements, tracks resume progress, generates interview preparation material, creates learning roadmaps, and provides an extensible AI Copilot layer through REST APIs.
 
 The platform follows a modular architecture where every capability is implemented as an independent AI engine. This separation of responsibilities improves maintainability, testing, scalability, and future extensibility.
 
@@ -58,7 +58,7 @@ The platform currently provides the following capabilities.
 | Analytics | Compare resume performance over time | ✅ |
 | Interview | Generate technical and HR interview questions | ✅ |
 | Training | Build personalized learning plans | ✅ |
-| AI Copilot | AI-powered resume assistance foundation | 🚧 In Progress |
+| AI Copilot | AI-powered resume assistance with REST API integration | ✅ |
 
 ---
 
@@ -75,7 +75,8 @@ The platform currently provides the following capabilities.
 - Resume Analytics
 - Interview Preparation
 - Personalized Training Recommendations
-- AI Copilot Foundation
+- AI Copilot Module
+- AI Copilot REST API
 - Provider-Independent LLM Architecture
 - Automated Unit Testing
 - Production-Oriented Project Structure
@@ -195,12 +196,12 @@ AI Resume Copilot follows a layered architecture where each layer has a single r
                             ▼
                       AI Engine Layer
                             │
- ┌────────┬──────┬────────┬──────────┬────────────┬──────────┬──────────┬──────────┬──────────┐
- ▼        ▼      ▼        ▼          ▼            ▼          ▼          ▼          ▼
+ ┌────────┬──────┬────────┬────────────┬────────────┬──────────┬──────────┬──────────┬──────────┐
+ ▼        ▼      ▼        ▼            ▼            ▼          ▼          ▼          ▼
 Parser    ATS   Jobs  Explainability Improvement Analytics Interview Training Copilot
                             │
                             ▼
-                 Structured JSON Response
+                  Structured JSON Response
 ```
 
 ---
@@ -417,30 +418,6 @@ Future releases will introduce configurable integrations for databases, authenti
 
 ---
 
-## 🔑 Environment Variables
-
-Future versions will include a `.env.example` file.
-
-Example configuration:
-
-```env
-DATABASE_URL=
-
-SECRET_KEY=
-
-JWT_SECRET_KEY=
-
-OPENAI_API_KEY=
-
-OLLAMA_BASE_URL=
-
-SMTP_USERNAME=
-
-SMTP_PASSWORD=
-```
-
----
-
 # ▶️ Running the Project
 
 Start the FastAPI development server.
@@ -524,6 +501,9 @@ Service Layer
       │
       ▼
 Resume Pipeline Integration
+      │
+      ▼
+API Integration
       │
       ▼
 Documentation
@@ -821,7 +801,7 @@ The Training Engine creates personalized learning plans based on predicted roles
 
 ## 🤖 AI Copilot
 
-The AI Copilot is the intelligent assistance layer of the platform. It builds on the existing AI engines and introduces LLM-ready capabilities through a provider-independent architecture.
+The AI Copilot is the intelligent assistance layer of the platform. It builds on the existing AI engines and introduces an extensible provider-independent architecture.
 
 ### Current Components
 
@@ -835,6 +815,7 @@ The AI Copilot is the intelligent assistance layer of the platform. It builds on
 - Cover Letter Generator
 - Explanation Engine
 - Copilot Service
+- REST API
 
 ### Current Capabilities
 
@@ -844,6 +825,7 @@ The AI Copilot is the intelligent assistance layer of the platform. It builds on
 - Personalized career guidance
 - Cover letter generation
 - AI-generated explanations
+- REST API endpoints
 - Centralized prompt management
 - Provider-independent LLM architecture
 
@@ -892,6 +874,9 @@ Training
 AI Copilot
       │
       ▼
+REST API
+      │
+      ▼
 Final API Response
 ```
 
@@ -899,9 +884,9 @@ Final API Response
 
 # 🧪 Testing
 
-AI Resume Copilot follows a **Test-Driven Development (TDD)** approach. Every completed AI engine is accompanied by dedicated unit tests, service tests, and integration into the main resume analysis pipeline.
+AI Resume Copilot follows a **Test-Driven Development (TDD)** approach. Every completed AI engine, service, and API endpoint is accompanied by automated tests to ensure reliability and maintainability.
 
-All automated tests are executed using **Pytest**.
+The project includes unit tests, API tests, service tests, and integration tests executed using **Pytest**.
 
 ---
 
@@ -909,15 +894,9 @@ All automated tests are executed using **Pytest**.
 
 | Metric | Value |
 |---------|------:|
-| Total Tests | **Update after latest test run** |
+| Total Tests | **153 Passed** |
 | Failed Tests | **0** |
 | Warnings | **1** |
-
-> Replace **"Update after latest test run"** with the actual number after running:
->
-> ```bash
-> python -m pytest
-> ```
 
 ---
 
@@ -1046,22 +1025,23 @@ python -m pytest tests/integration -v
 
 ## ✅ Testing Coverage
 
-The automated test suite validates the following components:
+The automated test suite validates:
 
 - Resume parsing
 - ATS evaluation
-- Job role prediction
-- Resume recommendations
+- Job recommendation
 - Explainability engine
 - Resume improvement
 - Resume analytics
 - Interview generation
 - Training recommendations
-- AI Copilot
+- AI Copilot services
+- AI Copilot REST APIs
 - Prompt management
-- LLM abstraction
+- LLM abstraction layer
 - Service layer
-- Resume pipeline integration
+- Resume analysis pipeline
+- API request validation
 - API responses
 - Error handling
 
@@ -1069,11 +1049,13 @@ The automated test suite validates the following components:
 
 # 🌐 REST API
 
-The backend exposes REST APIs built with **FastAPI**.
+AI Resume Copilot exposes RESTful APIs built with **FastAPI**. Each endpoint is responsible for a specific feature and returns structured JSON responses suitable for frontend or third-party integration.
 
 ---
 
 ## Available Endpoints
+
+### Core APIs
 
 | Endpoint | Method | Description |
 |-----------|--------|-------------|
@@ -1081,7 +1063,18 @@ The backend exposes REST APIs built with **FastAPI**.
 | `/resume/analyze` | POST | Complete resume analysis |
 | `/jobs/recommend` | POST | Generate job recommendations |
 
-> Additional AI Copilot endpoints will be introduced in a future release.
+---
+
+### AI Copilot APIs
+
+| Endpoint | Method | Description |
+|-----------|--------|-------------|
+| `/copilot/improve` | POST | Generate resume improvement suggestions |
+| `/copilot/rewrite` | POST | Rewrite resume professionally |
+| `/copilot/job-match` | POST | Compare resume with a job description |
+| `/copilot/career-advice` | POST | Generate personalized career guidance |
+| `/copilot/cover-letter` | POST | Generate a professional cover letter |
+| `/copilot/explain` | POST | Explain AI-generated recommendations |
 
 ---
 
@@ -1133,15 +1126,30 @@ http://127.0.0.1:8000/redoc
 
 ---
 
+## Request Validation
+
+All endpoints use **Pydantic** models for request validation.
+
+Validation includes:
+
+- Required field validation
+- Data type validation
+- Request body validation
+- Automatic HTTP `422 Unprocessable Entity` responses for invalid requests
+
+---
+
 ## Error Handling
 
-The API validates:
+The API validates and handles:
 
 - Unsupported file formats
 - Missing uploaded files
 - Invalid request payloads
+- Missing required fields
 - Resume processing failures
 - Invalid API requests
+- Internal processing errors
 
 All endpoints return structured JSON responses for consistent frontend integration.
 
@@ -1149,7 +1157,7 @@ All endpoints return structured JSON responses for consistent frontend integrati
 
 # 🗺️ Development Roadmap
 
-AI Resume Copilot is being developed incrementally. Each milestone introduces a new AI capability while maintaining a modular and scalable architecture.
+AI Resume Copilot is being developed incrementally. Each milestone introduces a new capability while preserving the modular architecture and maintaining backward compatibility.
 
 | Version | Milestone | Status |
 |---------|-----------|--------|
@@ -1158,17 +1166,17 @@ AI Resume Copilot is being developed incrementally. Each milestone introduces a 
 | v0.3.0 | ATS Engine | ✅ Completed |
 | v0.4.0 | Job Recommendation & Explainability | ✅ Completed |
 | v0.5.0 | Resume Improvement | ✅ Completed |
-| v0.6.0 | Analytics | ✅ Completed |
+| v0.6.0 | Analytics Engine | ✅ Completed |
 | v0.7.0 | Interview Engine | ✅ Completed |
 | v0.8.0 | Training Engine | ✅ Completed |
-| v0.9.0 | AI Copilot Foundation | 🚧 In Progress |
-| v1.0.0 | AI Copilot Platform | ⏳ Planned |
+| v0.9.0 | AI Copilot Backend & REST APIs | ✅ Completed |
+| v1.0.0 | LLM Integration | 🚧 Next Milestone |
 
 ---
 
 # 🚀 Future Roadmap
 
-The following capabilities are planned for future releases.
+The following enhancements are planned for future releases.
 
 ---
 
@@ -1236,12 +1244,12 @@ The following capabilities are planned for future releases.
 ## 🔐 Platform Features
 
 - User Authentication
-- JWT Authorization
+- JWT Authentication
 - Role-Based Access Control
 - PostgreSQL Integration
 - SQLAlchemy ORM
+- Resume History
 - Secure Resume Storage
-- Resume Version History
 
 ---
 
@@ -1260,41 +1268,45 @@ The following capabilities are planned for future releases.
 ## 🖥️ Frontend
 
 - React Dashboard
-- Resume Upload Interface
+- Resume Upload Portal
+- Resume Analysis Dashboard
 - AI Copilot Dashboard
 - Analytics Dashboard
 - Interview Dashboard
 - Training Dashboard
 - User Profile
-- Responsive UI
+- Responsive User Interface
 
 ---
 
 # 📋 Coding Standards
 
-The project follows consistent engineering and software development practices.
+AI Resume Copilot follows modern software engineering practices to ensure maintainability, scalability, and code quality.
+
+---
 
 ## Development Principles
 
 - Follow PEP 8
-- Keep modules focused on a single responsibility
-- Write reusable and modular code
+- Apply the Single Responsibility Principle
+- Write reusable and modular components
 - Follow layered architecture
 - Maintain separation of concerns
+- Keep business logic inside services and AI engines
 - Prefer dependency injection where appropriate
 - Avoid code duplication
-- Keep business logic inside services and AI engines
 - Write descriptive docstrings
-- Use meaningful variable and function names
-- Maintain consistent project structure
+- Use meaningful naming conventions
+- Keep the project structure consistent
 
 ---
 
 ## Testing Principles
 
 - Follow Test-Driven Development (TDD)
-- Write unit tests for every module
+- Write unit tests for every new module
 - Validate service layer functionality
+- Test REST API endpoints
 - Test integration between AI engines
 - Keep tests deterministic and independent
 - Maintain high code reliability
@@ -1303,11 +1315,11 @@ The project follows consistent engineering and software development practices.
 
 ## Documentation Principles
 
+- Keep documentation synchronized with implementation
 - Document every completed feature
-- Keep README synchronized with implementation
-- Maintain clear project structure
-- Use consistent formatting
-- Update roadmap after each milestone
+- Maintain a consistent README structure
+- Update API documentation after new endpoints
+- Update the roadmap after every milestone
 
 ---
 
@@ -1334,7 +1346,7 @@ Contributions are welcome and appreciated.
 If you would like to contribute to AI Resume Copilot, please follow these steps:
 
 1. Fork the repository.
-2. Create a new feature or bug-fix branch.
+2. Create a feature or bug-fix branch.
 3. Follow the existing project architecture and coding standards.
 4. Write or update tests for your changes.
 5. Ensure the complete test suite passes successfully.
@@ -1346,8 +1358,9 @@ If you would like to contribute to AI Resume Copilot, please follow these steps:
 - Follow PEP 8 coding standards.
 - Keep modules focused on a single responsibility.
 - Preserve the layered architecture.
-- Avoid unnecessary dependencies.
-- Update documentation when functionality changes.
+- Write clean, reusable, and maintainable code.
+- Add tests for newly introduced functionality.
+- Update documentation whenever implementation changes.
 - Keep pull requests focused on a single feature or fix.
 
 ---

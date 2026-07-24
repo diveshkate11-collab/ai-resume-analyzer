@@ -5,6 +5,7 @@ from app.api.improvement import router as improvement_router
 from app.api.answer import router as answer_router
 from app.api.interview import router as interview_router
 from app.api.resume import router as resume_router
+from app.api.copilot import router as copilot_router
 
 
 app = FastAPI(
@@ -20,6 +21,7 @@ app.include_router(interview_router)
 app.include_router(answer_router)
 app.include_router(improvement_router)
 app.include_router(jobs_router)
+app.include_router(copilot_router)
 
 
 @app.get("/", tags=["Home"])
