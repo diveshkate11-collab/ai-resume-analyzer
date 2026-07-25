@@ -1,4 +1,4 @@
-from app.ai_engine.copilot.llm_client import MockLLMClient
+from app.ai_engine.copilot.llm_factory import LLMFactory
 
 
 class ExplanationEngine:
@@ -7,7 +7,7 @@ class ExplanationEngine:
     """
 
     def __init__(self, client=None):
-        self.client = client or MockLLMClient()
+        self.client = client or LLMFactory.create()
 
     def explain(self, content: str) -> dict:
         """

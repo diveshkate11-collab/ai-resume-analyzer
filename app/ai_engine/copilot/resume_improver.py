@@ -1,4 +1,4 @@
-from app.ai_engine.copilot.llm_client import MockLLMClient
+from app.ai_engine.copilot.llm_factory import LLMFactory
 from app.ai_engine.copilot.prompt_manager import PromptManager
 
 
@@ -8,7 +8,7 @@ class ResumeImprover:
     """
 
     def __init__(self, client=None):
-        self.client = client or MockLLMClient()
+        self.client = client or LLMFactory.create()
 
     def improve(self, resume: str) -> dict:
         """
