@@ -1,8 +1,9 @@
 from app.ai_engine.copilot.jd_matcher import JDMatcher
+from app.ai_engine.copilot.llm_client import MockLLMClient
 
 
 def test_jd_matcher():
-    matcher = JDMatcher()
+    matcher = JDMatcher(client=MockLLMClient())
 
     result = matcher.match(
         "Python FastAPI SQL",

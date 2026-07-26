@@ -1,8 +1,9 @@
 from app.ai_engine.copilot.cover_letter import CoverLetterGenerator
+from app.ai_engine.copilot.llm_client import MockLLMClient
 
 
 def test_cover_letter():
-    generator = CoverLetterGenerator()
+    generator = CoverLetterGenerator(client=MockLLMClient())
 
     result = generator.generate(
         "Python FastAPI SQL",

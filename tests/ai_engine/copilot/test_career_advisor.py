@@ -1,8 +1,9 @@
 from app.ai_engine.copilot.career_advisor import CareerAdvisor
+from app.ai_engine.copilot.llm_client import MockLLMClient
 
 
 def test_career_advisor():
-    advisor = CareerAdvisor()
+    advisor = CareerAdvisor(client=MockLLMClient())
 
     result = advisor.advise(
         "Python FastAPI SQL"

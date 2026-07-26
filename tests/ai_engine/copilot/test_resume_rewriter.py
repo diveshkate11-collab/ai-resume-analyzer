@@ -1,8 +1,9 @@
 from app.ai_engine.copilot.resume_rewriter import ResumeRewriter
+from app.ai_engine.copilot.llm_client import MockLLMClient
 
 
 def test_resume_rewriter():
-    rewriter = ResumeRewriter()
+    rewriter = ResumeRewriter(client=MockLLMClient())
 
     result = rewriter.rewrite(
         "Python FastAPI SQL"

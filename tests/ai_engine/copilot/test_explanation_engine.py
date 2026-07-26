@@ -1,8 +1,9 @@
 from app.ai_engine.copilot.explanation_engine import ExplanationEngine
+from app.ai_engine.copilot.llm_client import MockLLMClient
 
 
 def test_explanation_engine():
-    engine = ExplanationEngine()
+    engine = ExplanationEngine(client=MockLLMClient())
 
     result = engine.explain(
         "ATS Score: 85"
