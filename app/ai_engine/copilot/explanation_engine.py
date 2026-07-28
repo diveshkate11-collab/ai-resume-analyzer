@@ -1,4 +1,5 @@
 from app.ai_engine.copilot.llm_factory import LLMFactory
+from app.ai_engine.copilot.response_parser import ResponseParser
 
 
 class ExplanationEngine:
@@ -24,7 +25,9 @@ Content:
 {content}
 """
 
-        response = self.client.generate(prompt)
+        response = ResponseParser.parse(
+            self.client.generate(prompt)
+        )
 
         return {
             "success": True,

@@ -1,4 +1,4 @@
-import json
+from app.ai_engine.copilot.response_parser import ResponseParser
 from app.ai_engine.copilot.llm_factory import LLMFactory
 from app.ai_engine.copilot.prompt_manager import PromptManager
 
@@ -20,11 +20,9 @@ class CareerAdvisor:
             resume
         )
 
-        response = self.client.generate(prompt)
-        try:
-            response = json.loads(response)
-        except json.JSONDecodeError:
-            pass
+        response = ResponseParser.parse(
+            self.client.generate(prompt)
+        )
 
         return {
             "success": True,
