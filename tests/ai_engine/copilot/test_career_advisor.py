@@ -11,5 +11,5 @@ def test_career_advisor():
 
     assert result["success"] is True
     assert result["feature"] == "career_advisor"
-    assert "Career path" in result["prompt"]
+    assert "Return ONLY valid JSON" in result["prompt"]
     assert "Mock AI Response" in result["response"]

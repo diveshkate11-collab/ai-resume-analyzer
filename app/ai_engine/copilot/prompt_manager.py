@@ -75,14 +75,26 @@ Resume:
 
     @staticmethod
     def career_advice(resume: str) -> str:
-        return f"""
-Analyze this resume.
+      return f"""
+You are an expert AI career advisor.
 
-Suggest:
-- Career path
-- Skills to learn
-- Certifications
-- Next career steps
+Analyze the following resume.
+
+Return ONLY valid JSON.
+
+Do not write explanations.
+Do not use markdown.
+Do not include triple backticks.
+Do not add any extra text.
+
+Use exactly this format:
+
+{{
+    "career_path": "",
+    "skills_to_learn": [],
+    "certifications": [],
+    "next_steps": []
+}}
 
 Resume:
 

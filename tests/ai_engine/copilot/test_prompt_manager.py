@@ -40,4 +40,4 @@ def test_cover_letter_prompt():
 def test_career_advice_prompt():
     prompt = PromptManager.career_advice("Resume")
 
-    assert "Career path" in prompt
+    assert "Return ONLY valid JSON" in prompt

@@ -1,3 +1,4 @@
+import json
 from app.ai_engine.copilot.llm_factory import LLMFactory
 from app.ai_engine.copilot.prompt_manager import PromptManager
 
@@ -20,6 +21,10 @@ class CareerAdvisor:
         )
 
         response = self.client.generate(prompt)
+        try:
+            response = json.loads(response)
+        except json.JSONDecodeError:
+            pass
 
         return {
             "success": True,
