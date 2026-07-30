@@ -2,7 +2,9 @@ fastapi
 uvicorn
 pydantic
 PyPDF2
+PyMuPDF
 python-docx
+python-multipart
 pytest
 httpx
 requests==2.32.4

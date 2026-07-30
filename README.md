@@ -1,9 +1,10 @@
 # 🤖 AI Resume Copilot
 
-> An AI-powered backend application that helps job seekers analyze, improve, and optimize resumes using Artificial Intelligence and Large Language Models (LLMs).
+> An AI-powered backend application that helps job seekers analyze, improve, and optimize resumes using Artificial Intelligence, Large Language Models (LLMs), and modern backend engineering practices.
 
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Tests](https://img.shields.io/badge/Tests-154%20Passed-success?style=for-the-badge)
 ![AI](https://img.shields.io/badge/AI-Ollama-orange?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
@@ -12,11 +13,11 @@
 
 # 📖 Overview
 
-AI Resume Copilot is a modular backend application built with **FastAPI** that leverages **Large Language Models (LLMs)** to assist job seekers throughout the recruitment process. It provides resume analysis, ATS evaluation, AI-powered resume rewriting, career guidance, interview preparation, and personalized learning recommendations.
+AI Resume Copilot is a modular backend application built with **FastAPI** that leverages **Large Language Models (LLMs)** to help job seekers improve resumes, analyze ATS compatibility, generate career guidance, prepare for interviews, and receive personalized learning recommendations.
 
-The project follows clean software engineering principles, including modular architecture, provider abstraction, dependency injection, centralized prompt management, and automated testing. AI providers can be switched without changing business logic, making the application easy to maintain and extend.
+The project follows modern software engineering practices including modular architecture, provider abstraction, dependency injection, centralized prompt management, shared response parsing, automated testing, and containerized deployment.
 
-Currently, the project integrates with **Ollama** using the **Llama 3.2** model for local AI inference while supporting a mock provider for testing.
+Currently, the project integrates **Ollama** with the **Llama 3.2** model for local AI inference while supporting a mock provider for testing. The backend is fully containerized using **Docker**, enabling consistent development and deployment across different operating systems.
 
 ---
 
@@ -28,6 +29,7 @@ Currently, the project integrates with **Ollama** using the **Llama 3.2** model 
 - ATS Analysis
 - Resume Improvement
 - Resume Rewriting
+- Resume Analytics
 - Explainability
 
 ## 🤖 AI Copilot
@@ -55,15 +57,24 @@ Currently, the project integrates with **Ollama** using the **Llama 3.2** model 
 - Job Recommendation
 - Training Recommendation
 
+## 🐳 Deployment
+
+- Docker Desktop
+- Docker Compose
+- Docker Containerization
+- WSL2 Integration
+- FastAPI Container Deployment
+
 ---
 
 # 🛠️ Tech Stack
 
 | Category | Technologies |
 |----------|--------------|
-| Backend | Python, FastAPI, Uvicorn, Pydantic |
-| AI | Ollama, Llama 3.2 |
-| Document Processing | PyPDF2, python-docx |
+| Backend | Python 3.12, FastAPI, Uvicorn, Pydantic |
+| Artificial Intelligence | Ollama, Llama 3.2 |
+| Document Processing | PyPDF2, PyMuPDF, python-docx |
+| Containerization | Docker, Docker Compose |
 | Testing | Pytest, HTTPX |
 | Development | Git, GitHub, VS Code |
 
@@ -78,7 +89,9 @@ Currently, the project integrates with **Ollama** using the **Llama 3.2** model 
 | AI Copilot | ✅ Completed |
 | Ollama Integration | ✅ Completed |
 | Provider Architecture | ✅ Completed |
-| Response Parser | ✅ Completed |
+| Shared Response Parser | ✅ Completed |
+| Docker Integration | ✅ Completed |
+| Docker Compose | ✅ Completed |
 | Automated Tests | ✅ 154 Passed |
 
 ---
@@ -87,9 +100,10 @@ Currently, the project integrates with **Ollama** using the **Llama 3.2** model 
 
 - Build a production-inspired AI backend.
 - Improve resumes using AI-powered analysis.
-- Support multiple LLM providers through a common interface.
-- Maintain clean, modular, and scalable architecture.
-- Demonstrate backend engineering and AI integration skills.
+- Support multiple AI providers through a common interface.
+- Follow clean, modular, and scalable architecture.
+- Demonstrate backend engineering, AI integration, and deployment practices.
+- Prepare the project for future cloud deployment.
 
 ---
 
@@ -106,7 +120,13 @@ AI-Resume-Copilot/
 │   ├── schemas/
 │   └── main.py
 │
+├── deployment/
+│   ├── docker-compose.yml
+│   └── nginx.conf
+│
 ├── tests/
+├── Dockerfile
+├── .dockerignore
 ├── requirements.txt
 ├── README.md
 └── .env
@@ -116,20 +136,20 @@ AI-Resume-Copilot/
 
 # 🌟 Highlights
 
-- ✅ Modular AI architecture
-- ✅ Local LLM support with Ollama
-- ✅ Provider abstraction for multiple AI models
-- ✅ Centralized prompt management
-- ✅ Shared AI response parser
-- ✅ RESTful API with FastAPI
-- ✅ Automated testing (**154 passing tests**)
-- ✅ Clean and scalable project structure
+- ✅ Modular AI Architecture
+- ✅ Provider-Based AI Design
+- ✅ Local LLM Support (Ollama)
+- ✅ Shared Response Parser
+- ✅ Docker Containerization
+- ✅ RESTful API Development
+- ✅ Automated Testing (**154 Passing Tests**)
+- ✅ Clean & Scalable Project Structure
 
 ---
 
 # ⚙️ Installation & Setup
 
-Follow these steps to run AI Resume Copilot locally.
+Follow these steps to run AI Resume Copilot on your local machine.
 
 ---
 
@@ -139,13 +159,14 @@ Install the following software before starting:
 
 | Software | Version |
 |----------|---------|
-| Python | 3.11+ |
+| Python | 3.12+ |
 | Git | Latest |
+| Docker Desktop | Latest |
 | Ollama | Latest |
 | pip | Latest |
 | VS Code | Recommended |
 
-Supported Operating Systems:
+Supported Operating Systems
 
 - Windows
 - Linux
@@ -153,7 +174,7 @@ Supported Operating Systems:
 
 ---
 
-# 📥 Clone the Repository
+# 📥 Clone Repository
 
 ```bash
 git clone https://github.com/your-username/AI-Resume-Copilot.git
@@ -163,7 +184,7 @@ cd AI-Resume-Copilot
 
 ---
 
-# 🐍 Create a Virtual Environment
+# 🐍 Create Virtual Environment
 
 ### Windows
 
@@ -187,13 +208,15 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Main dependencies:
+Main dependencies
 
 - FastAPI
 - Uvicorn
 - Pydantic
 - PyPDF2
+- PyMuPDF
 - python-docx
+- python-multipart
 - Requests
 - Pytest
 - HTTPX
@@ -202,9 +225,9 @@ Main dependencies:
 
 # 🤖 Install Ollama
 
-Download and install the latest version of **Ollama**.
+Download and install the latest version of **Ollama** from the official website.
 
-Verify installation:
+Verify the installation:
 
 ```bash
 ollama --version
@@ -220,7 +243,7 @@ Pull the **Llama 3.2** model:
 ollama pull llama3.2
 ```
 
-Verify the model:
+Verify the downloaded model:
 
 ```bash
 ollama list
@@ -251,7 +274,7 @@ Example:
 Hello! How can I help you today?
 ```
 
-If you receive a response, Ollama is configured correctly.
+If the model responds successfully, Ollama has been configured correctly.
 
 ---
 
@@ -263,30 +286,30 @@ Open:
 app/core/settings.py
 ```
 
-Set the provider:
+Configure the provider:
 
 ```python
 LLM_PROVIDER = "ollama"
 ```
 
-Available providers:
+Supported providers:
 
 | Provider | Purpose |
 |----------|---------|
 | mock | Unit Testing |
-| ollama | Local AI |
+| ollama | Local AI Inference |
 
 ---
 
-# ▶️ Run the Application
+# ▶️ Run the Application (Local)
 
-Start FastAPI:
+Start the FastAPI server:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Server:
+Application URL:
 
 ```text
 http://127.0.0.1:8000
@@ -296,7 +319,7 @@ http://127.0.0.1:8000
 
 # 📚 API Documentation
 
-FastAPI automatically generates interactive documentation.
+FastAPI automatically generates interactive API documentation.
 
 ### Swagger UI
 
@@ -326,10 +349,122 @@ Current Status:
 154 Passed
 ```
 
-Run only Copilot tests:
+Run only AI Copilot tests:
 
 ```bash
 python -m pytest tests/ai_engine/copilot -v
+```
+
+---
+
+# 🐳 Docker Integration
+
+AI Resume Copilot is fully containerized using **Docker**, allowing the backend to run consistently across different operating systems without manual dependency installation.
+
+## Docker Features
+
+- Docker Desktop Support
+- Docker Compose
+- Containerized FastAPI Backend
+- WSL2 Integration
+- Consistent Development Environment
+- Production-Oriented Deployment Structure
+
+---
+
+# 📂 Docker Files
+
+| File | Purpose |
+|------|---------|
+| Dockerfile | Builds the backend image |
+| deployment/docker-compose.yml | Runs and manages containers |
+| .dockerignore | Excludes unnecessary files during image creation |
+
+---
+
+# 🚀 Build Docker Image
+
+```bash
+docker compose -f deployment/docker-compose.yml build
+```
+
+---
+
+# ▶️ Start Docker Container
+
+```bash
+docker compose -f deployment/docker-compose.yml up
+```
+
+Run in detached mode:
+
+```bash
+docker compose -f deployment/docker-compose.yml up -d
+```
+
+---
+
+# 🛑 Stop Docker Container
+
+```bash
+docker compose -f deployment/docker-compose.yml down
+```
+
+---
+
+# 🌐 Docker Application URLs
+
+| Service | URL |
+|----------|-----|
+| FastAPI | http://localhost:8000 |
+| Swagger UI | http://localhost:8000/docs |
+| ReDoc | http://localhost:8000/redoc |
+
+---
+
+# 🏗 Docker Workflow
+
+```text
+Source Code
+      │
+      ▼
+Docker Build
+      │
+      ▼
+Docker Image
+      │
+      ▼
+Docker Container
+      │
+      ▼
+FastAPI Application
+      │
+      ▼
+Browser / API Client
+```
+
+---
+
+# ✅ Docker Verification
+
+Docker integration has been successfully verified.
+
+Completed:
+
+- Docker Desktop Installation
+- WSL2 Configuration
+- Ubuntu Integration
+- Dockerfile Creation
+- Docker Compose Configuration
+- Dependency Installation
+- FastAPI Container Startup
+- Swagger UI Verification
+- REST API Verification
+
+Current Status:
+
+```text
+AI Resume Copilot is running successfully inside a Docker container.
 ```
 
 ---
@@ -338,26 +473,28 @@ python -m pytest tests/ai_engine/copilot -v
 
 | File | Purpose |
 |------|---------|
-| `main.py` | FastAPI Entry Point |
-| `settings.py` | Application Configuration |
-| `requirements.txt` | Project Dependencies |
-| `README.md` | Project Documentation |
+| main.py | FastAPI Entry Point |
+| settings.py | Application Configuration |
+| requirements.txt | Python Dependencies |
+| Dockerfile | Docker Image Configuration |
+| deployment/docker-compose.yml | Container Orchestration |
+| README.md | Project Documentation |
 
 ---
 
 # 🔧 Troubleshooting
 
-### Ollama Not Found
+## Ollama Not Found
 
 ```bash
 ollama --version
 ```
 
-Reinstall Ollama if the command is unavailable.
+If the command is unavailable, reinstall Ollama and restart your terminal.
 
 ---
 
-### Model Missing
+## Model Missing
 
 ```bash
 ollama pull llama3.2
@@ -365,17 +502,34 @@ ollama pull llama3.2
 
 ---
 
-### API Not Starting
+## Docker Build Failed
 
-Restart FastAPI:
+Rebuild without cache:
 
 ```bash
-uvicorn app.main:app --reload
+docker compose -f deployment/docker-compose.yml build --no-cache
 ```
 
 ---
 
-### Tests Failing
+## Container Not Starting
+
+Check container logs:
+
+```bash
+docker compose -f deployment/docker-compose.yml up
+```
+
+Verify:
+
+- Docker Desktop is running.
+- WSL2 integration is enabled.
+- Required ports are available.
+- Dependencies are installed successfully.
+
+---
+
+## Tests Failing
 
 Run:
 
@@ -383,27 +537,32 @@ Run:
 python -m pytest
 ```
 
-If failures occur, verify:
+Verify:
 
-- Virtual environment is activated
-- Dependencies are installed
-- Ollama is configured correctly
+- Virtual environment is activated.
+- Dependencies are installed.
+- Ollama server is running.
+- Docker services are functioning correctly.
 
 ---
 
 # 🧠 AI Engines
 
-The AI Engine layer contains the core business logic of AI Resume Copilot. Each engine is designed with a **single responsibility**, making the project modular, maintainable, and easy to extend.
+The AI Engine layer contains the core business logic of AI Resume Copilot. Each engine is designed with a **single responsibility**, making the application modular, maintainable, testable, and easy to extend.
+
+Each engine can operate independently while sharing common project infrastructure such as configuration management, API routing, and response formatting.
 
 ---
 
-# 📄 Resume Parser
+# 📄 Resume Parser Engine
 
-Extracts text from uploaded **PDF** and **DOCX** resumes.
+The Resume Parser extracts textual information from uploaded PDF and DOCX resumes.
 
 ### Responsibilities
 
 - Read uploaded resumes
+- Support PDF documents
+- Support DOCX documents
 - Extract textual content
 - Clean formatting
 - Return structured text
@@ -423,7 +582,7 @@ Text Extraction
 Structured Resume Text
 ```
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -434,15 +593,16 @@ Structured Resume Text
 
 ---
 
-# 📊 ATS Engine
+# 📊 ATS Analysis Engine
 
-Evaluates resume compatibility with Applicant Tracking Systems (ATS).
+The ATS Engine evaluates resume compatibility with Applicant Tracking Systems.
 
 ### Features
 
 - ATS Score
 - Keyword Analysis
 - Skill Matching
+- Missing Skills Detection
 - Improvement Suggestions
 
 ### Workflow
@@ -454,13 +614,13 @@ Resume
 Keyword Analysis
    │
    ▼
-Score Generation
+ATS Scoring
    │
    ▼
 Recommendations
 ```
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -477,16 +637,16 @@ Recommendations
 
 # 💼 Job Recommendation Engine
 
-Analyzes resume skills and recommends suitable career paths.
+The Job Recommendation Engine analyzes resume skills and recommends suitable career opportunities.
 
 ### Features
 
 - Skill Analysis
-- Career Suggestions
-- Technology Recommendations
-- Growth Guidance
+- Recommended Job Roles
+- Technology Suggestions
+- Career Guidance
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -501,40 +661,18 @@ Analyzes resume skills and recommends suitable career paths.
 
 ---
 
-# 🔍 Explainability Engine
-
-Converts AI-generated results into clear, human-readable explanations.
-
-### Features
-
-- Explain ATS Scores
-- Explain Recommendations
-- Identify Strengths
-- Highlight Weaknesses
-
-**Example Response**
-
-```json
-{
-    "success": true,
-    "explanation": "Your resume scores well due to relevant technical skills and project experience."
-}
-```
-
----
-
 # ✨ Resume Improvement Engine
 
-Provides AI-powered suggestions to strengthen resume content.
+Provides AI-powered suggestions to strengthen resume quality without rewriting the entire document.
 
 ### Features
 
-- Improve wording
-- Recommend stronger achievements
-- Detect missing skills
-- Enhance readability
+- Better wording
+- Achievement improvements
+- Missing skill detection
+- Readability enhancement
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -549,18 +687,19 @@ Provides AI-powered suggestions to strengthen resume content.
 
 ---
 
-# 📈 Analytics Engine
+# 📈 Resume Analytics Engine
 
-Generates insights from resume data.
+Generates useful insights from resume content.
 
 ### Features
 
-- Skill Statistics
-- ATS Analytics
+- Resume Statistics
+- Skill Distribution
+- ATS Metrics
 - Experience Summary
-- Resume Metrics
+- Resume Score
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -575,18 +714,18 @@ Generates insights from resume data.
 
 ---
 
-# 🎤 Interview Engine
+# 🎤 Interview Preparation Engine
 
-Creates personalized interview questions based on the resume.
+Creates personalized interview questions using resume content.
 
 ### Features
 
 - Technical Questions
 - HR Questions
+- Resume Discussion
 - Project-Based Questions
-- Resume Discussions
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -600,9 +739,9 @@ Creates personalized interview questions based on the resume.
 
 ---
 
-# 📚 Training Engine
+# 📚 Training Recommendation Engine
 
-Generates personalized learning recommendations.
+Generates personalized learning recommendations based on resume analysis.
 
 ### Features
 
@@ -611,7 +750,7 @@ Generates personalized learning recommendations.
 - Technology Recommendations
 - Career Planning
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -626,7 +765,30 @@ Generates personalized learning recommendations.
 
 ---
 
-# 🔗 AI Engine Workflow
+# 🔍 Explainability Engine
+
+Transforms AI-generated outputs into clear and understandable explanations.
+
+### Features
+
+- Explain ATS Scores
+- Explain Recommendations
+- Highlight Strengths
+- Identify Weaknesses
+- Human-Friendly Responses
+
+### Example Response
+
+```json
+{
+    "success": true,
+    "explanation": "Your resume demonstrates strong backend development skills but would benefit from measurable achievements and cloud technologies."
+}
+```
+
+---
+
+# 🔄 AI Engine Workflow
 
 ```text
 Resume Upload
@@ -635,7 +797,7 @@ Resume Upload
 Resume Parser
       │
       ▼
-ATS Engine
+ATS Analysis
       │
       ├──────────────┐
       ▼              ▼
@@ -649,31 +811,90 @@ Resume Improvement
 Explainability
       │
       ▼
-Interview & Training
+Interview Preparation
+      │
+      ▼
+Training Recommendation
 ```
 
-Each engine is independent, making it easy to add new features without affecting existing modules.
+---
+
+# 🎯 AI Engine Design Principles
+
+Each AI Engine follows a common design philosophy.
+
+### Principles
+
+- Single Responsibility Principle
+- Modular Architecture
+- Reusable Components
+- Clear Separation of Concerns
+- Independent Business Logic
+- Easy Testing
+- Scalable Design
+
+---
+
+# ✅ Current AI Engine Modules
+
+| Engine | Status |
+|---------|--------|
+| Resume Parser | ✅ Completed |
+| ATS Analysis | ✅ Completed |
+| Resume Improvement | ✅ Completed |
+| Resume Analytics | ✅ Completed |
+| Explainability | ✅ Completed |
+| Job Recommendation | ✅ Completed |
+| Interview Preparation | ✅ Completed |
+| Training Recommendation | ✅ Completed |
+
+
+The AI Engine layer serves as the foundation of AI Resume Copilot. Every module is implemented independently, allowing new capabilities to be added with minimal changes while maintaining clean architecture and high test coverage.
 
 ---
 
 # 🤖 AI Copilot
 
-The AI Copilot layer provides AI-powered features for resume enhancement, career guidance, and job preparation. Each module focuses on a single task while sharing the same AI provider architecture.
+The AI Copilot layer provides intelligent AI-powered features that help users improve resumes, prepare job applications, receive career guidance, and better understand AI-generated recommendations.
+
+Unlike traditional AI applications, every Copilot module shares the same underlying architecture through a centralized **PromptManager**, **LLMFactory**, and **ResponseParser**, ensuring consistency, maintainability, and minimal code duplication.
 
 ---
 
 # 📝 Resume Rewriter
 
-Rewrites resume content to improve professionalism while preserving the original meaning.
+Professionally rewrites resume content while preserving its original meaning.
 
 ### Features
 
-- Professional wording
-- Grammar correction
-- ATS-friendly writing
+- Professional language
+- Grammar improvement
+- ATS-friendly wording
 - Better readability
+- Strong action verbs
 
-**Example Response**
+### Workflow
+
+```text
+Resume
+   │
+   ▼
+Prompt Manager
+   │
+   ▼
+LLM Factory
+   │
+   ▼
+AI Provider
+   │
+   ▼
+Response Parser
+   │
+   ▼
+Professional Resume
+```
+
+### Example Response
 
 ```json
 {
@@ -687,16 +908,17 @@ Rewrites resume content to improve professionalism while preserving the original
 
 # ✨ Resume Improver
 
-Analyzes resumes and suggests targeted improvements instead of rewriting the entire document.
+Analyzes resume content and provides targeted suggestions without completely rewriting it.
 
 ### Features
 
-- Improve achievements
-- Better action verbs
-- Missing skills
+- Achievement improvement
+- Stronger action verbs
+- Skill recommendations
 - Content enhancement
+- ATS optimization
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -713,22 +935,23 @@ Analyzes resumes and suggests targeted improvements instead of rewriting the ent
 
 # 📄 Cover Letter Generator
 
-Generates professional cover letters based on resume information, company, and job role.
+Generates personalized cover letters using resume content, company name, and job role.
 
 ### Features
 
-- Personalized content
+- Personalized writing
+- Company-specific content
 - Professional formatting
-- Company-specific writing
-- Role-focused cover letters
+- Role-focused writing
+- Ready-to-use cover letters
 
-**Example Response**
+### Example Response
 
 ```json
 {
     "success": true,
     "feature": "cover_letter",
-    "response": "Generated cover letter..."
+    "response": "Generated professional cover letter..."
 }
 ```
 
@@ -736,16 +959,17 @@ Generates professional cover letters based on resume information, company, and j
 
 # 💼 Career Advisor
 
-Provides AI-generated career guidance based on resume content.
+Provides AI-generated career guidance based on the user's resume.
 
 ### Features
 
 - Career path recommendations
 - Skills to learn
 - Certification suggestions
-- Next career steps
+- Internship guidance
+- Long-term career planning
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -756,13 +980,6 @@ Provides AI-generated career guidance based on resume content.
         "skills_to_learn": [
             "Docker",
             "System Design"
-        ],
-        "certifications": [
-            "AWS Cloud Practitioner"
-        ],
-        "next_steps": [
-            "Build production projects",
-            "Apply for internships"
         ]
     }
 }
@@ -772,16 +989,17 @@ Provides AI-generated career guidance based on resume content.
 
 # 📑 Job Description Matcher
 
-Compares resumes against job descriptions to identify compatibility.
+Compares a resume with a job description to evaluate compatibility.
 
 ### Features
 
-- Match percentage
-- Missing skills
-- Resume improvement suggestions
+- Resume match percentage
+- Missing skills detection
 - Skill comparison
+- Improvement suggestions
+- ATS compatibility
 
-**Example Response**
+### Example Response
 
 ```json
 {
@@ -801,22 +1019,23 @@ Compares resumes against job descriptions to identify compatibility.
 
 # 🔍 Explanation Engine
 
-Converts AI-generated results into simple, easy-to-understand explanations.
+Transforms AI-generated responses into simple and easy-to-understand explanations.
 
 ### Features
 
 - Human-readable summaries
+- Simple explanations
 - Better transparency
-- Clear recommendations
-- Improved understanding
+- Easier interpretation
+- Improved user understanding
 
-**Example Response**
+### Example Response
 
 ```json
 {
     "success": true,
     "feature": "explanation_engine",
-    "response": "Your resume is strong in backend development but can be improved by adding measurable achievements and cloud experience."
+    "response": "Your resume demonstrates strong backend skills but would benefit from measurable achievements and cloud technologies."
 }
 ```
 
@@ -840,7 +1059,7 @@ Prompt Manager
 LLM Factory
       │
       ▼
-Selected Provider
+Selected AI Provider
       │
       ▼
 Ollama / Mock
@@ -854,6 +1073,57 @@ Structured JSON Response
 
 ---
 
+# 🧩 Shared Components
+
+Every AI Copilot module uses the same shared infrastructure.
+
+### Prompt Manager
+
+Responsible for:
+
+- Centralized prompt templates
+- Consistent AI instructions
+- Reusable prompts
+- Easy prompt maintenance
+
+---
+
+### LLM Factory
+
+Responsible for:
+
+- Creating AI provider instances
+- Switching providers
+- Dependency abstraction
+- Future provider support
+
+Current Providers
+
+- Ollama
+- Mock Provider
+
+Future Providers
+
+- OpenAI
+- Google Gemini
+- Anthropic Claude
+- Azure OpenAI
+
+---
+
+### Response Parser
+
+Responsible for:
+
+- Parsing AI responses
+- JSON validation
+- Error handling
+- Returning structured Python dictionaries
+
+Instead of implementing response parsing separately in every Copilot module, a single shared parser is reused throughout the application.
+
+---
+
 # ✅ Current AI Copilot Features
 
 | Feature | Status |
@@ -864,67 +1134,102 @@ Structured JSON Response
 | Career Advisor | ✅ Completed |
 | Job Description Matcher | ✅ Completed |
 | Explanation Engine | ✅ Completed |
+| Prompt Manager | ✅ Completed |
+| LLM Factory | ✅ Completed |
+| Response Parser | ✅ Completed |
 | Ollama Integration | ✅ Completed |
-| Shared Response Parser | ✅ Completed |
+
+---
+
+# 🎯 AI Copilot Highlights
+
+- Modular AI Architecture
+- Shared Prompt Management
+- Provider-Based Design
+- Reusable Response Parsing
+- Local LLM Support
+- Easily Extensible Features
+- Consistent JSON Responses
+- Minimal Code Duplication
 
 
-The AI Copilot follows a modular architecture where every feature uses a common **PromptManager**, **LLMFactory**, and **ResponseParser**. This design minimizes code duplication, simplifies maintenance, and allows new AI providers or Copilot modules to be added with minimal changes.
+The AI Copilot demonstrates how multiple AI-powered capabilities can be developed using a common architecture while maintaining clean code, modularity, and scalability. New Copilot modules can be added with minimal changes by reusing the shared infrastructure.
 
 ---
 
 # 🏗️ AI Architecture
 
-AI Resume Copilot follows a modular and provider-based architecture. Business logic is separated from AI providers, allowing the application to switch between different LLMs without changing the core implementation.
+AI Resume Copilot follows a modular, provider-based architecture that separates business logic from AI providers. This design improves maintainability, scalability, testing, and future extensibility while minimizing code duplication.
+
+The architecture allows AI providers to be replaced without modifying the application's core business logic.
 
 ---
 
-# 🧠 Prompt Manager
+# 🧠 Architecture Overview
+
+```text
+                Client
+                   │
+                   ▼
+           FastAPI REST API
+                   │
+                   ▼
+            AI Copilot Module
+                   │
+        ┌──────────┼──────────┐
+        ▼          ▼          ▼
+ PromptManager  LLMFactory  ResponseParser
+                   │
+                   ▼
+            Selected Provider
+          ┌────────┴────────┐
+          ▼                 ▼
+     Ollama Provider    Mock Provider
+                   │
+                   ▼
+              AI Response
+                   │
+                   ▼
+          Structured JSON Output
+```
+
+---
+
+# 📝 Prompt Manager
 
 The **PromptManager** centralizes all AI prompts used throughout the application.
+
+Instead of embedding prompts inside every module, prompts are maintained in one location, making updates simple and ensuring consistency.
 
 ### Responsibilities
 
 - Centralized prompt templates
-- Reusable prompts
-- Consistent AI instructions
+- Reusable AI prompts
+- Consistent instructions
 - Easier maintenance
-
-Instead of embedding prompts inside multiple modules, every Copilot feature retrieves its prompt from a single location.
+- Reduced duplication
 
 ---
 
 # 🏭 LLM Factory
 
-The **LLMFactory** creates the appropriate AI client based on the application configuration.
+The **LLMFactory** is responsible for creating AI provider instances based on application configuration.
 
-Current providers:
+Business logic never communicates directly with a provider. Instead, every module requests an AI client from the factory.
 
-- MockLLMClient
-- OllamaLLMClient
+### Current Providers
 
-Future providers:
+| Provider | Purpose |
+|----------|---------|
+| Ollama | Local AI inference |
+| Mock Provider | Unit testing |
+
+### Planned Providers
 
 - OpenAI
 - Google Gemini
 - Anthropic Claude
 - Azure OpenAI
-
-### Factory Workflow
-
-```text
-Application
-      │
-      ▼
- LLM Factory
-      │
-      ├───────────────┐
-      ▼               ▼
- Mock Provider   Ollama Provider
-      │               │
-      └───────┬───────┘
-              ▼
-        AI Response
-```
 
 ---
 
@@ -933,22 +1238,29 @@ Application
 Every AI provider follows the same interface.
 
 ```text
-          LLM Client
-              │
-      ┌───────┴────────┐
-      ▼                ▼
-MockLLMClient   OllamaLLMClient
+             LLM Client
+                 │
+      ┌──────────┴──────────┐
+      ▼                     ▼
+Mock Provider       Ollama Provider
 ```
 
-This abstraction allows providers to be replaced without modifying business logic.
+Because every provider follows the same contract, switching providers requires only a configuration change.
+
+### Advantages
+
+- Easy provider replacement
+- Cleaner business logic
+- Better testing
+- Future extensibility
 
 ---
 
 # 🤖 Ollama Integration
 
-The project integrates **Ollama** for running Large Language Models locally.
+The project currently uses **Ollama** as its AI backend.
 
-Current Model:
+Current model:
 
 ```text
 llama3.2
@@ -956,36 +1268,54 @@ llama3.2
 
 ### Benefits
 
-- Local AI execution
-- No API costs
+- Local execution
 - Offline support
+- No API cost
 - Better privacy
-- Easy provider switching
+- Faster experimentation
 
 ---
 
 # 📦 Response Parser
 
-The **ResponseParser** converts raw AI responses into structured Python objects.
+The **ResponseParser** standardizes AI responses before they are returned to the application.
+
+Instead of every Copilot module parsing responses individually, all modules now reuse a shared parser.
 
 ### Responsibilities
 
 - Parse JSON responses
 - Handle invalid JSON safely
 - Return Python dictionaries
-- Centralize response parsing
+- Centralize response processing
+- Improve consistency
 
-Instead of each Copilot module handling JSON parsing individually, all modules now use a shared parser.
+### Workflow
 
 ```text
-AI Response
-     │
-     ▼
-ResponseParser
-     │
-     ▼
-Python Object
+Raw AI Response
+        │
+        ▼
+ ResponseParser
+        │
+        ▼
+ Structured Python Object
 ```
+
+---
+
+# ⚙️ Configuration Layer
+
+Application behavior is controlled through centralized configuration.
+
+Current configuration includes:
+
+- AI Provider Selection
+- Ollama Configuration
+- Application Settings
+- Environment Variables
+
+This approach keeps configuration separate from business logic.
 
 ---
 
@@ -993,37 +1323,45 @@ Python Object
 
 ```text
 Client Request
-      │
-      ▼
+       │
+       ▼
 FastAPI Endpoint
-      │
-      ▼
-Copilot Module
-      │
-      ▼
+       │
+       ▼
+Request Validation
+       │
+       ▼
+Business Logic
+       │
+       ▼
 PromptManager
-      │
-      ▼
+       │
+       ▼
 LLMFactory
-      │
-      ▼
-Selected Provider
-      │
-      ▼
+       │
+       ▼
+Selected AI Provider
+       │
+       ▼
 Ollama / Mock
-      │
-      ▼
+       │
+       ▼
 ResponseParser
-      │
-      ▼
+       │
+       ▼
 Structured JSON Response
+       │
+       ▼
+Client
 ```
 
 ---
 
 # 🏛️ Design Principles
 
-The project follows several software engineering principles:
+AI Resume Copilot follows modern software engineering principles.
+
+### Principles Used
 
 - Single Responsibility Principle (SRP)
 - Separation of Concerns
@@ -1032,27 +1370,53 @@ The project follows several software engineering principles:
 - Provider Abstraction
 - Reusable Components
 - Modular Architecture
+- Low Coupling
+- High Cohesion
 
 ---
 
-# 🚀 Advantages
+# 🚀 Architectural Advantages
 
-- Clean and maintainable code
-- Easy to add new AI providers
-- Minimal code duplication
+The current architecture provides several long-term benefits.
+
+### Benefits
+
+- Easy to maintain
+- Easy to extend
+- Supports multiple AI providers
 - Consistent AI responses
+- Minimal code duplication
 - Simplified testing
-- Scalable architecture
-- Production-ready design
+- Cleaner project structure
+- Production-oriented design
+
+---
+
+# 📈 Future Architecture
+
+The current architecture is designed to support future expansion.
+
+Planned improvements include:
+
+- OpenAI Integration
+- Google Gemini Integration
+- Claude Integration
+- Azure OpenAI Support
+- Multi-provider Selection
+- Response Caching
+- Streaming Responses
+- AI Usage Analytics
 
 
-This architecture enables AI Resume Copilot to support multiple language models while keeping the application modular, testable, and easy to extend.
+The architecture of AI Resume Copilot emphasizes modularity, maintainability, and scalability. By separating AI providers from business logic and introducing shared components such as the **PromptManager**, **LLMFactory**, and **ResponseParser**, the project is well prepared for future enhancements while keeping the codebase clean and easy to maintain.
 
 ---
 
 # 🌐 REST API
 
-AI Resume Copilot exposes RESTful APIs built with **FastAPI**. All endpoints accept and return **JSON**, making integration with web and mobile applications straightforward.
+AI Resume Copilot exposes a RESTful API built with **FastAPI**. Every endpoint accepts structured requests and returns standardized JSON responses, making integration with web, desktop, or mobile applications straightforward.
+
+The API follows a modular architecture where each feature is implemented as an independent endpoint while sharing common validation, AI infrastructure, and response formatting.
 
 ---
 
@@ -1072,11 +1436,13 @@ http://127.0.0.1:8000/docs
 http://127.0.0.1:8000/redoc
 ```
 
+These interfaces allow developers to explore and test every endpoint without additional tools.
+
 ---
 
-# 📄 API Endpoints
+# 📄 Resume Parser APIs
 
-## Resume Parser
+### Parse Resume
 
 ```http
 POST /parser/parse
@@ -1086,79 +1452,81 @@ Extracts text from uploaded PDF or DOCX resumes.
 
 ---
 
-## ATS Analysis
+# 📊 ATS APIs
+
+### Analyze Resume
 
 ```http
 POST /ats/analyze
 ```
 
-Calculates ATS score and provides resume recommendations.
+Calculates ATS compatibility, analyzes keywords, and generates improvement recommendations.
 
 ---
 
-## Job Recommendation
+# 💼 Job Recommendation APIs
+
+### Recommend Jobs
 
 ```http
 POST /recommendation/jobs
 ```
 
-Suggests suitable job roles based on resume skills.
+Suggests suitable career opportunities based on resume skills and experience.
 
 ---
 
-## Explainability
+# ✨ Resume Improvement APIs
 
-```http
-POST /explainability/explain
-```
-
-Explains AI-generated scores and recommendations.
-
----
-
-## Resume Improvement
+### Improve Resume
 
 ```http
 POST /resume-improver/improve
 ```
 
-Provides suggestions to strengthen resume content.
+Provides AI-powered suggestions to strengthen resume quality.
 
 ---
 
-## Analytics
+# 📈 Analytics APIs
+
+### Analyze Resume
 
 ```http
 POST /analytics/analyze
 ```
 
-Generates resume statistics and insights.
+Generates resume statistics, skill analysis, and ATS metrics.
 
 ---
 
-## Interview Preparation
+# 🎤 Interview APIs
+
+### Generate Interview Questions
 
 ```http
 POST /interview/questions
 ```
 
-Creates personalized interview questions.
+Creates personalized interview questions from resume content.
 
 ---
 
-## Training Recommendation
+# 📚 Training APIs
+
+### Recommend Learning Path
 
 ```http
 POST /training/recommend
 ```
 
-Generates personalized learning roadmaps.
+Generates personalized learning recommendations and skill-development roadmaps.
 
 ---
 
 # 🤖 AI Copilot APIs
 
-## Resume Rewriter
+### Resume Rewriter
 
 ```http
 POST /copilot/rewrite-resume
@@ -1168,57 +1536,57 @@ Professionally rewrites resume content.
 
 ---
 
-## Resume Improver
+### Resume Improver
 
 ```http
 POST /copilot/improve-resume
 ```
 
-Suggests improvements without rewriting the entire resume.
+Suggests improvements while preserving the original content.
 
 ---
 
-## Cover Letter Generator
+### Cover Letter Generator
 
 ```http
 POST /copilot/cover-letter
 ```
 
-Generates professional cover letters.
+Creates personalized cover letters based on the resume, company, and job role.
 
 ---
 
-## Career Advisor
+### Career Advisor
 
 ```http
 POST /copilot/career-advice
 ```
 
-Provides AI-powered career guidance.
+Provides AI-generated career guidance and recommendations.
 
 ---
 
-## Job Description Matcher
+### Job Description Matcher
 
 ```http
 POST /copilot/jd-match
 ```
 
-Compares resumes against job descriptions.
+Compares resumes with job descriptions and identifies missing skills.
 
 ---
 
-## Explanation Engine
+### Explanation Engine
 
 ```http
 POST /copilot/explain
 ```
 
-Simplifies AI-generated outputs into human-readable explanations.
+Transforms AI-generated outputs into clear, human-readable explanations.
 
 ---
 
-# 🔄 API Workflow
+# 🔄 API Request Workflow
 
 ```text
 Client
@@ -1233,7 +1601,7 @@ Request Validation
 Business Logic
    │
    ▼
-AI Engine
+AI Engine / Copilot
    │
    ▼
 LLM Provider
@@ -1249,6 +1617,8 @@ JSON Response
 
 # ✅ Standard Success Response
 
+Every successful endpoint follows a consistent response format.
+
 ```json
 {
     "success": true,
@@ -1259,7 +1629,9 @@ JSON Response
 
 ---
 
-# ❌ Error Response
+# ❌ Standard Error Response
+
+Validation errors are automatically handled by FastAPI and Pydantic.
 
 ```json
 {
@@ -1280,31 +1652,52 @@ JSON Response
 | Code | Description |
 |------|-------------|
 | 200 | Success |
-| 201 | Created |
+| 201 | Resource Created |
 | 400 | Bad Request |
-| 404 | Not Found |
+| 404 | Resource Not Found |
 | 422 | Validation Error |
 | 500 | Internal Server Error |
 
 ---
 
-# 🔒 Validation
+# 🔒 Request Validation
 
-The API uses **Pydantic** models for request validation, ensuring:
+The API uses **Pydantic** for request validation.
 
-- Required fields
-- Correct data types
-- Consistent JSON responses
-- Automatic error handling
+### Validation Features
+
+- Required field validation
+- Automatic type checking
+- JSON schema generation
+- Consistent error responses
+- Built-in documentation support
+
+---
+
+# 🚀 API Highlights
+
+- RESTful architecture
+- FastAPI framework
+- Automatic OpenAPI documentation
+- Interactive Swagger UI
+- ReDoc support
+- Standardized JSON responses
+- Request validation with Pydantic
+- Modular endpoint design
+- Easy frontend integration
+- Docker-compatible deployment
 
 
-The REST API follows a consistent design across all modules, making it easy to integrate with frontend applications while maintaining clean architecture and predictable responses.
+
+The REST API serves as the communication layer between clients and the AI engine, providing a clean, consistent, and scalable interface for all resume analysis and AI-powered career assistance features.
 
 ---
 
 # 🧪 Testing & Development
 
-AI Resume Copilot follows a **test-driven and modular development approach**. Automated testing ensures that new features do not break existing functionality.
+AI Resume Copilot follows a **test-driven and modular development approach**. Automated testing ensures that new features remain reliable and do not break existing functionality.
+
+The project currently contains **154 passing automated tests**, covering AI engines, AI Copilot modules, API routes, and shared infrastructure.
 
 ---
 
@@ -1317,71 +1710,104 @@ AI Resume Copilot follows a **test-driven and modular development approach**. Au
 | API Tests | ✅ Passed |
 | AI Engine Tests | ✅ Passed |
 | AI Copilot Tests | ✅ Passed |
-| Ollama Tests | ✅ Passed |
+| Ollama Integration | ✅ Passed |
+| Docker Deployment | ✅ Verified |
 
 ---
 
 # 🧩 Testing Strategy
 
-The project includes multiple testing layers:
+The project uses multiple testing layers to validate different parts of the application.
 
-### Unit Tests
+## Unit Testing
 
-Verify individual modules independently.
+Unit tests verify individual modules independently.
 
-Examples:
+Covered modules:
 
 - Resume Parser
 - ATS Engine
+- Resume Improvement
+- Analytics Engine
+- Job Recommendation
+- Interview Engine
+- Training Engine
 - Prompt Manager
-- Career Advisor
-- Resume Improver
+- LLM Factory
+- Response Parser
 - Resume Rewriter
+- Resume Improver
 - Cover Letter Generator
+- Career Advisor
 - JD Matcher
 - Explanation Engine
 
 ---
 
-### API Tests
+## API Testing
 
-Validate FastAPI endpoints.
+API tests validate FastAPI endpoints.
+
+Coverage includes:
 
 - Request validation
 - Response validation
 - HTTP status codes
 - Route functionality
+- Error handling
 
 ---
 
-### Integration Tests
+## Integration Testing
 
-Verify complete workflows.
+Integration tests verify complete workflows from API request to AI response.
 
 ```text
-API Route
-    │
-    ▼
+Client Request
+      │
+      ▼
+FastAPI Endpoint
+      │
+      ▼
 Business Logic
-    │
-    ▼
+      │
+      ▼
 Prompt Manager
-    │
-    ▼
+      │
+      ▼
 LLM Factory
-    │
-    ▼
+      │
+      ▼
 AI Provider
-    │
-    ▼
+      │
+      ▼
 Response Parser
+      │
+      ▼
+JSON Response
 ```
+
+---
+
+## Docker Verification
+
+The application has been tested successfully inside a Docker container.
+
+Verified components:
+
+- Docker Image Build
+- Docker Compose
+- FastAPI Startup
+- REST API
+- Swagger UI
+- ReDoc
+- Dependency Installation
 
 ---
 
 # ▶️ Running Tests
 
-Run all tests:
+Run the complete test suite:
 
 ```bash
 python -m pytest
@@ -1393,16 +1819,38 @@ Expected output:
 154 passed
 ```
 
-Run a specific test:
+Run AI Copilot tests only:
 
 ```bash
 python -m pytest tests/ai_engine/copilot -v
 ```
 
-Verbose mode:
+Run with verbose output:
 
 ```bash
 python -m pytest -v
+```
+
+---
+
+# 🐳 Running with Docker
+
+Build the Docker image:
+
+```bash
+docker compose -f deployment/docker-compose.yml build
+```
+
+Start the application:
+
+```bash
+docker compose -f deployment/docker-compose.yml up
+```
+
+Stop the application:
+
+```bash
+docker compose -f deployment/docker-compose.yml down
 ```
 
 ---
@@ -1413,23 +1861,27 @@ python -m pytest -v
 
 Used for:
 
-- Unit testing
-- Fast execution
-- Consistent responses
+- Unit Testing
+- Fast Execution
+- Predictable Responses
+- Offline Development
+
+---
 
 ### Ollama Provider
 
 Used for:
 
-- Real AI integration
-- Local LLM testing
-- End-to-end verification
+- Local AI Inference
+- End-to-End Testing
+- Real AI Responses
+- Feature Validation
 
 Requirements:
 
-- Ollama installed
-- Llama 3.2 downloaded
-- Ollama server running
+- Ollama Installed
+- Llama 3.2 Downloaded
+- Ollama Service Running
 
 ---
 
@@ -1455,7 +1907,7 @@ tests/
 
 ---
 
-# 🛠 Development Workflow
+# 🔄 Development Workflow
 
 ```text
 Develop Feature
@@ -1470,6 +1922,12 @@ Run Pytest
 Fix Issues
       │
       ▼
+Run Docker
+      │
+      ▼
+Verify APIs
+      │
+      ▼
 Commit Changes
       │
       ▼
@@ -1480,66 +1938,96 @@ Push to GitHub
 
 # 📋 Coding Standards
 
-The project follows modern software engineering practices:
+The project follows modern backend engineering practices.
+
+### Standards
 
 - Modular Architecture
 - Clean Code
 - Type Hints
 - Dependency Injection
 - Factory Pattern
-- Single Responsibility Principle
 - Provider Abstraction
 - Reusable Components
+- Docker-Based Development
 
 ---
 
-# 🔒 Security & Performance
+# 🔒 Security & Reliability
 
 Current implementation includes:
 
-- Request validation with Pydantic
-- Structured API responses
-- Local AI execution with Ollama
-- Error handling
-- Provider abstraction
+- Request Validation
+- Structured API Responses
+- Local AI Execution
+- Error Handling
+- Provider Abstraction
+- Docker Isolation
 
-Future improvements:
+Planned improvements:
 
 - JWT Authentication
 - OAuth2
-- Rate Limiting
+- PostgreSQL
+- SQLAlchemy
+- Alembic
 - CI/CD Pipeline
 - Performance Testing
 - Load Testing
 
+---
 
-This testing strategy ensures that AI Resume Copilot remains reliable, maintainable, and scalable as new features are added.
+# 🚀 Development Highlights
+
+Current project achievements:
+
+- 154 Passing Automated Tests
+- Fully Modular Architecture
+- Shared AI Infrastructure
+- Provider-Based AI Design
+- Dockerized Backend
+- Interactive API Documentation
+- Clean Project Structure
+- Production-Oriented Development Workflow
+
+
+
+The testing and development strategy ensures that AI Resume Copilot remains reliable, maintainable, and scalable while supporting continuous feature development and future production deployment.
 
 ---
 
 # 🗺️ Roadmap
 
-The project is actively evolving toward a production-ready AI platform.
+AI Resume Copilot is being developed as a production-inspired AI backend application. The project continues to evolve with new AI capabilities, backend improvements, and deployment features.
 
-## ✅ Completed
+---
 
-### Backend Foundation
+# ✅ Completed
+
+## Backend Foundation
+
 - FastAPI Project Setup
 - Modular Project Structure
 - REST API Development
 - Configuration Management
 
-### AI Engines
-- Resume Parser
-- ATS Engine
-- Job Recommendation
-- Resume Improvement
-- Explainability
-- Analytics
-- Interview Engine
-- Training Engine
+---
 
-### AI Copilot
+## AI Engines
+
+- Resume Parser
+- ATS Analysis
+- Resume Improvement
+- Resume Analytics
+- Explainability Engine
+- Job Recommendation Engine
+- Interview Preparation Engine
+- Training Recommendation Engine
+
+---
+
+## AI Copilot
+
 - Resume Rewriter
 - Resume Improver
 - Cover Letter Generator
@@ -1547,7 +2035,10 @@ The project is actively evolving toward a production-ready AI platform.
 - Job Description Matcher
 - Explanation Engine
 
-### AI Infrastructure
+---
+
+## AI Infrastructure
+
 - Prompt Manager
 - LLM Factory
 - Mock Provider
@@ -1556,11 +2047,27 @@ The project is actively evolving toward a production-ready AI platform.
 - Shared Response Parser
 - Local Llama 3.2 Integration
 
-### Testing
-- Unit Tests
-- API Tests
-- Integration Tests
-- **154 Passing Tests**
+---
+
+## Deployment
+
+- Docker Desktop Integration
+- Dockerfile
+- Docker Compose
+- Dockerized FastAPI Backend
+- WSL2 Integration
+- Ubuntu Configuration
+- Containerized Development Environment
+
+---
+
+## Testing
+
+- Unit Testing
+- API Testing
+- Integration Testing
+- Docker Verification
+- **154 Passing Automated Tests**
 
 ---
 
@@ -1568,16 +2075,20 @@ The project is actively evolving toward a production-ready AI platform.
 
 The next development milestones include:
 
-- Docker Support
 - PostgreSQL Integration
 - SQLAlchemy ORM
-- Alembic Migrations
-- User Authentication
+- Alembic Database Migrations
+- JWT Authentication
+- User Management
 - Resume History
 - File Storage
 - Logging
 - Background Tasks
+- Environment Configuration
 - CI/CD Pipeline
+- Production Deployment
+- API Versioning
+- Monitoring & Health Checks
 
 ---
 
@@ -1585,21 +2096,21 @@ The next development milestones include:
 
 Planned deployment platforms:
 
-- Docker
 - Railway
 - Render
-- Azure
+- Azure App Service
 - AWS
 - Google Cloud Platform
 - DigitalOcean
+- Self-Hosted Docker Server
 
 ---
 
 # 🎯 Long-Term Vision
 
-AI Resume Copilot aims to become a complete AI-powered career assistant by expanding beyond resume analysis.
+AI Resume Copilot aims to become a complete AI-powered career platform that helps users throughout their professional journey.
 
-Future capabilities may include:
+Future capabilities include:
 
 - AI Resume Builder
 - Portfolio Generator
@@ -1607,14 +2118,19 @@ Future capabilities may include:
 - GitHub Profile Analyzer
 - Mock Interview Simulator
 - Salary Insights
-- Career Progress Tracking
+- Career Progress Tracker
 - AI Career Coach
+- Multi-Language Support
+- Team Collaboration
+- Recruiter Dashboard
 
 ---
 
 # 🤝 Contributing
 
 Contributions are welcome.
+
+To contribute:
 
 1. Fork the repository.
 2. Create a feature branch.
@@ -1623,7 +2139,7 @@ Contributions are welcome.
 5. Ensure all tests pass.
 6. Submit a Pull Request.
 
-Please follow the existing project structure and coding standards.
+Please follow the existing project structure, coding standards, and development workflow.
 
 ---
 
@@ -1655,28 +2171,52 @@ Bachelor of Technology (Artificial Intelligence & Machine Learning)
 - Artificial Intelligence
 - Machine Learning
 - FastAPI
+- Docker
 - Software Engineering
+- System Design
 
 ---
 
 # ⭐ Project Summary
 
-AI Resume Copilot demonstrates the development of a modern AI-powered backend application using FastAPI and Large Language Models.
+AI Resume Copilot is a modern AI-powered backend application built using **FastAPI**, **Ollama**, and **Docker**. The project demonstrates modular backend architecture, AI integration, provider abstraction, automated testing, and containerized deployment.
 
-### Highlights
+## Key Highlights
 
-- Modular AI Architecture
-- Provider-Based LLM Design
-- Ollama (Llama 3.2) Integration
-- Shared Response Parser
-- RESTful APIs
-- Automated Testing (**154 Passing Tests**)
-- Clean, Scalable Project Structure
-
-The project is designed as a learning journey toward building production-quality AI applications while following clean architecture and software engineering best practices.
+- 🤖 AI-Powered Resume Analysis
+- 📝 Resume Rewriter & Improver
+- 💼 Career Advisor
+- 📄 Cover Letter Generator
+- 🎯 ATS Analysis
+- 📊 Resume Analytics
+- 🧠 Provider-Based AI Architecture
+- ⚙️ Shared Prompt Management
+- 🔄 Shared Response Parser
+- 🐳 Dockerized Backend
+- 📚 Interactive API Documentation
+- ✅ 154 Passing Automated Tests
+- 🏗️ Modular & Scalable Architecture
 
 ---
 
-⭐ If you find this project useful, consider giving the repository a star.
+## Project Statistics
+
+| Category | Status |
+|----------|--------|
+| AI Engines | ✅ 8 Modules |
+| AI Copilot Features | ✅ 6 Modules |
+| REST APIs | ✅ Available |
+| Docker Support | ✅ Completed |
+| AI Provider | ✅ Ollama |
+| Tests | ✅ 154 Passed |
+| Documentation | ✅ Complete |
+
+---
+
+### Thank You
 
 Thank you for exploring **AI Resume Copilot**.
+
+This project represents an ongoing journey of learning backend engineering, Artificial Intelligence, software architecture, testing, and deployment while following modern development practices.
+
+⭐ If you found this project helpful, consider giving it a **Star** on GitHub!
