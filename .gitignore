@@ -33,6 +33,7 @@ Thumbs.db
 # Uploaded Files
 # ======================================
 uploads/resumes/*
+!uploads/resumes/sample_resume.docx
 !uploads/resumes/.gitkeep
 
 uploads/job_descriptions/*
