@@ -27,7 +27,7 @@ The project follows modern backend engineering practices, including:
 - Docker Containerization
 - Continuous Integration using GitHub Actions
 
-The application currently integrates **Ollama** with the **Llama 3.2** model for local AI inference while supporting a **Mock Provider** for testing. Application configuration is now managed through **environment variables (`.env`)**, improving portability and making the project more production-ready. The backend is fully containerized using Docker and includes an automated GitHub Actions workflow that validates the project on every push.
+The application currently integrates **Ollama** with the **Llama 3.2** model for local AI inference while supporting a **Mock Provider** for automated testing and Continuous Integration. Application configuration is managed through **environment variables (`.env`)**, improving portability across local development, Docker containers, and GitHub Actions. The project includes a fully automated CI pipeline that validates every push with **154 passing Pytest tests**.
 
 ---
 
@@ -91,7 +91,7 @@ The application currently integrates **Ollama** with the **Llama 3.2** model for
 
 # 🏗️ Project Architecture
 
-The project follows a modular backend architecture where every component has a single responsibility. This improves maintainability, scalability, testing, and future feature development.
+The project follows a modular backend architecture where each component has a clearly defined responsibility. This approach improves maintainability, scalability, testing, and future feature development while keeping the codebase easy to extend.
 
 ```
                 +----------------------+
@@ -130,6 +130,9 @@ Automation
       │
       ▼
  GitHub Actions (CI)
+      │
+      ▼
+ Automated Pytest Pipeline
 ```
 
 ---
@@ -182,58 +185,73 @@ AI-RESUME-COPILOT
 | AI Model | Llama 3.2 |
 | AI Provider | Ollama |
 | Testing | Pytest |
+| CI/CD | GitHub Actions |
 | API Validation | Pydantic |
 | PDF Parser | PyMuPDF, PyPDF2 |
 | DOCX Parser | python-docx |
 | HTTP Client | Requests |
-| Containerization | Docker |
-| CI | GitHub Actions |
 | Configuration | python-dotenv |
+| Containerization | Docker |
 | Version Control | Git & GitHub |
 
 ---
 
 # 🎯 Design Principles
 
-The application follows several backend engineering principles:
+The project follows modern backend engineering principles.
 
 - Modular Design
 - Separation of Concerns
-- Provider-Based AI Architecture
+- Provider-Based Architecture
 - Dependency Injection
 - Environment-Based Configuration
-- Test-Driven Development
-- Containerized Deployment
+- Automated Testing
 - Continuous Integration
+- Containerized Deployment
 - Scalable Project Structure
+- Maintainable Codebase
 
 ---
 
 # 🌍 Configuration Management
 
-Application configuration is managed using **environment variables** instead of hardcoded values.
+Application configuration is managed using environment variables instead of hardcoded values.
 
-Current configuration includes:
+Configuration includes:
 
 - LLM Provider
-- LLM Model
-- Ollama Base URL
+- AI Model
 - Request Timeout
-- Temperature Settings
+- Temperature
+- Ollama Base URL
 
-This approach makes the application portable across local development, Docker containers, and CI environments without changing the source code.
+This approach allows the same codebase to run in local development, Docker containers, and GitHub Actions without modifying the application source code.
+
+---
+
+# ✅ Architecture Highlights
+
+- FastAPI Backend
+- Modular AI Engine
+- Provider-Based LLM Architecture
+- Docker Support
+- GitHub Actions CI
+- Environment-Based Configuration
+- Automated Testing
+- Mock Provider for CI
+- 154 Passing Automated Tests
 
 ---
 
 # 🚀 Getting Started
 
-Follow these steps to set up AI Resume Copilot on your local machine.
+Follow the steps below to set up AI Resume Copilot on your local machine for development.
 
 ---
 
 # 📋 Prerequisites
 
-Before starting, ensure the following software is installed:
+Before starting, install the following software:
 
 - Python 3.12 or later
 - Git
@@ -289,31 +307,29 @@ python -m pip install -r requirements.txt
 
 # ⚙️ Environment Configuration
 
-Create a local **`.env`** file in the project root.
+The application loads configuration from a local **`.env`** file.
 
-```env
-LLM_PROVIDER=ollama
-LLM_MODEL=llama3.2
-LLM_TIMEOUT=60
-LLM_TEMPERATURE=0.3
-OLLAMA_BASE_URL=http://localhost:11434
-```
+The `.env` file is ignored by Git and is never committed to the repository.
 
-> **Note:** The `.env` file is ignored by Git and should never be committed.
+Configuration includes:
+
+- LLM Provider
+- AI Model
+- Request Timeout
+- Temperature
+- Ollama Base URL
 
 ---
 
 # 🤖 Start Ollama
 
-Ensure Ollama is installed.
-
-Pull the model:
+Pull the required model:
 
 ```bash
 ollama pull llama3.2
 ```
 
-Start Ollama:
+Start the Ollama server:
 
 ```bash
 ollama serve
@@ -327,19 +343,19 @@ ollama serve
 uvicorn app.main:app --reload
 ```
 
-Application:
+Application URL
 
 ```text
 http://127.0.0.1:8000
 ```
 
-Swagger Documentation:
+Swagger UI
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-ReDoc:
+ReDoc
 
 ```text
 http://127.0.0.1:8000/redoc
@@ -349,19 +365,19 @@ http://127.0.0.1:8000/redoc
 
 # 🐳 Run with Docker
 
-Build and start the project:
+Build and start the application
 
 ```bash
 docker compose -f deployment/docker-compose.yml up --build
 ```
 
-Run in detached mode:
+Run in detached mode
 
 ```bash
 docker compose -f deployment/docker-compose.yml up -d
 ```
 
-Stop containers:
+Stop the containers
 
 ```bash
 docker compose -f deployment/docker-compose.yml down
@@ -371,7 +387,7 @@ docker compose -f deployment/docker-compose.yml down
 
 # 🧪 Run Automated Tests
 
-Execute all tests locally:
+Execute the complete test suite:
 
 ```bash
 pytest
@@ -383,24 +399,33 @@ or
 python -m pytest
 ```
 
-Current local status:
+Expected result:
 
 ```text
-154 Passed
+154 passed
 ```
 
 ---
 
 # 🔄 Continuous Integration
 
-GitHub Actions automatically executes the test suite whenever code is pushed to the repository.
+Every push and pull request automatically triggers GitHub Actions.
 
-Current CI status:
+The workflow performs:
+
+- Repository Checkout
+- Python Setup
+- Dependency Installation
+- Automated Test Execution
+- CI Status Reporting
+
+Current CI Status
 
 - ✅ Workflow Configured
+- ✅ Mock Provider Enabled
 - ✅ Dependencies Installed
-- ✅ Tests Running Automatically
-- ⚠️ Remaining integration tests depend on a running Ollama instance
+- ✅ 154 / 154 Tests Passing
+- ✅ Automated Validation on Every Push
 
 ---
 
@@ -425,14 +450,17 @@ Push to GitHub
 GitHub Actions
      │
      ▼
-Automatic Test Execution
+154 Automated Tests
+     │
+     ▼
+Deployment Ready
 ```
 
 ---
 
 # 🐳 Docker & Deployment
 
-AI Resume Copilot is fully containerized using Docker, allowing the application to run consistently across Windows, Linux, and macOS without manual dependency management.
+AI Resume Copilot is fully containerized using Docker, allowing the application to run consistently across different operating systems without additional setup. The project also includes an automated Continuous Integration (CI) pipeline using GitHub Actions to verify every code change.
 
 ---
 
@@ -444,7 +472,7 @@ AI Resume Copilot is fully containerized using Docker, allowing the application 
 - WSL2 Compatibility
 - Ubuntu Development Environment
 - Consistent Development Workflow
-- Production-Ready Deployment
+- Production-Inspired Deployment
 
 ---
 
@@ -453,7 +481,7 @@ AI Resume Copilot is fully containerized using Docker, allowing the application 
 | File | Purpose |
 |------|---------|
 | Dockerfile | Builds the application image |
-| deployment/docker-compose.yml | Runs the application container |
+| deployment/docker-compose.yml | Runs application services |
 | .dockerignore | Excludes unnecessary files during image creation |
 
 ---
@@ -502,24 +530,24 @@ docker compose -f deployment/docker-compose.yml down
 
 ```text
 Developer
-    │
-    ▼
+     │
+     ▼
 Git Repository
-    │
-    ▼
+     │
+     ▼
 Docker Build
-    │
-    ▼
+     │
+     ▼
 Docker Image
-    │
-    ▼
+     │
+     ▼
 Docker Container
-    │
-    ▼
+     │
+     ▼
 FastAPI Backend
-    │
-    ▼
-Browser / API Client
+     │
+     ▼
+REST API
 ```
 
 ---
@@ -543,49 +571,47 @@ Current Status
 Docker Environment Ready
 FastAPI Running Successfully
 Container Build Successful
+Application Verified
 ```
 
 ---
 
-# ⚙️ Environment Configuration
+# ⚙️ Configuration Management
 
-Application settings are loaded from a local `.env` file.
+The application uses **environment variables** for configuration instead of hardcoded values.
 
-Current configuration:
+Configuration includes:
 
-```env
-LLM_PROVIDER=ollama
-LLM_MODEL=llama3.2
-LLM_TIMEOUT=60
-LLM_TEMPERATURE=0.3
-OLLAMA_BASE_URL=http://localhost:11434
-```
+- LLM Provider
+- AI Model
+- Request Timeout
+- Temperature
+- Ollama Base URL
 
 Benefits:
 
-- No hardcoded configuration
-- Easy environment switching
-- Docker-friendly configuration
-- Production-ready setup
-- Git-safe local configuration
-
-> The `.env` file is ignored using `.gitignore` and is never committed to GitHub.
+- Environment-independent configuration
+- Better security
+- Cleaner source code
+- Docker compatibility
+- Easy deployment
+- Local configuration separated from Git
 
 ---
 
 # 🔄 Continuous Integration
 
-The project includes an automated GitHub Actions workflow.
+GitHub Actions automatically validates every push and pull request.
 
-Every push automatically:
+Workflow stages:
 
-- Checks out the repository
-- Sets up Python
-- Installs project dependencies
-- Runs the complete pytest suite
-- Reports CI results
+1. Checkout Repository
+2. Setup Python Environment
+3. Install Dependencies
+4. Execute Pytest Suite
+5. Publish Results
 
-Workflow:
+Workflow
 
 ```text
 Developer Push
@@ -603,10 +629,10 @@ Ubuntu Runner
 Install Dependencies
       │
       ▼
-Run Tests
+Run 154 Automated Tests
       │
       ▼
-Publish Results
+Publish Status
 ```
 
 ---
@@ -616,12 +642,13 @@ Publish Results
 | Component | Status |
 |-----------|--------|
 | GitHub Actions | ✅ Configured |
-| Workflow | ✅ Running |
+| Workflow | ✅ Passing |
 | Docker Support | ✅ Verified |
 | Dependency Installation | ✅ Successful |
-| Local Configuration | ✅ Environment Variables |
-| Passing Tests | ✅ 140 |
-| Remaining Tests | ⚠️ 14 (Require Ollama) |
+| Environment Variables | ✅ Configured |
+| Mock Provider | ✅ Enabled |
+| Local Tests | ✅ 154 Passed |
+| GitHub Actions Tests | ✅ 154 Passed |
 
 ---
 
@@ -637,24 +664,18 @@ docker compose -f deployment/docker-compose.yml build --no-cache
 
 ## Container Not Starting
 
-Check:
+Verify:
 
 - Docker Desktop is running
 - WSL2 is enabled
 - Port **8000** is available
-- Dependencies installed successfully
+- Dependencies are installed
 
 ---
 
 ## Ollama Connection Error
 
-If you receive:
-
-```text
-Connection refused: localhost:11434
-```
-
-Run:
+If the application cannot connect to Ollama:
 
 ```bash
 ollama serve
@@ -668,15 +689,12 @@ ollama list
 
 ---
 
-## GitHub Actions Failure
+## GitHub Actions
 
-Current GitHub Actions failures are limited to integration tests requiring a live Ollama server.
+The CI pipeline uses the **Mock LLM Provider**, allowing automated tests to run without requiring a live Ollama server.
 
-Planned solution:
+This keeps the pipeline fast, reliable, and fully automated while local development continues to use Ollama.
 
-- Replace live Ollama calls with the Mock Provider during CI.
-- Keep Ollama for local development.
-- Achieve a fully passing GitHub Actions pipeline.
 
 ---
 
@@ -684,7 +702,7 @@ Planned solution:
 
 The AI Engine is the intelligence layer of AI Resume Copilot. It is responsible for processing resumes, interacting with Large Language Models (LLMs), generating AI-powered responses, and providing career-related assistance.
 
-The engine is designed using a modular architecture where every component has a single responsibility, making the system scalable, maintainable, and easy to test.
+The engine follows a modular architecture where every component has a single responsibility, making the application scalable, maintainable, testable, and easy to extend.
 
 ---
 
@@ -736,14 +754,14 @@ Extracts structured text from uploaded resumes.
 
 - Read uploaded resumes
 - Extract text content
-- Remove unnecessary formatting
+- Remove formatting
 - Prepare data for AI processing
 
 ---
 
 # 📊 ATS Analysis
 
-Evaluates resume quality for Applicant Tracking Systems (ATS).
+Evaluates resumes for Applicant Tracking Systems (ATS).
 
 ### Features
 
@@ -757,11 +775,11 @@ Evaluates resume quality for Applicant Tracking Systems (ATS).
 
 # ✨ Resume Improvement
 
-Generates AI-powered recommendations to improve resume quality.
+Uses AI to enhance resume quality.
 
 ### Capabilities
 
-- Grammar Improvements
+- Grammar Improvement
 - Professional Writing
 - Better Action Verbs
 - ATS Optimization
@@ -771,7 +789,7 @@ Generates AI-powered recommendations to improve resume quality.
 
 # 💼 Job Matching
 
-Compares resumes with job descriptions.
+Matches resumes with job descriptions.
 
 ### Output
 
@@ -784,7 +802,7 @@ Compares resumes with job descriptions.
 
 # 📈 Resume Analytics
 
-Provides statistical insights about resumes.
+Provides insights about resume content.
 
 ### Metrics
 
@@ -798,20 +816,20 @@ Provides statistical insights about resumes.
 
 # 🎤 Interview Preparation
 
-Generates personalized interview questions based on resume content.
+Generates interview questions based on uploaded resumes.
 
 ### Categories
 
 - Technical Questions
 - HR Questions
 - Behavioral Questions
-- Project-Based Questions
+- Project Questions
 
 ---
 
 # 📚 Training Recommendation
 
-Suggests learning resources based on missing skills.
+Suggests learning resources for career growth.
 
 ### Recommendations
 
@@ -824,15 +842,16 @@ Suggests learning resources based on missing skills.
 
 # 🧩 Shared AI Components
 
-All AI modules use a common infrastructure.
+All AI modules share common infrastructure to ensure consistency and maintainability.
 
 ## Prompt Manager
 
-Responsible for:
+Responsibilities:
 
 - Prompt Templates
 - Prompt Organization
 - Reusable Prompt Library
+- Centralized Prompt Management
 
 ---
 
@@ -840,12 +859,12 @@ Responsible for:
 
 Creates the appropriate AI provider during runtime.
 
-### Supported Providers
+### Current Providers
 
 - Ollama
 - Mock Provider
 
-### Planned Providers
+### Future Providers
 
 - OpenAI
 - Google Gemini
@@ -856,7 +875,7 @@ Creates the appropriate AI provider during runtime.
 
 ## Response Parser
 
-Processes AI responses into a standardized format.
+Converts AI responses into a standardized format.
 
 ### Responsibilities
 
@@ -864,6 +883,7 @@ Processes AI responses into a standardized format.
 - JSON Formatting
 - Error Handling
 - Output Validation
+- Consistent Response Structure
 
 ---
 
@@ -882,10 +902,10 @@ Prompt Manager
 LLM Factory
       │
       ▼
-AI Provider
+Selected Provider
       │
       ▼
-Generated Response
+AI Response
       │
       ▼
 Response Parser
@@ -893,6 +913,27 @@ Response Parser
       ▼
 Structured JSON Response
 ```
+
+---
+
+# 🧪 AI Testing Strategy
+
+The AI layer supports two execution modes.
+
+### Local Development
+
+- Ollama Provider
+- Llama 3.2 Model
+- Real AI Responses
+
+### Automated Testing
+
+- Mock Provider
+- Deterministic Responses
+- No External Dependencies
+- Fully Compatible with GitHub Actions
+
+This separation allows developers to use real AI locally while ensuring automated tests remain fast, stable, and reproducible.
 
 ---
 
@@ -911,10 +952,12 @@ Structured JSON Response
 | LLM Factory | ✅ Completed |
 | Response Parser | ✅ Completed |
 | Ollama Integration | ✅ Completed |
-| Mock Provider | 🚧 CI Integration in Progress |
+| Mock Provider | ✅ Completed |
+| Automated AI Testing | ✅ Completed |
+| GitHub Actions Compatibility | ✅ Completed |
 
 
-The AI Engine follows a modular and provider-based architecture, allowing new AI providers and intelligent features to be integrated with minimal changes to the existing codebase. It is designed for scalability, maintainability, automated testing, and future production deployment.
+The AI Engine is designed around provider abstraction, allowing multiple LLM providers to be supported without changing business logic. This architecture simplifies testing, improves maintainability, and enables future expansion while keeping the codebase clean and modular.
 
 ---
 
@@ -922,7 +965,7 @@ The AI Engine follows a modular and provider-based architecture, allowing new AI
 
 AI Resume Copilot follows a provider-based architecture that separates business logic from AI providers. This design keeps the application modular, scalable, testable, and easy to maintain.
 
-The business logic never communicates directly with an AI model. Instead, every request passes through shared infrastructure before reaching the selected provider.
+The application can switch between different AI providers without changing the business logic. Local development uses the Ollama provider, while automated testing uses the Mock Provider to ensure reliable Continuous Integration.
 
 ---
 
@@ -958,32 +1001,32 @@ The business logic never communicates directly with an AI model. Instead, every 
 
 # 📝 Prompt Manager
 
-The Prompt Manager stores and organizes all AI prompts used throughout the application.
+The Prompt Manager stores and manages all prompts used throughout the application.
 
-Instead of writing prompts inside every AI module, prompts are managed from one location.
+Instead of embedding prompts inside business logic, every prompt is maintained centrally for consistency and easier maintenance.
 
 ### Responsibilities
 
-- Centralized Prompt Templates
-- Reusable Prompts
+- Prompt Templates
+- Prompt Organization
+- Reusable Prompt Library
 - Consistent AI Instructions
-- Easy Prompt Maintenance
-- Reduced Code Duplication
+- Centralized Prompt Management
 
 ---
 
 # 🏭 LLM Factory
 
-The LLM Factory creates the appropriate AI provider during runtime.
+The LLM Factory selects the appropriate AI provider during runtime.
 
-Application services never communicate directly with an AI provider.
+Business services communicate only with the factory, never directly with a provider.
 
 ### Supported Providers
 
 - Ollama
 - Mock Provider
 
-### Planned Providers
+### Future Providers
 
 - OpenAI
 - Google Gemini
@@ -994,47 +1037,44 @@ Application services never communicate directly with an AI provider.
 
 # 🤖 Ollama Provider
 
-The project currently uses Ollama for local AI inference.
+Ollama powers local AI inference using the Llama 3.2 model.
 
-Current model:
+### Advantages
 
-- Llama 3.2
-
-### Benefits
-
-- Local AI Execution
+- Local Execution
 - Offline Capability
-- No API Cost
 - Better Privacy
+- No API Cost
 - Fast Development
 
 ---
 
 # 🧪 Mock Provider
 
-A Mock Provider is included to support automated testing.
+The Mock Provider enables deterministic AI responses during automated testing.
 
-It allows AI-related features to be tested without requiring a running AI server.
+It is primarily used by GitHub Actions to execute the complete test suite without requiring a running Ollama server.
 
 ### Advantages
 
-- Faster Testing
-- Deterministic Responses
-- CI Compatibility
-- Independent Test Execution
+- Stable Test Results
+- Fast Execution
+- No External Dependencies
+- CI/CD Compatibility
+- Reproducible Responses
 
 ---
 
 # 📦 Response Parser
 
-The Response Parser converts AI responses into a consistent format before returning them to the application.
+The Response Parser standardizes every AI response before it reaches the application.
 
 ### Responsibilities
 
 - Response Parsing
 - JSON Formatting
-- Error Handling
 - Response Validation
+- Error Handling
 - Consistent Output Structure
 
 ---
@@ -1060,28 +1100,28 @@ LLM Factory
 Selected Provider
       │
       ▼
-AI Response
+Generated Response
       │
       ▼
 Response Parser
       │
       ▼
-JSON Response
+Structured JSON Response
 ```
 
 ---
 
 # 🏛️ Software Design Principles
 
-The project follows modern software engineering principles.
+The architecture follows modern software engineering practices.
 
 ### Principles
 
 - Single Responsibility Principle
 - Separation of Concerns
-- Dependency Injection
 - Factory Pattern
 - Provider Abstraction
+- Dependency Injection
 - Modular Architecture
 - Low Coupling
 - High Cohesion
@@ -1090,42 +1130,39 @@ The project follows modern software engineering principles.
 
 # 🔄 Continuous Integration
 
-GitHub Actions automatically validates the project whenever new code is pushed to the repository.
+Every push and pull request automatically executes the GitHub Actions workflow.
 
-Current workflow:
+The workflow performs:
 
 ```text
-Developer
-     │
-     ▼
-Git Push
-     │
-     ▼
+Developer Push
+      │
+      ▼
 GitHub Repository
-     │
-     ▼
+      │
+      ▼
 GitHub Actions
-     │
-     ▼
+      │
+      ▼
 Ubuntu Runner
-     │
-     ▼
+      │
+      ▼
 Install Dependencies
-     │
-     ▼
+      │
+      ▼
 Run Pytest
-     │
-     ▼
-Publish Results
+      │
+      ▼
+154 Passing Tests
 ```
 
-Current status:
+Current Status
 
-- ✅ Workflow Configured
-- ✅ Automatic Test Execution
-- ✅ Dependency Installation
-- ✅ 140 Tests Passing
-- ⚠️ Remaining integration tests require a running Ollama server
+- ✅ GitHub Actions Configured
+- ✅ Mock Provider Enabled
+- ✅ Automated Testing
+- ✅ 154 / 154 Tests Passing
+- ✅ Fully Automated CI Pipeline
 
 ---
 
@@ -1137,23 +1174,23 @@ Planned architecture enhancements include:
 - Google Gemini Provider
 - Claude Provider
 - Azure OpenAI Provider
+- Streaming AI Responses
 - Response Caching
-- Streaming Responses
-- Database Integration
+- PostgreSQL Integration
 - Background Task Processing
-- Production CI/CD Pipeline
-- Complete Mock-Based CI Testing
+- Production Deployment
+- Monitoring & Logging
 
 
-The provider-based architecture allows AI Resume Copilot to support multiple LLM providers while keeping business logic independent from implementation details. This design improves scalability, maintainability, automated testing, and future extensibility.
+The provider-based architecture allows AI Resume Copilot to support multiple LLM providers while keeping business logic independent from implementation details. Combined with automated testing and Continuous Integration, the project is structured for scalability, maintainability, and future production deployment.
 
 ---
 
 # 🌐 REST API
 
-AI Resume Copilot exposes a RESTful API built with **FastAPI**. The API is organized into independent modules, allowing each feature to be developed, tested, and maintained separately.
+AI Resume Copilot exposes a modular REST API built with **FastAPI**. The API is organized into independent feature modules, making development, testing, and maintenance straightforward.
 
-All endpoints return structured JSON responses and are documented automatically using the OpenAPI specification.
+Every endpoint returns structured JSON responses and is automatically documented through the OpenAPI specification.
 
 ---
 
@@ -1173,7 +1210,7 @@ http://127.0.0.1:8000/docs
 http://127.0.0.1:8000/redoc
 ```
 
-These interfaces allow developers to explore and test every endpoint without additional tools.
+These interfaces allow developers to test every endpoint directly from the browser.
 
 ---
 
@@ -1185,7 +1222,7 @@ These interfaces allow developers to explore and test every endpoint without add
 POST /api/resume/upload
 ```
 
-Uploads and parses PDF or DOCX resumes for further processing.
+Uploads and parses PDF or DOCX resumes for AI processing.
 
 ---
 
@@ -1197,7 +1234,7 @@ Uploads and parses PDF or DOCX resumes for further processing.
 POST /api/improvement/analyze
 ```
 
-Analyzes resume quality and provides AI-powered improvement suggestions.
+Evaluates resume quality and provides AI-powered improvement suggestions.
 
 ---
 
@@ -1209,7 +1246,7 @@ Analyzes resume quality and provides AI-powered improvement suggestions.
 POST /api/jobs/recommend
 ```
 
-Generates job recommendations based on resume content and extracted skills.
+Generates personalized job recommendations based on resume content and extracted skills.
 
 ---
 
@@ -1221,7 +1258,7 @@ Generates job recommendations based on resume content and extracted skills.
 POST /api/interview/questions
 ```
 
-Creates personalized interview questions based on the uploaded resume.
+Creates interview questions using resume information.
 
 ---
 
@@ -1231,7 +1268,7 @@ Creates personalized interview questions based on the uploaded resume.
 POST /api/interview/evaluate
 ```
 
-Evaluates user answers and provides AI-generated feedback.
+Analyzes interview responses and provides AI-generated feedback.
 
 ---
 
@@ -1243,7 +1280,7 @@ Evaluates user answers and provides AI-generated feedback.
 POST /api/copilot/rewrite
 ```
 
-Professionally rewrites resume sections while maintaining the original meaning.
+Professionally rewrites resume sections while preserving their original meaning.
 
 ---
 
@@ -1253,7 +1290,7 @@ Professionally rewrites resume sections while maintaining the original meaning.
 POST /api/copilot/improve
 ```
 
-Provides AI-driven suggestions to improve clarity, impact, and ATS compatibility.
+Provides AI-driven recommendations to improve clarity, impact, and ATS compatibility.
 
 ---
 
@@ -1263,7 +1300,7 @@ Provides AI-driven suggestions to improve clarity, impact, and ATS compatibility
 POST /api/copilot/cover-letter
 ```
 
-Creates a personalized cover letter using resume information and job details.
+Creates personalized cover letters using resume and job information.
 
 ---
 
@@ -1273,7 +1310,7 @@ Creates a personalized cover letter using resume information and job details.
 POST /api/copilot/career-advice
 ```
 
-Provides AI-powered career guidance and learning recommendations.
+Generates AI-powered career guidance and learning recommendations.
 
 ---
 
@@ -1283,7 +1320,7 @@ Provides AI-powered career guidance and learning recommendations.
 POST /api/copilot/job-match
 ```
 
-Compares a resume against a job description and identifies missing skills.
+Compares a resume against a job description and highlights missing skills.
 
 ---
 
@@ -1293,7 +1330,7 @@ Compares a resume against a job description and identifies missing skills.
 POST /api/copilot/explain
 ```
 
-Explains resume improvements and AI-generated suggestions in simple language.
+Explains AI-generated resume suggestions in a simple and understandable format.
 
 ---
 
@@ -1315,7 +1352,10 @@ Business Logic
 AI Engine
    │
    ▼
-LLM Provider
+LLM Factory
+   │
+   ▼
+Selected Provider
    │
    ▼
 Response Parser
@@ -1376,15 +1416,16 @@ Current testing status:
 | Category | Status |
 |----------|--------|
 | Local Testing | ✅ 154 Passed |
-| GitHub Actions | ✅ Configured |
-| CI Passing Tests | ✅ 140 |
-| Remaining CI Tests | ⚠️ 14 (Require Ollama) |
+| GitHub Actions | ✅ Passing |
+| Automated CI | ✅ Enabled |
+| Mock Provider | ✅ Configured |
+| Overall Test Suite | ✅ 154 / 154 Passed |
 
 ---
 
 # 🔄 Continuous Integration
 
-Every push to the **main** branch automatically triggers GitHub Actions.
+Every push and pull request automatically triggers GitHub Actions.
 
 The workflow performs:
 
@@ -1394,7 +1435,7 @@ The workflow performs:
 - Automated Test Execution
 - CI Status Reporting
 
-This ensures code quality is continuously validated before future deployments.
+This ensures every code change is automatically verified before deployment.
 
 ---
 
@@ -1405,17 +1446,19 @@ This ensures code quality is continuously validated before future deployments.
 - Automatic OpenAPI Documentation
 - Swagger UI
 - ReDoc Documentation
-- Pydantic Request Validation
+- Pydantic Validation
 - Modular Route Structure
+- Provider-Based AI Architecture
 - Docker Ready
 - GitHub Actions Integration
-- Automated Testing
+- Environment-Based Configuration
+- Automated Testing (154 Passing Tests)
 
 ---
 
 # 🗺️ Roadmap
 
-AI Resume Copilot is being developed as a production-inspired AI backend application. The project will continue to evolve with additional AI capabilities, backend improvements, DevOps practices, and deployment features.
+AI Resume Copilot is being developed as a production-inspired AI backend application. The project combines Artificial Intelligence, backend engineering, automated testing, containerization, and Continuous Integration to create a scalable foundation for future AI-powered career tools.
 
 ---
 
@@ -1454,17 +1497,20 @@ AI Resume Copilot is being developed as a production-inspired AI backend applica
 - Mock Provider
 - Response Parser
 - Provider-Based Architecture
+- Environment-Based Configuration
 
 ---
 
-## Testing
+## Testing & Quality
 
 - Unit Testing
 - API Testing
 - Integration Testing
 - Pytest Configuration
-- GitHub Actions Workflow
-- Local Test Verification
+- Mock Provider Testing
+- GitHub Actions CI
+- Automated Test Pipeline
+- 154 / 154 Passing Tests
 
 ---
 
@@ -1477,36 +1523,41 @@ AI Resume Copilot is being developed as a production-inspired AI backend applica
 - WSL2
 - Ubuntu Development Environment
 - Continuous Integration
+- Environment Variable Management
 
 ---
 
 # 🚧 In Progress
 
-The following improvements are currently under development:
+Current development focuses on expanding the application into a production-ready platform.
 
-- Mock Provider Integration for CI
-- GitHub Actions Test Improvements
-- Complete CI Compatibility
-- Production Deployment Preparation
+Current priorities:
+
+- PostgreSQL Integration
+- SQLAlchemy ORM
+- Alembic Database Migrations
+- Authentication & Authorization
+- Resume Storage
+- User Management
 
 ---
 
 # 📌 Upcoming Features
 
-Future development includes:
+Planned additions include:
 
-- PostgreSQL Integration
+- PostgreSQL Database
 - SQLAlchemy ORM
-- Alembic Migrations
 - JWT Authentication
 - User Accounts
 - Resume History
-- File Management
+- Resume Versioning
 - Background Tasks
 - Logging
 - Monitoring
 - API Versioning
 - Role-Based Authorization
+- File Storage
 
 ---
 
@@ -1525,9 +1576,9 @@ Planned deployment platforms:
 
 # 🎯 Long-Term Vision
 
-The goal of AI Resume Copilot is to become a complete AI-powered career platform.
+The long-term goal is to build a complete AI-powered career platform.
 
-Planned capabilities include:
+Future capabilities include:
 
 - AI Resume Builder
 - Portfolio Generator
@@ -1550,27 +1601,29 @@ Planned capabilities include:
 | AI Engine | ✅ Completed |
 | REST APIs | ✅ Completed |
 | Docker | ✅ Configured |
-| GitHub Actions | ✅ Configured |
-| Local Testing | ✅ 154 Tests Passed |
-| GitHub CI | ⚠️ 140 Tests Passed |
-| Remaining Work | Mock Ollama Integration |
+| GitHub Actions | ✅ Passing |
+| Local Testing | ✅ 154 / 154 Passed |
+| CI Testing | ✅ 154 / 154 Passed |
+| Environment Configuration | ✅ Completed |
+| Mock Provider | ✅ Completed |
+| Next Milestone | PostgreSQL Integration |
 
 ---
 
 # 📅 Latest Development
 
-## Day 10 — Environment Configuration & CI Preparation
+## Day 11 — GitHub Actions & CI Pipeline Completed
 
 ### Completed
 
-- Added support for environment-based application configuration.
-- Installed and configured **python-dotenv**.
-- Refactored application settings to load values from environment variables.
-- Created a local `.env` configuration for development.
-- Verified that the `.env` file is ignored by Git.
-- Added GitHub Actions workflow for automated testing.
-- Fixed the missing sample resume file required by the test suite.
-- Investigated GitHub Actions failures and identified the remaining dependency on a running Ollama server.
+- Configured GitHub Actions for automated testing.
+- Added Mock Provider support for Continuous Integration.
+- Eliminated the dependency on a running Ollama server during CI.
+- Updated the GitHub Actions workflow to use the Mock Provider.
+- Verified automated dependency installation.
+- Successfully executed the complete Pytest suite in GitHub Actions.
+- Achieved **154 / 154 passing tests** in both local development and CI.
+- Improved project portability through environment-based configuration.
 
 ### Current Status
 
@@ -1579,21 +1632,23 @@ Local Development
 ✔ Docker Running
 ✔ FastAPI Running
 ✔ Swagger Verified
-✔ Environment Configuration Working
-✔ 154 Tests Passed
+✔ Ollama Integration Working
+✔ 154 / 154 Tests Passed
 
 GitHub Actions
-✔ Workflow Configured
+✔ Workflow Passing
 ✔ Automatic Testing Enabled
-✔ 140 Tests Passed
-⚠ 14 Integration Tests Require Ollama
+✔ Mock Provider Enabled
+✔ 154 / 154 Tests Passed
 ```
 
 ### Next Milestone
 
-- Configure the Mock Provider for GitHub Actions.
-- Remove the dependency on a live Ollama server during CI.
-- Achieve 154 / 154 passing tests in GitHub Actions.
+- Integrate PostgreSQL.
+- Add SQLAlchemy ORM.
+- Create database models.
+- Store uploaded resumes and AI analysis results.
+- Implement user authentication.
 
 ---
 
@@ -1606,7 +1661,7 @@ To contribute:
 1. Fork the repository.
 2. Create a feature branch.
 3. Commit your changes.
-4. Run the test suite.
+4. Run the complete test suite.
 5. Open a Pull Request.
 
 ---
