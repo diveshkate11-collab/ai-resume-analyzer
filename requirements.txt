@@ -9,3 +9,6 @@ pytest
 httpx
 requests==2.32.4
 python-dotenv
+sqlalchemy
+psycopg2-binary
+alembic
