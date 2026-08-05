@@ -1,276 +1,873 @@
-# 🤖 AI Resume Copilot
+<div align="center">
 
-> An AI-powered backend application that helps job seekers analyze, improve, and optimize resumes using Artificial Intelligence, Large Language Models (LLMs), modern backend engineering practices, and PostgreSQL-powered data persistence.
+# AI Resume Analyzer
 
-![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?style=for-the-badge)
-![Alembic](https://img.shields.io/badge/Alembic-Migrations-FF9900?style=for-the-badge)
-![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![AI](https://img.shields.io/badge/AI-Ollama-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+### AI-Powered Resume Analysis Platform using FastAPI, PostgreSQL, Ollama, and Large Language Models
 
----
+[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Latest-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-336791?logo=postgresql)](https://www.postgresql.org/)
+[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.x-red)](https://www.sqlalchemy.org/)
+[![Alembic](https://img.shields.io/badge/Alembic-Latest-green)](https://alembic.sqlalchemy.org/)
+[![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-black)](https://ollama.com/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://www.docker.com/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-# 📖 Overview
-
-AI Resume Copilot is a production-inspired backend application built with **FastAPI** that uses **Large Language Models (LLMs)** to analyze resumes, improve ATS compatibility, rewrite resume content, generate cover letters, provide career guidance, recommend learning resources, and assist job seekers throughout their placement journey.
-
-The project follows modern backend engineering practices including:
-
-- Modular Architecture
-- Provider-Based AI Design
-- Dependency Injection
-- Shared Prompt Management
-- Shared Response Parsing
-- Environment-Based Configuration
-- SQLAlchemy ORM
-- PostgreSQL Integration
-- Alembic Database Migrations
-- Automated Testing
-- Docker Containerization
-- Continuous Integration using GitHub Actions
-
-The application currently integrates **Ollama** with the **Llama 3.2** model for local AI inference while supporting a **Mock Provider** for automated testing and Continuous Integration.
-
-Configuration is managed using **environment variables (`.env`)**, allowing the same codebase to run across local development, Docker containers, CI pipelines, and future cloud deployments without changing the application source code.
-
-The backend now includes a fully configured **PostgreSQL** database with **SQLAlchemy ORM** and **Alembic** migration support. The initial database schema has been created successfully, providing the foundation for persistent resume storage and future user-related features.
-
-The project also includes a fully automated CI pipeline with **154 passing Pytest tests**, ensuring reliability and maintainability as new features are added.
+</div>
 
 ---
 
-# ✨ Features
+# 📌 Overview
 
-## 📄 Resume Intelligence
+AI Resume Analyzer is an Artificial Intelligence-powered backend application designed to assist users in improving resumes, analyzing career opportunities, generating professional documents, and matching resumes with job descriptions using Large Language Models (LLMs).
 
-- Resume Parsing
-- ATS Analysis
+The project combines modern backend engineering with local AI inference to create a scalable and maintainable platform for resume intelligence. Instead of relying on external cloud-based AI APIs, the application integrates locally hosted language models through Ollama, enabling private and cost-effective AI processing.
+
+The backend is developed using FastAPI and follows a layered architecture where API endpoints, business logic, AI engines, database operations, and configuration are organized into independent modules. This separation improves maintainability, testing, and future scalability.
+
+The project is intended as a production-inspired learning project that demonstrates backend development, AI integration, database management, software architecture, automated testing, and deployment practices.
+
+---
+
+# 🎯 Project Objectives
+
+The primary objectives of AI Resume Analyzer are:
+
+- Build a modular backend using FastAPI.
+- Integrate local Large Language Models through Ollama.
+- Analyze resumes using Artificial Intelligence.
+- Generate professional resume improvement suggestions.
+- Rewrite resumes with improved wording and structure.
+- Compare resumes with job descriptions.
+- Generate AI-assisted career guidance.
+- Produce structured JSON responses for frontend integration.
+- Maintain a scalable and testable software architecture.
+- Prepare the project for future production deployment.
+
+---
+
+# ✨ Implemented Features
+
+The following features are currently available in the project.
+
+### AI Features
+
 - Resume Improvement
-- Resume Rewriting
-- Resume Analytics
-- Resume Explainability
-
-### Resume Processing
-
-- Extract text from PDF resumes
-- Extract text from DOCX resumes
-- Normalize extracted resume content
-- Prepare structured resume data for AI processing
-
-### ATS Optimization
-
-- ATS Compatibility Analysis
-- Resume Quality Evaluation
-- Keyword Matching
-- Missing Skills Detection
-- AI-Based Resume Suggestions
-
----
-
-## 🤖 AI Copilot
-
+- Resume Rewriter
 - Career Advisor
 - Cover Letter Generator
-- Resume Rewriter
-- Resume Improver
 - Job Description Matcher
-- AI Explanation Engine
-
-### Planned AI Capabilities
-
-- AI Resume Builder
-- Portfolio Generator
-- LinkedIn Profile Analysis
-- GitHub Profile Analysis
-- Career Roadmap Generator
+- Explainability Module
 
 ---
 
-## 🧠 AI Infrastructure
+### Backend Features
 
-- Prompt Manager
-- LLM Factory
-- Provider-Based Architecture
-- Ollama Integration
-- Mock Provider
-- Shared Response Parser
+- FastAPI REST API
+- Modular Service Layer
+- Request Validation using Pydantic
+- Structured JSON Responses
 - Environment-Based Configuration
 
-### Current Providers
+---
 
-- Ollama
+### Database Features
+
+- PostgreSQL Integration
+- SQLAlchemy ORM
+- Alembic Database Migrations
+- Resume Data Model
+
+---
+
+### AI Infrastructure
+
+- Ollama Integration
+- Llama 3.2 Support
+- Provider-Based Architecture
+- Mock Provider
+- Prompt Manager
+- LLM Factory
+
+---
+
+### Development Features
+
+- Docker Support
+- Automated Testing
+- Swagger UI
+- ReDoc Documentation
+- GitHub Actions Workflow
+
+---
+
+# 🚧 Planned Features
+
+The following capabilities are planned for future development.
+
+- User Authentication
+- Resume Upload API
+- Resume Dashboard
+- Resume History
+- ATS Dashboard
+- Resume Analytics Dashboard
+- LinkedIn Profile Analysis
+- GitHub Repository Analysis
+- Portfolio Generator
+- AI Interview Simulator
+- Learning Recommendation Engine
+- Salary Prediction
+- Enterprise User Management
+- Cloud Deployment
+
+---
+
+# 📖 About This Project
+
+AI Resume Analyzer is being developed incrementally with a strong focus on software engineering principles rather than rapid feature accumulation. Every component is designed to remain modular, reusable, and independently testable.
+
+The project emphasizes:
+
+- Clean Architecture
+- Separation of Concerns
+- Modular AI Components
+- Database Version Control
+- Automated Testing
+- Provider-Based AI Integration
+- Production-Oriented Backend Development
+
+As development progresses, additional capabilities will be integrated without compromising the overall architecture or maintainability of the codebase.
+
+---
+
+# 🏗️ System Architecture
+
+AI Resume Analyzer follows a layered backend architecture that separates API handling, business logic, Artificial Intelligence processing, and database operations into independent modules. This design improves maintainability, scalability, testing, and future extensibility while ensuring that each component has a single responsibility.
+
+Instead of embedding AI logic directly inside API endpoints, requests pass through dedicated service layers and AI engines before interacting with the configured Large Language Model (LLM).
+
+---
+
+# 🎯 Architectural Goals
+
+The architecture has been designed to achieve the following objectives:
+
+- Separation of Concerns
+- Modular Code Organization
+- Independent AI Components
+- Easy Feature Expansion
+- High Testability
+- Database Independence
+- Provider-Based AI Integration
+- Production-Oriented Backend Design
+
+---
+
+# 🏛️ High-Level Architecture
+
+```text
+                          Client
+                             │
+                             ▼
+                     FastAPI REST API
+                             │
+                             ▼
+                      API Route Layer
+                             │
+                             ▼
+                     Business Services
+                             │
+          ┌──────────────────┼──────────────────┐
+          ▼                  ▼                  ▼
+    AI Copilot          Resume Engine      Database Layer
+          │                  │                  │
+          ▼                  ▼                  ▼
+   Prompt Manager      Resume Parser      SQLAlchemy ORM
+          │                                     │
+          ▼                                     ▼
+      LLM Factory                          PostgreSQL
+          │
+    ┌─────┴─────────────┐
+    ▼                   ▼
+Ollama Provider    Mock Provider
+    │
+    ▼
+Llama 3.2
+```
+
+---
+
+# 🧩 Architectural Layers
+
+The backend is divided into multiple logical layers, each responsible for a specific part of the application.
+
+---
+
+## 1. API Layer
+
+The API layer serves as the entry point for all client requests.
+
+Responsibilities:
+
+- Receive HTTP requests
+- Validate request payloads
+- Forward requests to the service layer
+- Return structured JSON responses
+- Generate OpenAPI documentation
+
+Current framework:
+
+- FastAPI
+
+---
+
+## 2. Service Layer
+
+The service layer contains the application's business logic.
+
+Responsibilities:
+
+- Process incoming requests
+- Coordinate AI modules
+- Manage workflow execution
+- Handle application logic
+- Prepare responses
+
+This layer prevents business logic from being placed inside API routes.
+
+---
+
+## 3. AI Copilot Layer
+
+The AI Copilot layer manages every AI-powered capability of the application.
+
+Current modules include:
+
+- Career Advisor
+- Resume Improver
+- Resume Rewriter
+- Cover Letter Generator
+- Job Description Matcher
+- Explainability Engine
+
+Each module operates independently and can evolve without affecting the rest of the system.
+
+---
+
+## 4. Prompt Management Layer
+
+Prompt engineering is centralized within the Prompt Manager.
+
+Responsibilities:
+
+- Store reusable prompt templates
+- Standardize AI instructions
+- Simplify prompt maintenance
+- Improve consistency across AI modules
+
+Centralizing prompts eliminates duplicated prompt logic throughout the codebase.
+
+---
+
+## 5. LLM Provider Layer
+
+The provider layer abstracts communication with Large Language Models.
+
+Current providers:
+
+- Ollama Provider
 - Mock Provider
 
-### Planned Providers
+Future providers may include:
 
 - OpenAI
 - Google Gemini
 - Claude
 - Azure OpenAI
 
+Changing the AI provider requires configuration changes rather than business logic modifications.
+
 ---
 
-## 🗄️ Database Infrastructure
+## 6. Database Layer
 
-The application now includes a dedicated persistence layer powered by PostgreSQL.
+The persistence layer manages all interactions with the database.
+
+Responsibilities:
+
+- Data storage
+- CRUD operations
+- Session management
+- Transaction handling
+- Database abstraction
+
+Current technologies:
+
+- PostgreSQL
+- SQLAlchemy ORM
+- Alembic
+
+---
+
+# 🔄 Request Lifecycle
+
+Every client request follows a structured execution pipeline.
+
+```text
+Client Request
+      │
+      ▼
+FastAPI Endpoint
+      │
+      ▼
+Request Validation
+      │
+      ▼
+Business Service
+      │
+      ▼
+AI Copilot Module
+      │
+      ▼
+Prompt Manager
+      │
+      ▼
+LLM Factory
+      │
+      ▼
+Selected AI Provider
+      │
+      ▼
+Large Language Model
+      │
+      ▼
+Structured Response Parser
+      │
+      ▼
+JSON Response
+      │
+      ▼
+Client
+```
+
+---
+
+# 🤖 AI Processing Workflow
+
+The AI engine processes every request through multiple independent stages.
+
+```text
+User Input
+      │
+      ▼
+Prompt Generation
+      │
+      ▼
+Provider Selection
+      │
+      ▼
+LLM Execution
+      │
+      ▼
+Response Processing
+      │
+      ▼
+Structured JSON
+      │
+      ▼
+API Response
+```
+
+---
+
+# 🗄️ Database Workflow
+
+Database operations follow a dedicated workflow.
+
+```text
+API Request
+      │
+      ▼
+Business Service
+      │
+      ▼
+SQLAlchemy Session
+      │
+      ▼
+ORM Model
+      │
+      ▼
+PostgreSQL
+      │
+      ▼
+Commit Transaction
+      │
+      ▼
+Return Result
+```
+
+---
+
+# 📂 Project Module Organization
+
+The project is organized into independent modules to simplify development and maintenance.
+
+```text
+app/
+│
+├── ai_engine/
+│
+├── api/
+│
+├── core/
+│
+├── database/
+│
+├── models/
+│
+├── schemas/
+│
+├── services/
+│
+└── utils/
+```
+
+Each module is responsible for a specific aspect of the application, reducing coupling between components.
+
+---
+
+# 📈 Benefits of the Architecture
+
+This architecture provides several engineering advantages:
+
+- Clean separation between layers
+- Easier maintenance
+- Independent AI modules
+- Simplified testing
+- Reusable business logic
+- Flexible AI provider integration
+- Scalable project organization
+- Production-oriented backend structure
+
+---
+
+# 🔮 Future Architectural Enhancements
+
+The architecture is designed to support future expansion without major structural changes.
+
+Planned enhancements include:
+
+- Authentication Layer
+- Authorization Layer
+- Background Task Processing
+- Redis Caching
+- Message Queues
+- Multi-Agent AI Collaboration
+- Cloud Storage Integration
+- Monitoring and Logging
+- Distributed Deployment
+
+---
+
+# 📌 Architecture Summary
+
+AI Resume Analyzer follows a modular, layered architecture that separates API handling, business logic, AI processing, and database operations into clearly defined components. This approach improves maintainability, simplifies testing, supports multiple AI providers, and provides a scalable foundation for future development and production deployment.
+
+---
+
+# 🛠️ Technology Stack
+
+AI Resume Analyzer is built using a modern backend technology stack that combines Artificial Intelligence, RESTful API development, relational database management, automated testing, and production-oriented software engineering practices. Each technology has been selected to support modular development, maintainability, scalability, and future extensibility.
+
+The project emphasizes backend architecture and local AI inference while maintaining compatibility with future cloud-based deployments and additional AI providers.
+
+---
+
+# 🎯 Technology Overview
+
+| Category | Technology |
+|-----------|------------|
+| Programming Language | Python 3.12 |
+| Backend Framework | FastAPI |
+| Database | PostgreSQL 18 |
+| ORM | SQLAlchemy 2.x |
+| Database Migration | Alembic |
+| Database Driver | psycopg2-binary |
+| Data Validation | Pydantic |
+| AI Runtime | Ollama |
+| Large Language Model | Llama 3.2 |
+| Resume Processing | PyMuPDF, python-docx |
+| Testing | Pytest |
+| API Testing | HTTPX |
+| Configuration | python-dotenv |
+| Containerization | Docker |
+| Version Control | Git |
+| Repository Hosting | GitHub |
+| Continuous Integration | GitHub Actions |
+| Development Environment | Ubuntu (WSL2), VS Code |
+
+---
+
+# 🐍 Programming Language
+
+## Python 3.12
+
+Python serves as the primary programming language for the entire project.
+
+Current responsibilities include:
+
+- Backend development
+- Artificial Intelligence integration
+- API implementation
+- Database interaction
+- Business logic
+- Automated testing
+- Resume processing
+
+Python was selected because of its mature AI ecosystem, extensive backend libraries, and excellent support for machine learning and web development.
+
+---
+
+# ⚡ Backend Framework
+
+## FastAPI
+
+FastAPI powers the REST API layer of AI Resume Analyzer.
 
 Current capabilities include:
 
-- PostgreSQL 18
-- SQLAlchemy ORM
-- Alembic Migration Management
-- Declarative ORM Models
-- Database Session Management
-- Environment-Based Database Configuration
-- Resume Model
-- Migration Version Control
+- High-performance asynchronous APIs
+- Automatic OpenAPI documentation
+- Swagger UI
+- ReDoc documentation
+- Request validation
+- Response serialization
+- Dependency Injection
+- Type-safe development
 
-Current database tables:
-
-- resumes
-- alembic_version
+FastAPI enables clean API design while providing excellent performance and developer productivity.
 
 ---
 
-## 🚀 Additional AI Engines
+# 🗄️ Database Technologies
 
-- Resume Analytics
-- Interview Preparation
-- Job Recommendation
-- Training Recommendation
+## PostgreSQL 18
 
-### Future AI Engines
+PostgreSQL is the primary relational database used by the project.
 
-- Salary Prediction
-- Career Progress Tracking
-- AI Career Coach
+Current responsibilities include:
 
----
+- Resume data storage
+- Persistent application data
+- Structured relational storage
+- Transaction management
+- Future user data management
 
-## 🐳 Deployment & DevOps
-
-- Docker Desktop
-- Docker Compose
-- Dockerized FastAPI Backend
-- WSL2 Integration
-- Ubuntu Development Environment
-- GitHub Actions CI
-- Automated Testing Pipeline
-- Environment Variable Management
-
-Current deployment workflow supports:
-
-- Local Development
-- PostgreSQL Integration
-- Database Migrations
-- Automated Testing
-- Continuous Integration
+PostgreSQL was selected because of its reliability, scalability, and strong support for enterprise applications.
 
 ---
 
-# 🏗️ Project Architecture
+## SQLAlchemy ORM
 
-AI Resume Copilot follows a layered architecture where each component has a single responsibility. This separation makes the application easier to maintain, test, and extend as new AI features are added.
+SQLAlchemy provides an abstraction layer between Python objects and SQL queries.
+
+Current responsibilities:
+
+- ORM Models
+- CRUD Operations
+- Database Sessions
+- Query Generation
+- Relationship Management
+- Database Abstraction
+
+Using an ORM reduces boilerplate code while improving maintainability.
+
+---
+
+## Alembic
+
+Alembic manages database schema versioning.
+
+Current features:
+
+- Database migrations
+- Schema evolution
+- Version tracking
+- Migration history
+- Automated migration generation
+
+Database changes remain version-controlled throughout development.
+
+---
+
+# 🤖 Artificial Intelligence Stack
+
+## Ollama
+
+Ollama enables local execution of Large Language Models.
+
+Current benefits:
+
+- Offline AI inference
+- No external API dependency
+- Improved privacy
+- Lower operational cost
+- Faster local development
+
+The application communicates directly with Ollama through a provider abstraction layer.
+
+---
+
+## Llama 3.2
+
+Current AI model:
 
 ```text
-                           Client
-                              │
-                              ▼
-                     FastAPI REST API
-                              │
-                              ▼
-                    API Routes / Endpoints
-                              │
-                              ▼
-                      Business Services
-                              │
-        ┌─────────────────────┼─────────────────────┐
-        ▼                     ▼                     ▼
-   Resume Engine         AI Copilot         Career Services
-        │                     │                     │
-        └─────────────────────┼─────────────────────┘
-                              ▼
-                      Prompt Management
-                              │
-                              ▼
-                         LLM Factory
-                    ┌─────────┴─────────┐
-                    ▼                   ▼
-             Ollama Provider      Mock Provider
-                    │
-                    ▼
-                Llama 3.2 Model
-
-────────────────────────────────────────────────────
-
-Configuration Layer
-        │
-        ▼
-Environment Variables (.env)
-
-────────────────────────────────────────────────────
-
-Persistence Layer
-        │
-        ▼
-SQLAlchemy ORM
-        │
-        ▼
-PostgreSQL Database
-        │
-        ▼
-Alembic Migrations
+llama3.2
 ```
+
+The model currently supports:
+
+- Resume analysis
+- Resume rewriting
+- Career guidance
+- Cover letter generation
+- Job description matching
+- AI explanations
+
+The architecture allows additional models to be integrated without modifying business logic.
+
+---
+
+# 🧠 AI Provider Architecture
+
+The project follows a provider-based AI architecture.
+
+Current providers:
+
+- Ollama Provider
+- Mock Provider
+
+Planned providers:
+
+- OpenAI
+- Google Gemini
+- Anthropic Claude
+- Azure OpenAI
+
+The provider abstraction allows the application to switch between different AI providers through configuration instead of code modifications.
+
+---
+
+# 📑 Data Validation
+
+## Pydantic
+
+Pydantic is responsible for validating all API requests and responses.
+
+Current responsibilities:
+
+- Request validation
+- Response validation
+- Data serialization
+- Type enforcement
+- Error reporting
+
+Using Pydantic improves API reliability and ensures consistent data structures.
+
+---
+
+# 📄 Resume Processing Libraries
+
+## PyMuPDF
+
+PyMuPDF processes PDF resumes.
+
+Current capabilities:
+
+- PDF reading
+- Text extraction
+- Resume preprocessing
+- Content normalization
+
+---
+
+## python-docx
+
+python-docx processes Microsoft Word resumes.
+
+Current capabilities:
+
+- DOCX reading
+- Text extraction
+- Structured document parsing
+
+Together, these libraries provide support for the primary resume formats used by the application.
+
+---
+
+# 🧪 Testing Framework
+
+## Pytest
+
+Pytest is the primary testing framework.
+
+Current testing includes:
+
+- Unit Tests
+- Integration Tests
+- API Tests
+- AI Provider Tests
+- Service Layer Tests
+- Utility Tests
+
+Current project status:
+
+```text
+154 Passing Tests
+```
+
+Automated testing helps maintain application stability during development.
+
+---
+
+## HTTPX
+
+HTTPX is used for API testing.
+
+Current responsibilities:
+
+- Endpoint testing
+- Request validation
+- Response validation
+- Integration testing
+
+---
+
+# 🐳 Containerization
+
+## Docker
+
+Docker provides a consistent execution environment.
+
+Current objectives:
+
+- Simplified deployment
+- Environment consistency
+- Reproducible builds
+- Future cloud deployment
+
+The project is structured to support containerized development and deployment workflows.
+
+---
+
+# ⚙️ Configuration Management
+
+The application uses environment-based configuration to separate application settings from source code.
+
+Current configuration categories include:
+
+- AI provider selection
+- AI model selection
+- Database configuration
+- Runtime options
+- Application settings
+
+Sensitive information is intentionally excluded from the repository.
+
+---
+
+# 🔄 Version Control
+
+## Git
+
+Git manages source code history.
+
+Current workflow includes:
+
+- Feature branches
+- Version tracking
+- Incremental commits
+- Change history
+
+---
+
+## GitHub
+
+GitHub hosts the project repository and supports collaborative development.
+
+Repository:
+
+**https://github.com/diveshkate11-collab/ai-resume-analyzer**
+
+Current usage includes:
+
+- Source code hosting
+- Documentation
+- Issue tracking
+- Pull requests
+- Version management
+
+---
+
+# 🚀 Continuous Integration
+
+## GitHub Actions
+
+GitHub Actions provides automated validation for the project.
+
+Current pipeline objectives:
+
+- Install dependencies
+- Execute automated tests
+- Validate project integrity
+- Prepare for future deployment automation
+
+---
+
+# 💻 Development Environment
+
+The project is currently developed using:
+
+- Windows 11
+- Ubuntu (WSL2)
+- Visual Studio Code
+- Python Virtual Environment
+- PostgreSQL
+- Ollama
+- Docker Desktop
+
+This environment provides a stable workflow for backend development and local AI integration.
+
+---
+
+# 📌 Technology Summary
+
+AI Resume Analyzer combines modern backend technologies with local Artificial Intelligence to create a modular, maintainable, and production-oriented application. The selected technology stack emphasizes clean architecture, scalable development, automated testing, database reliability, and flexible AI integration while providing a strong foundation for future expansion.
 
 ---
 
 # 📂 Project Structure
 
+AI Resume Analyzer follows a modular and scalable project structure that separates backend services, Artificial Intelligence components, database management, documentation, frontend resources, testing, deployment assets, and project configuration into dedicated directories.
+
+This organization improves maintainability, scalability, collaboration, and long-term development while keeping each component independent and reusable.
+
+---
+
+# 📁 Root Directory Structure
+
 ```text
-AI-RESUME-COPILOT
+AI RESUME COPILOT/
 │
 ├── .github/
 │   └── workflows/
+│       └── python-tests.yml
 │
+├── .pytest_cache/
+├── .venv/
 ├── alembic/
-│   ├── versions/
-│   ├── env.py
-│   ├── README
-│   └── script.py.mako
-│
 ├── app/
-│   ├── ai_engine/
-│   │   ├── analytics/
-│   │   ├── ats/
-│   │   ├── copilot/
-│   │   ├── explainability/
-│   │   ├── improvement/
-│   │   ├── interview/
-│   │   ├── jobs/
-│   │   ├── parser/
-│   │   ├── training/
-│   │   └── utils/
-│   │
-│   ├── api/
-│   ├── core/
-│   ├── database/
-│   │   ├── base.py
-│   │   ├── connection.py
-│   │   ├── migrations.py
-│   │   └── seed.py
-│   │
-│   ├── models/
-│   ├── prompts/
-│   ├── schemas/
-│   ├── services/
-│   ├── utils/
-│   ├── __init__.py
-│   └── main.py
-│
 ├── data/
 ├── deployment/
 ├── docs/
@@ -293,927 +890,986 @@ AI-RESUME-COPILOT
 
 ---
 
-# 💻 Technology Stack
+# 📦 Application Directory
 
-| Category | Technology |
-|----------|------------|
-| Programming Language | Python 3.12 |
-| Backend Framework | FastAPI |
-| Database | PostgreSQL 18 |
-| ORM | SQLAlchemy 2.x |
-| Database Migration | Alembic |
-| Database Driver | psycopg2-binary |
-| AI Framework | Ollama |
-| LLM | Llama 3.2 |
-| Data Validation | Pydantic |
-| Testing | Pytest |
-| API Testing | HTTPX |
-| PDF Processing | PyMuPDF |
-| DOCX Processing | python-docx |
-| Configuration | python-dotenv |
-| Containerization | Docker |
-| Version Control | Git & GitHub |
-| CI/CD | GitHub Actions |
-| Operating System | Ubuntu (WSL2) |
+The **app/** directory contains the complete backend application.
+
+Its responsibilities include:
+
+- FastAPI Application
+- REST API Endpoints
+- Business Services
+- Artificial Intelligence Engine
+- Database Layer
+- Models
+- Schemas
+- Utility Functions
+- Core Configuration
+
+This directory contains the primary implementation of the project.
 
 ---
 
-# 🏛️ Design Principles
+# 🤖 AI Engine
 
-The project is developed using modern software engineering and backend development practices.
+The AI Engine is responsible for all Artificial Intelligence functionality.
 
-### Software Engineering
+Current AI modules include:
 
-- Modular Design
-- Separation of Concerns
-- High Cohesion
-- Low Coupling
-- Scalable Architecture
-
-### Backend Engineering
-
-- RESTful API Design
-- Environment-Based Configuration
-- Database Version Control
-- ORM-Based Database Access
-- Layered Application Structure
-
-### AI Engineering
-
-- Provider-Based Architecture
-- Prompt Management
-- Shared Response Parsing
-- Extensible LLM Factory
-
-### Database Engineering
-
-- PostgreSQL as the primary relational database
-- SQLAlchemy Declarative ORM
-- Alembic Versioned Database Migrations
-- Environment-based database configuration
-- Persistent resume data storage
-
----
-
-# ⚙️ Configuration Management
-
-Application configuration is centralized through environment variables.
-
-Sensitive information such as database credentials, API keys, and provider settings are stored inside the local `.env` file and are never committed to version control.
-
-Current configurable components include:
-
-- LLM Provider
-- LLM Model
-- Ollama Base URL
-- Database Host
-- Database Port
-- Database Name
-- Database Username
-- Database Password
-- LLM Temperature
-- Request Timeout
-
-This approach allows the same application to run across local development, Docker containers, CI pipelines, and future production deployments without modifying the source code.
-
----
-
-# 🎯 Architecture Highlights
-
-- Modular FastAPI backend
-- Provider-based AI architecture
-- SQLAlchemy ORM integration
-- PostgreSQL persistence layer
-- Alembic migration management
-- Environment-driven configuration
-- Docker-ready development environment
-- GitHub Actions Continuous Integration
-- Production-inspired project organization
-
----
-
-# 🧩 Core Project Modules
-
-The project is organized into multiple independent modules, each responsible for a specific functionality. This modular design improves maintainability, scalability, readability, and testing.
-
----
-
-## 📄 Resume Parser
-
-The Resume Parser is responsible for extracting structured information from uploaded resumes.
-
-### Responsibilities
-
-- Extract text from PDF resumes
-- Extract text from DOCX resumes
-- Clean extracted content
-- Normalize formatting
-- Prepare text for AI processing
-
-### Planned Improvements
-
-- OCR Support
-- Multi-language Resume Parsing
-- Image Resume Parsing
-- Better Formatting Detection
-
----
-
-## 🎯 ATS Analysis Engine
-
-The ATS Analysis Engine evaluates resumes based on Applicant Tracking System (ATS) standards.
-
-### Current Capabilities
-
-- ATS Compatibility Analysis
-- Resume Quality Evaluation
-- Keyword Detection
-- Missing Skills Identification
-- Improvement Suggestions
-
-### Future Enhancements
-
-- Company-Specific ATS Rules
-- Industry-Based Resume Scoring
-- Job Description Comparison
-- ATS Score Prediction
-
----
-
-## ✍️ Resume Improvement Engine
-
-This module generates actionable suggestions to improve resume quality.
-
-Current objectives include:
-
-- Improve grammar
-- Improve readability
-- Improve professional wording
-- Remove unnecessary content
-- Optimize formatting recommendations
-- Enhance ATS compatibility
-
-Future enhancements include:
-
-- Industry-specific recommendations
-- Role-based resume optimization
-- Experience-based improvement suggestions
-
----
-
-## 🔄 Resume Rewriter
-
-The Resume Rewriter uses the configured LLM provider to rewrite resume content while preserving meaning.
-
-Capabilities include:
-
-- Professional language enhancement
-- Improved sentence structure
-- Better impact statements
-- ATS-friendly wording
-- Consistent formatting recommendations
-
-Future enhancements:
-
-- Senior-level resume rewriting
-- Fresher resume templates
-- Executive resume optimization
-
----
-
-## 🧠 AI Copilot
-
-The AI Copilot acts as the central intelligent assistant within the application.
-
-Current modules include:
-
-- Career Advisor
 - Resume Improvement
-- Resume Rewriting
-- Cover Letter Generation
-- Resume Explanation
-- Job Description Matching
+- Resume Rewriter
+- Career Advisor
+- Cover Letter Generator
+- Job Description Matcher
+- Explainability Engine
+- Prompt Manager
+- LLM Factory
+- AI Providers
 
-Planned capabilities include:
-
-- AI Career Coach
-- Personalized Learning Recommendations
-- Resume Builder
-- Portfolio Assistant
+The AI layer is isolated from the API layer to improve maintainability and testing.
 
 ---
 
-## 📊 Resume Analytics
+# 🌐 API Layer
 
-The analytics module provides deeper insights into resume quality.
+The API layer exposes REST endpoints using FastAPI.
+
+Responsibilities include:
+
+- Request Validation
+- Response Serialization
+- Endpoint Routing
+- API Documentation
+- Input Validation
+
+The API layer remains lightweight by delegating business logic to the service layer.
+
+---
+
+# 🗄️ Database Migration
+
+The **alembic/** directory manages database schema versioning.
+
+Responsibilities include:
+
+- Migration Scripts
+- Version History
+- Schema Updates
+- Database Evolution
+
+Alembic ensures database changes remain synchronized throughout development.
+
+---
+
+# 📊 Data Directory
+
+The **data/** directory stores datasets and application data used during development and experimentation.
+
+Typical usage includes:
+
+- Sample Datasets
+- Development Data
+- Testing Resources
+- AI Experiment Data
+
+---
+
+# 🚀 Deployment
+
+The **deployment/** directory contains deployment-related resources.
+
+Typical contents may include:
+
+- Deployment Configurations
+- Deployment Scripts
+- Production Assets
+- Infrastructure Files
+
+Keeping deployment resources separate improves project organization and simplifies future production deployment.
+
+---
+
+# 📚 Documentation
+
+The **docs/** directory stores project documentation.
+
+Documentation may include:
+
+- Architecture Notes
+- API Documentation
+- Technical Guides
+- Design Documents
+- Development Notes
+
+Separating documentation from source code keeps the repository organized.
+
+---
+
+# 🖥️ Frontend
+
+The **frontend/** directory is reserved for the client-side application.
+
+Future frontend implementation may include:
+
+- User Interface
+- Dashboard
+- Resume Upload
+- Authentication
+- Analytics
+
+The backend and frontend remain independent to support scalable full-stack development.
+
+---
+
+# 📓 Notebooks
+
+The **notebooks/** directory stores Jupyter notebooks used during development.
+
+Possible usage includes:
+
+- AI Experiments
+- Data Analysis
+- Model Evaluation
+- Feature Prototyping
+
+These notebooks are separate from production code.
+
+---
+
+# 💾 Storage
+
+The **storage/** directory is intended for application-generated resources.
+
+Possible contents include:
+
+- Generated Reports
+- Processed Files
+- Cached Outputs
+- AI Results
+
+Keeping generated assets separate simplifies maintenance.
+
+---
+
+# 📤 Uploads
+
+The **uploads/** directory stores files uploaded by users.
+
+Current purpose:
+
+- Resume Uploads
+- Temporary Files
+- Input Documents
+
+Separating uploaded files from source code improves organization and security.
+
+---
+
+# 🧪 Testing
+
+The **tests/** directory contains the automated test suite.
+
+Current testing includes:
+
+- Unit Tests
+- Integration Tests
+- API Tests
+- AI Module Tests
+- Service Tests
+
+The project currently maintains automated testing to improve reliability and prevent regressions.
+
+---
+
+# ⚙️ GitHub Workflows
+
+GitHub Actions workflows are stored in:
+
+```text
+.github/workflows/
+```
+
+Current workflow:
+
+```text
+python-tests.yml
+```
+
+Responsibilities include:
+
+- Automated Testing
+- Continuous Integration
+- Build Validation
+
+---
+
+# 📄 Configuration Files
+
+The project includes several important configuration files.
+
+| File | Purpose |
+|------|---------|
+| requirements.txt | Python dependencies |
+| pyproject.toml | Project configuration |
+| Dockerfile | Docker image configuration |
+| alembic.ini | Alembic configuration |
+| .gitignore | Git ignore rules |
+| .dockerignore | Docker ignore rules |
+| README.md | Project documentation |
+| LICENSE | Project license |
+
+Sensitive configuration is intentionally excluded from documentation.
+
+---
+
+# 🎯 Project Organization Principles
+
+The directory structure follows modern software engineering principles.
+
+Current design goals include:
+
+- Modular Development
+- Separation of Concerns
+- Independent Components
+- Scalable Architecture
+- Reusable Code
+- Maintainable Project Structure
+- Clean Repository Organization
+
+---
+
+# 📌 Project Structure Summary
+
+The current project structure separates application code, database migrations, deployment resources, documentation, frontend development, datasets, testing, uploaded files, and configuration into dedicated directories. This organization provides a scalable foundation for future development while keeping the codebase clean, modular, and easy to maintain.
+
+---
+
+# 🚀 Installation & Getting Started
+
+This section explains how to set up AI Resume Analyzer for local development. The project is designed to run on a local machine using Python, PostgreSQL, Ollama, and FastAPI.
+
+Before starting, ensure that all required software is installed on your system.
+
+---
+
+# 📋 Prerequisites
+
+Install the following software before cloning the project.
+
+| Software | Recommended Version |
+|-----------|---------------------|
+| Python | 3.12 or later |
+| PostgreSQL | 18 |
+| Git | Latest |
+| Docker Desktop | Latest |
+| Ollama | Latest |
+| Visual Studio Code | Latest |
+
+---
+
+# 📥 Clone the Repository
+
+Clone the repository using Git.
+
+```bash
+git clone https://github.com/diveshkate11-collab/ai-resume-analyzer.git
+```
+
+Move into the project directory.
+
+```bash
+cd ai-resume-analyzer
+```
+
+---
+
+# 🐍 Create a Virtual Environment
+
+Create a Python virtual environment.
+
+**Windows**
+
+```bash
+python -m venv .venv
+```
+
+**Linux / macOS**
+
+```bash
+python3 -m venv .venv
+```
+
+---
+
+# ▶️ Activate the Virtual Environment
+
+### Windows (PowerShell)
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+### Windows (Command Prompt)
+
+```cmd
+.venv\Scripts\activate.bat
+```
+
+### Linux / macOS
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+# 📦 Install Project Dependencies
+
+Install all required Python packages.
+
+```bash
+pip install -r requirements.txt
+```
+
+If the project uses **pyproject.toml**, install it in editable mode.
+
+```bash
+pip install -e .
+```
+
+---
+
+# ⚙️ Project Configuration
+
+Application configuration is managed through environment variables.
+
+For security reasons, sensitive configuration such as database credentials, passwords, API keys, and tokens are **not included** in this documentation.
+
+Project-specific configuration should be created locally and should never be committed to the repository.
+
+---
+
+# 🗄️ Install PostgreSQL
+
+Install PostgreSQL on your system before running the application.
+
+Verify the installation.
+
+```bash
+psql --version
+```
+
+After installation:
+
+- Start the PostgreSQL service.
+- Create a database for the application.
+- Configure local database access.
+- Apply database migrations before running the application.
+
+---
+
+# 🔄 Database Migration
+
+Database schema management is handled using Alembic.
+
+Apply all available migrations.
+
+```bash
+alembic upgrade head
+```
+
+View the current migration.
+
+```bash
+alembic current
+```
+
+View migration history.
+
+```bash
+alembic history
+```
+
+---
+
+# 🤖 Install Ollama
+
+Download and install Ollama from the official website.
+
+Verify the installation.
+
+```bash
+ollama --version
+```
+
+---
+
+# 🚀 Start Ollama
+
+Launch the Ollama server.
+
+```bash
+ollama serve
+```
+
+---
+
+# 📥 Download the AI Model
+
+Download the Llama 3.2 model.
+
+```bash
+ollama pull llama3.2
+```
+
+Verify installed models.
+
+```bash
+ollama list
+```
+
+Expected output includes the installed Llama 3.2 model.
+
+---
+
+# ▶️ Start the Application
+
+Run the FastAPI development server.
+
+```bash
+uvicorn app.main:app --reload
+```
+
+The application will start on:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+# 📖 API Documentation
+
+FastAPI automatically generates interactive API documentation.
+
+### Swagger UI
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+### ReDoc
+
+```text
+http://127.0.0.1:8000/redoc
+```
+
+These interfaces allow developers to explore and test API endpoints directly from the browser.
+
+---
+
+# ✅ Verify Installation
+
+After completing the setup:
+
+- Python environment is active.
+- Dependencies are installed.
+- PostgreSQL is running.
+- Database migrations have been applied.
+- Ollama is running.
+- Llama 3.2 is available.
+- FastAPI starts successfully.
+- Swagger UI opens without errors.
+
+At this stage, the backend is ready for local development and testing.
+
+---
+
+# 🗄️ Database & Persistence Layer
+
+AI Resume Analyzer uses PostgreSQL as its primary relational database and SQLAlchemy as the Object Relational Mapper (ORM). Database schema evolution is managed using Alembic, allowing changes to be version-controlled and applied consistently across different development environments.
+
+The persistence layer has been designed to separate database operations from business logic, ensuring maintainability, scalability, and cleaner code organization.
+
+---
+
+# 🎯 Database Objectives
+
+The database layer is responsible for:
+
+- Persistent Data Storage
+- Resume Information Management
+- Structured Data Access
+- Transaction Management
+- Database Version Control
+- Future User Data Management
+
+---
+
+# 🏛️ Database Architecture
+
+```text
+                 FastAPI Endpoint
+                        │
+                        ▼
+                 Business Service
+                        │
+                        ▼
+                 SQLAlchemy ORM
+                        │
+                        ▼
+                 Database Session
+                        │
+                        ▼
+                   PostgreSQL
+```
+
+The application never communicates directly with the database from the API layer. All database operations pass through the service layer and SQLAlchemy ORM.
+
+---
+
+# 🐘 PostgreSQL
+
+PostgreSQL is used as the primary relational database.
+
+Current responsibilities include:
+
+- Resume Data Storage
+- Structured Relational Data
+- Transaction Support
+- Future User Management
+- AI Result Storage
+- Application Metadata
+
+PostgreSQL was selected for its reliability, performance, and enterprise-grade capabilities.
+
+---
+
+# ⚙️ SQLAlchemy ORM
+
+SQLAlchemy provides the abstraction layer between Python objects and database tables.
+
+Current responsibilities:
+
+- ORM Models
+- CRUD Operations
+- Query Generation
+- Relationship Management
+- Session Handling
+- Database Abstraction
+
+Benefits include:
+
+- Reduced SQL Boilerplate
+- Cleaner Code
+- Easier Maintenance
+- Database Independence
+
+---
+
+# 🔄 Alembic
+
+Alembic manages schema versioning throughout the project lifecycle.
 
 Current capabilities:
 
-- Resume Quality Analysis
-- ATS Readiness
-- Skill Identification
-- Section Completeness
-- Improvement Recommendations
-
-Future capabilities:
-
-- Resume Trend Analysis
-- Historical Resume Comparison
-- Skill Gap Visualization
-- Career Growth Tracking
-
----
-
-## 💼 Job Recommendation Engine
-
-The project includes a dedicated module for job-related recommendations.
-
-Current focus:
-
-- Resume-to-Job Matching
-- Skill-Based Recommendations
-- Job Description Comparison
-
-Future roadmap:
-
-- Personalized Job Recommendations
-- Company Recommendation Engine
-- Location-Based Jobs
-- Salary Estimation
-
----
-
-## 🎤 Interview Preparation
-
-The Interview module helps users prepare for technical and HR interviews.
-
-Planned features include:
-
-- HR Interview Questions
-- Technical Interview Questions
-- AI-Based Interview Practice
-- Mock Interviews
-- Answer Evaluation
-- Personalized Feedback
-
----
-
-## 📚 Training Recommendation
-
-The Training module recommends learning resources based on identified skill gaps.
-
-Future recommendations may include:
-
-- Online Courses
-- Certifications
-- Practice Platforms
-- Books
-- Interview Preparation Resources
-- Personalized Learning Paths
-
----
-
-# 🗄️ Database Layer
-
-The project now includes a fully configured relational database layer.
-
-Current implementation includes:
-
-- PostgreSQL database
-- SQLAlchemy ORM
-- Declarative Base
-- Session Management
-- Resume ORM Model
-- Alembic Migration System
-- Version-Controlled Database Schema
-
-### Database Tables
-
-Current tables:
-
-- `resumes`
-- `alembic_version`
-
-Future tables may include:
-
-- users
-- resumes_history
-- cover_letters
-- interview_sessions
-- job_matches
-- activity_logs
-
----
-
-# 🔄 Application Workflow
-
-The current backend workflow follows this sequence:
-
-```text
-User
- │
- ▼
-Upload Resume
- │
- ▼
-Resume Parser
- │
- ▼
-Resume Processing
- │
- ▼
-AI Engine
- │
- ├── ATS Analysis
- ├── Resume Improvement
- ├── Resume Rewriting
- ├── Resume Analytics
- └── Career Guidance
- │
- ▼
-Database Storage (PostgreSQL)
- │
- ▼
-FastAPI Response
- │
- ▼
-Client
-```
-
----
-
-# ⚙️ Installation Guide
-
-## 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/your-username/AI-Resume-Copilot.git
-
-cd AI-Resume-Copilot
-```
-
----
-
-## 2️⃣ Create Virtual Environment
-
-Windows
-
-```bash
-python -m venv .venv
-```
-
-Linux / macOS
-
-```bash
-python3 -m venv .venv
-```
-
----
-
-## 3️⃣ Activate Virtual Environment
-
-Windows (PowerShell)
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Windows (CMD)
-
-```cmd
-.venv\Scripts\activate.bat
-```
-
-Linux / macOS
-
-```bash
-source .venv/bin/activate
-```
-
----
-
-## 4️⃣ Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-or
-
-```bash
-pip install -e .
-```
-
----
-
-# 🐘 PostgreSQL Setup
-
-Install PostgreSQL 18 and create a database.
-
-```sql
-CREATE DATABASE ai_resume_copilot;
-```
-
-Verify the database:
-
-```sql
-\l
-```
-
-Connect to the database:
-
-```sql
-\c ai_resume_copilot
-```
-
----
-
-# 🔐 Environment Variables
-
-Create a `.env` file in the project root.
-
-Example:
-
-```env
-LLM_PROVIDER=ollama
-LLM_MODEL=llama3.2
-LLM_TIMEOUT=60
-LLM_TEMPERATURE=0.3
-
-OLLAMA_BASE_URL=http://localhost:11434
-
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=ai_resume_copilot
-DB_USER=postgres
-DB_PASSWORD=YOUR_PASSWORD
-```
-
-> **Important:** Never commit the `.env` file or database password to GitHub. Sensitive credentials should remain local and `.env` should be included in `.gitignore`.
-
----
-
-# 🗄️ Database Configuration
-
-The application uses SQLAlchemy for database access and Alembic for migration management.
-
-Current database components include:
-
-- SQLAlchemy Engine
-- Session Factory
-- Declarative Base
-- Resume ORM Model
-- Alembic Migration Environment
-- PostgreSQL Connection Management
-
-The first migration creates:
-
-- `resumes`
-- `alembic_version`
-
----
-
-# 🔄 Database Migration Commands
-
-Generate a migration:
-
-```bash
-alembic revision --autogenerate -m "create resumes table"
-```
-
-Apply migrations:
+- Database Migration
+- Schema Version Tracking
+- Upgrade Management
+- Migration History
+- Rollback Support
+
+Migration commands:
+
+Upgrade database
 
 ```bash
 alembic upgrade head
 ```
 
-Check the current migration version:
+Check current version
 
 ```bash
 alembic current
 ```
 
-View migration history:
+View migration history
 
 ```bash
 alembic history
 ```
 
----
-
-# 🤖 Running Ollama
-
-Start the Ollama service:
+Generate a migration
 
 ```bash
-ollama serve
-```
-
-Download the model:
-
-```bash
-ollama pull llama3.2
-```
-
-Verify installed models:
-
-```bash
-ollama list
+alembic revision --autogenerate -m "migration_name"
 ```
 
 ---
 
-# 🚀 Running the Application
+# 📂 Database Components
 
-Start the FastAPI development server:
+The database layer currently consists of the following components:
 
-```bash
-uvicorn app.main:app --reload
-```
+- Database Engine
+- Database Session
+- ORM Models
+- Migration Scripts
+- Alembic Configuration
+- Connection Management
 
-Default application URL:
-
-```
-http://127.0.0.1:8000
-```
-
-Swagger Documentation:
-
-```
-http://127.0.0.1:8000/docs
-```
-
-ReDoc Documentation:
-
-```
-http://127.0.0.1:8000/redoc
-```
+Each component has a dedicated responsibility, reducing coupling within the application.
 
 ---
 
-# 📦 Current Development Status
+# 📋 Current Database Responsibilities
 
-The following components have been completed:
+The persistence layer currently supports:
 
-- FastAPI project setup
-- AI engine architecture
-- Prompt management
-- Ollama integration
-- Mock provider
-- Shared response parser
-- Docker support
-- GitHub Actions CI
-- Automated testing
-- PostgreSQL integration
-- SQLAlchemy ORM
-- Alembic migration system
-- Resume ORM model
-- Database connectivity
-- Initial database schema
-- Environment-based configuration
+- Resume Information Storage
+- AI Processing Results
+- Structured Application Data
+- Migration Tracking
 
-The project is now ready for implementing persistent resume upload APIs, resume storage services, and AI-powered resume processing using the configured PostgreSQL backend.
+As the project evolves, additional entities will be introduced.
 
 ---
 
-# ⚙️ Installation Guide
+# 🚧 Planned Database Entities
 
-## 1️⃣ Clone the Repository
+Future development may introduce:
 
-```bash
-git clone https://github.com/your-username/AI-Resume-Copilot.git
-
-cd AI-Resume-Copilot
-```
-
----
-
-## 2️⃣ Create Virtual Environment
-
-Windows
-
-```bash
-python -m venv .venv
-```
-
-Linux / macOS
-
-```bash
-python3 -m venv .venv
-```
-
----
-
-## 3️⃣ Activate Virtual Environment
-
-Windows (PowerShell)
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Windows (CMD)
-
-```cmd
-.venv\Scripts\activate.bat
-```
-
-Linux / macOS
-
-```bash
-source .venv/bin/activate
-```
-
----
-
-## 4️⃣ Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-or
-
-```bash
-pip install -e .
-```
-
----
-
-# 🐘 PostgreSQL Setup
-
-Install PostgreSQL 18 and create a database.
-
-```sql
-CREATE DATABASE ai_resume_copilot;
-```
-
-Verify the database:
-
-```sql
-\l
-```
-
-Connect to the database:
-
-```sql
-\c ai_resume_copilot
-```
-
----
-
-# 🔐 Environment Variables
-
-Create a `.env` file in the project root.
-
-Example:
-
-```env
-LLM_PROVIDER=ollama
-LLM_MODEL=llama3.2
-LLM_TIMEOUT=60
-LLM_TEMPERATURE=0.3
-
-OLLAMA_BASE_URL=http://localhost:11434
-
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=ai_resume_copilot
-DB_USER=postgres
-DB_PASSWORD=YOUR_PASSWORD
-```
-
-> **Important:** Never commit the `.env` file or database password to GitHub. Sensitive credentials should remain local and `.env` should be included in `.gitignore`.
-
----
-
-# 🗄️ Database Configuration
-
-The application uses SQLAlchemy for database access and Alembic for migration management.
-
-Current database components include:
-
-- SQLAlchemy Engine
-- Session Factory
-- Declarative Base
-- Resume ORM Model
-- Alembic Migration Environment
-- PostgreSQL Connection Management
-
-The first migration creates:
-
-- `resumes`
-- `alembic_version`
-
----
-
-# 🔄 Database Migration Commands
-
-Generate a migration:
-
-```bash
-alembic revision --autogenerate -m "create resumes table"
-```
-
-Apply migrations:
-
-```bash
-alembic upgrade head
-```
-
-Check the current migration version:
-
-```bash
-alembic current
-```
-
-View migration history:
-
-```bash
-alembic history
-```
-
----
-
-# 🤖 Running Ollama
-
-Start the Ollama service:
-
-```bash
-ollama serve
-```
-
-Download the model:
-
-```bash
-ollama pull llama3.2
-```
-
-Verify installed models:
-
-```bash
-ollama list
-```
-
----
-
-# 🚀 Running the Application
-
-Start the FastAPI development server:
-
-```bash
-uvicorn app.main:app --reload
-```
-
-Default application URL:
-
-```
-http://127.0.0.1:8000
-```
-
-Swagger Documentation:
-
-```
-http://127.0.0.1:8000/docs
-```
-
-ReDoc Documentation:
-
-```
-http://127.0.0.1:8000/redoc
-```
-
----
-
-# 📦 Current Development Status
-
-The following components have been completed:
-
-- FastAPI project setup
-- AI engine architecture
-- Prompt management
-- Ollama integration
-- Mock provider
-- Shared response parser
-- Docker support
-- GitHub Actions CI
-- Automated testing
-- PostgreSQL integration
-- SQLAlchemy ORM
-- Alembic migration system
-- Resume ORM model
-- Database connectivity
-- Initial database schema
-- Environment-based configuration
-
-The project is now ready for implementing persistent resume upload APIs, resume storage services, and AI-powered resume processing using the configured PostgreSQL backend.
-
----
-
-# 🚀 API Overview
-
-AI Resume Copilot is designed as a RESTful backend application using **FastAPI**. Every feature is exposed through clean, modular API endpoints, making the backend suitable for web, mobile, and desktop applications.
-
-The API architecture separates routing, business logic, AI processing, and database operations into independent layers.
-
-Current API architecture:
-
-```text
-Client
-   │
-   ▼
-FastAPI Routes
-   │
-   ▼
-Service Layer
-   │
-   ▼
-AI Engine
-   │
-   ▼
-Database Layer
-   │
-   ▼
-PostgreSQL
-```
-
----
-
-# 📡 Planned API Modules
-
-The backend is structured so each feature can have its own dedicated API router.
-
-Current and planned modules include:
-
-- Resume APIs
-- ATS Analysis APIs
-- Resume Improvement APIs
-- Resume Rewrite APIs
-- Career Guidance APIs
-- Interview Preparation APIs
-- Job Recommendation APIs
-- Training Recommendation APIs
-
-Future modules:
-
-- Authentication APIs
-- User Management APIs
-- Dashboard APIs
-- Analytics APIs
-
----
-
-# 📄 Resume API
-
-The Resume module will become the central component of the application.
-
-Planned capabilities include:
-
-- Upload Resume
-- View Resume
-- Update Resume
-- Delete Resume
+- Users
 - Resume History
-- Resume Metadata
-- Resume Processing Status
+- AI Reports
+- ATS Reports
+- Cover Letters
+- Job Match Results
+- Interview Sessions
+- Activity Logs
 
-Future workflow:
+These entities are planned and are not yet part of the implemented system.
+
+---
+
+# 🔐 Data Integrity
+
+The persistence layer is designed to maintain data consistency through:
+
+- ORM Validation
+- Transaction Management
+- Migration Version Control
+- Structured Relationships
+- Database Constraints
+
+This approach minimizes inconsistencies and simplifies long-term maintenance.
+
+---
+
+# 📈 Database Workflow
+
+Every database operation follows a structured execution flow.
 
 ```text
-Upload Resume
+Client Request
       │
       ▼
-Validate File
+FastAPI Endpoint
       │
       ▼
-Extract Resume Text
+Business Service
       │
       ▼
-Store in PostgreSQL
+Database Session
       │
       ▼
-Run AI Analysis
+SQLAlchemy ORM
       │
       ▼
-Return Results
+PostgreSQL
+      │
+      ▼
+Commit Transaction
+      │
+      ▼
+Response
 ```
 
 ---
 
-# 🤖 AI Processing Pipeline
+# 🛠️ Database Design Principles
 
-Once a resume is uploaded, it will pass through multiple AI processing stages.
+The database layer follows modern software engineering practices.
 
-Processing pipeline:
+Current principles include:
+
+- Separation of Concerns
+- ORM-Based Development
+- Version-Controlled Schema
+- Transaction Safety
+- Maintainable Data Models
+- Scalable Architecture
+
+---
+
+# 📌 Database Summary
+
+The persistence layer of AI Resume Analyzer provides a structured and maintainable foundation for storing application data. By combining PostgreSQL, SQLAlchemy, and Alembic, the project achieves reliable data management, schema version control, and clean separation between business logic and database operations while remaining scalable for future enhancements.
+
+---
+
+# 🤖 AI Copilot & Artificial Intelligence Architecture
+
+Artificial Intelligence is the core component of AI Resume Analyzer. Instead of embedding AI logic directly into API endpoints or business services, the application follows a provider-based architecture where every AI capability is implemented as an independent module.
+
+This approach improves maintainability, scalability, testing, and allows multiple Large Language Models (LLMs) to be integrated without modifying the application's business logic.
+
+---
+
+# 🎯 AI Design Goals
+
+The AI architecture has been designed with the following objectives:
+
+- Modular AI Components
+- Provider Independence
+- Local AI Execution
+- Reusable Prompt Templates
+- Structured AI Responses
+- Easy Testing
+- Scalable Architecture
+- Future Multi-Provider Support
+
+---
+
+# 🏗️ AI Architecture
 
 ```text
-Resume Upload
+                     User Request
+                           │
+                           ▼
+                    FastAPI Endpoint
+                           │
+                           ▼
+                     Business Service
+                           │
+                           ▼
+                      AI Copilot Module
+                           │
+                           ▼
+                     Prompt Manager
+                           │
+                           ▼
+                       LLM Factory
+                  ┌────────┴────────┐
+                  ▼                 ▼
+          Ollama Provider     Mock Provider
+                  │
+                  ▼
+              Llama 3.2 Model
+                  │
+                  ▼
+          Response Processing
+                  │
+                  ▼
+          Structured JSON Output
+                  │
+                  ▼
+              API Response
+```
+
+---
+
+# 🧩 AI Copilot Modules
+
+The AI Copilot is organized into independent modules. Each module is responsible for solving a specific problem and can be developed or tested independently.
+
+Current AI modules include:
+
+- Resume Improver
+- Resume Rewriter
+- Career Advisor
+- Cover Letter Generator
+- Job Description Matcher
+- Explainability Engine
+
+This modular design allows new AI capabilities to be added without affecting existing functionality.
+
+---
+
+# 📄 Resume Improver
+
+The Resume Improver reviews resume content and provides suggestions to improve overall quality.
+
+Current capabilities include:
+
+- Resume Quality Analysis
+- Professional Suggestions
+- Missing Skill Identification
+- ATS Improvement Recommendations
+- Resume Enhancement Guidance
+
+---
+
+# ✍️ Resume Rewriter
+
+The Resume Rewriter generates a professionally rewritten version of an existing resume while preserving its original meaning.
+
+Current improvements include:
+
+- Better Grammar
+- Professional Language
+- Improved Readability
+- ATS-Friendly Wording
+- Consistent Formatting
+
+---
+
+# 🎓 Career Advisor
+
+The Career Advisor analyzes resume information and generates career guidance.
+
+Current recommendations include:
+
+- Career Path Suggestions
+- Skills to Learn
+- Certification Recommendations
+- Next Career Steps
+
+The module returns structured responses suitable for frontend applications.
+
+---
+
+# 📨 Cover Letter Generator
+
+The Cover Letter Generator creates professional cover letters using resume information together with company and job role details.
+
+Current capabilities:
+
+- Professional Writing
+- Company Personalization
+- Role-Specific Content
+- Structured Output
+
+---
+
+# 💼 Job Description Matcher
+
+The Job Description Matcher compares a resume against a target job description.
+
+Current analysis includes:
+
+- Resume Match Evaluation
+- Missing Skill Identification
+- Improvement Suggestions
+- Resume Optimization Guidance
+
+---
+
+# 🔍 Explainability Engine
+
+The Explainability Engine helps users understand AI-generated recommendations.
+
+Current responsibilities:
+
+- Explain Resume Improvements
+- Explain Career Suggestions
+- Explain Job Match Results
+- Improve AI Transparency
+
+Providing explanations makes AI recommendations easier to understand and validate.
+
+---
+
+# 📝 Prompt Manager
+
+All AI prompts are managed through a centralized Prompt Manager.
+
+Responsibilities include:
+
+- Prompt Templates
+- Prompt Reusability
+- Standardized Instructions
+- Easy Maintenance
+
+Current prompt templates:
+
+- Resume Improvement
+- Resume Rewriting
+- Career Advice
+- Cover Letter Generation
+- Job Matching
+
+Centralizing prompts improves consistency and reduces duplication.
+
+---
+
+# 🏭 LLM Factory
+
+The application uses a Factory Pattern to create the configured AI provider.
+
+Current providers:
+
+- Ollama Provider
+- Mock Provider
+
+Responsibilities:
+
+- Provider Selection
+- Provider Initialization
+- Provider Abstraction
+
+Using the factory pattern allows AI providers to be replaced without modifying business logic.
+
+---
+
+# 🔌 AI Providers
+
+## Ollama Provider
+
+The Ollama Provider enables local execution of Large Language Models.
+
+Current advantages:
+
+- Offline AI Processing
+- Privacy-Focused Execution
+- No External API Dependency
+- Lower Operating Cost
+
+Current model:
+
+```text
+llama3.2
+```
+
+---
+
+## Mock Provider
+
+The Mock Provider is used during development and automated testing.
+
+Current benefits:
+
+- Deterministic Responses
+- Faster Test Execution
+- Offline Testing
+- Continuous Integration Support
+
+This provider eliminates the need for a running AI model during testing.
+
+---
+
+# 📊 AI Request Workflow
+
+Every AI request follows a consistent execution flow.
+
+```text
+Client Request
       │
       ▼
-Parser
+FastAPI Endpoint
       │
       ▼
-Resume Cleaning
+Business Service
       │
       ▼
 Prompt Manager
@@ -1222,1051 +1878,1295 @@ Prompt Manager
 LLM Factory
       │
       ▼
-Selected AI Provider
+Configured AI Provider
       │
       ▼
-Response Parser
+Large Language Model
       │
       ▼
-Structured Output
+Response Processing
       │
       ▼
-Database Storage
+Structured JSON Response
+      │
+      ▼
+Client
 ```
 
-Current supported provider:
+---
 
-- Ollama (Llama 3.2)
+# 📈 Current AI Capabilities
 
-Current testing provider:
+The project currently supports:
 
-- Mock Provider
-
-Future providers:
-
-- OpenAI
-- Google Gemini
-- Claude
-- Azure OpenAI
+- Resume Analysis
+- Resume Improvement
+- Resume Rewriting
+- Career Guidance
+- Cover Letter Generation
+- Job Description Matching
+- Explainable AI Responses
+- Provider-Based AI Integration
 
 ---
 
-# 📁 File Processing
+# 🚧 Planned AI Enhancements
 
-The application supports structured resume processing.
+Future AI capabilities may include:
 
-Supported formats:
+- AI Resume Builder
+- Portfolio Analysis
+- LinkedIn Profile Analysis
+- GitHub Repository Analysis
+- Interview Simulation
+- Learning Recommendations
+- Salary Prediction
+- Multi-Agent AI Collaboration
 
-- PDF
-- DOCX
-
-Processing stages:
-
-- File Upload
-- Validation
-- Text Extraction
-- Content Cleaning
-- AI Processing
-- Database Storage
-
-Future support:
-
-- Image Resume Parsing
-- OCR Processing
-- Multi-language Resume Support
+These features are planned for future development and are not currently implemented.
 
 ---
 
-# 📊 Resume Analysis Pipeline
+# 🎯 AI Engineering Principles
 
-The ATS analysis workflow consists of several independent stages.
+The AI layer follows modern software engineering principles.
+
+Current design principles include:
+
+- Modular AI Architecture
+- Separation of Concerns
+- Provider Independence
+- Reusable Prompt Templates
+- Structured Responses
+- Easy Testability
+- Future Extensibility
+
+---
+
+# 📌 AI Architecture Summary
+
+The AI Copilot is designed as a modular intelligence layer that separates prompt management, provider selection, AI execution, and response processing into dedicated components. This architecture simplifies maintenance, improves scalability, supports multiple AI providers, and provides a robust foundation for future AI-powered features.
+
+---
+
+# 🌐 REST API Documentation
+
+AI Resume Analyzer exposes a RESTful API built with **FastAPI**. The API is designed around a layered architecture where request handling, business logic, Artificial Intelligence processing, and database operations remain independent.
+
+This design simplifies maintenance, improves scalability, and makes frontend integration straightforward.
+
+---
+
+# 🎯 API Design Principles
+
+The API follows modern REST design practices.
+
+Current principles include:
+
+- RESTful Architecture
+- JSON-Based Communication
+- Request Validation
+- Structured Responses
+- Modular Routing
+- Service Layer Abstraction
+- Provider-Based AI Integration
+
+---
+
+# 🏛️ API Request Lifecycle
+
+Every request follows a structured execution pipeline.
 
 ```text
-Resume
+Client
    │
    ▼
-Extract Content
+FastAPI Endpoint
    │
    ▼
-Skill Detection
+Request Validation
    │
    ▼
-Keyword Matching
+Business Service
    │
    ▼
-Missing Skill Detection
+AI Copilot
    │
    ▼
-Resume Scoring
+LLM Provider
    │
    ▼
-Improvement Suggestions
+Response Processing
+   │
+   ▼
+JSON Response
 ```
 
-Future additions:
-
-- Company-specific ATS Rules
-- Industry Benchmarks
-- AI Resume Ranking
-- Resume Comparison
-
 ---
 
-# 🗄️ Database Workflow
+# 📂 API Modules
 
-The project now includes a fully functional PostgreSQL persistence layer.
+The backend API is organized into independent functional modules.
 
-Current workflow:
+Current modules include:
 
-```text
-FastAPI Request
-      │
-      ▼
-SQLAlchemy Session
-      │
-      ▼
-ORM Model
-      │
-      ▼
-PostgreSQL Database
-      │
-      ▼
-Commit Transaction
-      │
-      ▼
-Return Response
-```
+- Resume APIs
+- Career Advisor APIs
+- Resume Improvement APIs
+- Resume Rewriter APIs
+- Cover Letter APIs
+- Job Matching APIs
+- Health Check APIs
 
-Current database technologies:
+Future modules may include:
 
-- PostgreSQL
-- SQLAlchemy ORM
-- Alembic
-- psycopg2
-
----
-
-# 📦 Dependency Management
-
-The project manages dependencies using modern Python tooling.
-
-Current dependencies include:
-
-Core
-
-- FastAPI
-- SQLAlchemy
-- Alembic
-- psycopg2-binary
-- Pydantic
-- python-dotenv
-
-AI
-
-- Ollama
-
-Resume Processing
-
-- PyMuPDF
-- python-docx
-
-Testing
-
-- Pytest
-- HTTPX
-
-Development
-
-- Uvicorn
-
-Future dependencies may include:
-
-- Redis
-- Celery
-- JWT Authentication
-- LangChain
-- OpenTelemetry
-
----
-
-# 📈 Current Project Status
-
-Completed
-
-- FastAPI Backend
-- AI Architecture
-- Prompt Management
-- LLM Factory
-- Ollama Integration
-- Mock Provider
-- Docker Support
-- GitHub Actions
-- Automated Testing
-- PostgreSQL Installation
-- Database Connection
-- SQLAlchemy ORM
-- Alembic Setup
-- Resume ORM Model
-- Initial Database Migration
-- Database Schema Versioning
-
-Current Progress
-
-- Resume Persistence Layer
-- Backend Infrastructure
-- AI Processing Foundation
-
-Next Development Targets
-
-- Resume Upload API
-- Resume CRUD APIs
-- Resume Storage Service
-- ATS Analysis API
-- Resume Improvement API
-- Authentication System
-
----
-
-# 🛣️ Development Roadmap
-
-The project is being developed incrementally, with each phase building upon a stable and tested foundation. The objective is to create a production-inspired AI-powered backend application for resume analysis and career assistance.
-
----
-
-# ✅ Completed Foundation
-
-The following components have been successfully implemented:
-
-### Backend
-
-- FastAPI Project Setup
-- Modular Project Structure
-- API Layer
-- Service Layer
-- Configuration Management
-- Environment Variable Support
-
-### Artificial Intelligence
-
-- Ollama Integration
-- Llama 3.2 Support
-- Mock Provider
-- Provider-Based Architecture
-- LLM Factory
-- Prompt Management
-- Shared Response Parsing
-
-### Database
-
-- PostgreSQL Installation
-- PostgreSQL Database Creation
-- SQLAlchemy ORM Configuration
-- Database Engine
-- Session Management
-- Declarative Base
-- Resume ORM Model
-- Alembic Configuration
-- Initial Database Migration
-- Database Version Control
-- Resume Table Creation
-
-### Development Tools
-
-- Docker Support
-- GitHub Actions CI
-- Automated Testing
-- Pytest Configuration
-- Project Documentation
-
----
-
-# 🚧 Current Development Phase
-
-The current focus is building the backend features on top of the completed database infrastructure.
-
-Current tasks include:
-
+- Authentication APIs
+- User Management APIs
 - Resume Upload APIs
-- Resume CRUD Operations
-- Resume Storage Services
-- Resume Retrieval
-- Resume Processing Pipeline
-- ATS Analysis Integration
+- Analytics APIs
+- Dashboard APIs
 
 ---
 
-# 📅 Upcoming Development
+# 📄 Current API Endpoints
 
-The following modules are planned for future implementation.
+The project currently exposes AI-powered endpoints for resume analysis and related functionality.
 
-## Resume Management
+Implemented capabilities include:
+
+- Career Advice
+- Resume Improvement
+- Resume Rewriting
+- Cover Letter Generation
+- Job Description Matching
+
+Additional endpoints will be introduced as new features are implemented.
+
+---
+
+# 📝 Request Validation
+
+FastAPI and Pydantic validate every incoming request before it reaches the business layer.
+
+Validation currently includes:
+
+- Required Fields
+- Data Types
+- Request Structure
+- JSON Parsing
+
+Invalid requests receive appropriate HTTP error responses.
+
+---
+
+# 📤 Response Format
+
+The application returns structured JSON responses.
+
+Typical response structure:
+
+```json
+{
+    "success": true,
+    "feature": "career_advisor",
+    "response": {}
+}
+```
+
+Using consistent response formats simplifies frontend integration and improves API reliability.
+
+---
+
+# 🤖 AI API Workflow
+
+AI-powered endpoints follow a common execution flow.
+
+```text
+API Request
+      │
+      ▼
+Request Validation
+      │
+      ▼
+Business Service
+      │
+      ▼
+Prompt Manager
+      │
+      ▼
+LLM Factory
+      │
+      ▼
+Configured Provider
+      │
+      ▼
+AI Model
+      │
+      ▼
+Structured Response
+      │
+      ▼
+API Response
+```
+
+---
+
+# 📊 HTTP Status Codes
+
+The API uses standard HTTP status codes.
+
+| Status Code | Description |
+|-------------|-------------|
+| 200 | Request completed successfully |
+| 400 | Invalid request |
+| 404 | Resource not found |
+| 422 | Validation error |
+| 500 | Internal server error |
+
+---
+
+# 📖 Interactive API Documentation
+
+FastAPI automatically generates API documentation.
+
+## Swagger UI
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+Swagger UI provides:
+
+- Endpoint Documentation
+- Request Examples
+- Response Examples
+- Interactive Testing
+
+---
+
+## ReDoc
+
+```text
+http://127.0.0.1:8000/redoc
+```
+
+ReDoc presents a clean, structured view of all available API endpoints and schemas.
+
+---
+
+# 🔐 Security Considerations
+
+Current API design includes:
+
+- Request Validation
+- Response Validation
+- Structured Error Handling
+
+Planned improvements:
+
+- JWT Authentication
+- Role-Based Authorization
+- API Rate Limiting
+- HTTPS Enforcement
+
+These security features are planned for future development.
+
+---
+
+# 🚧 Planned API Expansion
+
+Future REST API modules may include:
+
+- Authentication
+- User Profiles
+- Resume Upload
+- Resume Management
+- Resume Analytics
+- Dashboard
+- Portfolio Analysis
+- Learning Recommendations
+
+These features are not currently implemented.
+
+---
+
+# 📌 API Summary
+
+The REST API provides a structured interface for AI-powered resume analysis while maintaining a clear separation between request handling, business logic, AI processing, and database operations. This modular architecture simplifies development, testing, and future feature expansion while providing a stable foundation for frontend integration.
+
+---
+
+# 🧪 Testing & Quality Assurance
+
+AI Resume Analyzer follows a testing-first approach to ensure application stability, maintainability, and reliability. Automated tests verify that individual components, business services, AI modules, and API endpoints behave as expected while reducing the risk of regressions during development.
+
+Testing is integrated into the development workflow, allowing new features to be validated before they are merged into the project.
+
+---
+
+# 🎯 Testing Objectives
+
+The testing strategy focuses on the following objectives:
+
+- Verify application correctness
+- Prevent regressions
+- Improve code quality
+- Validate AI modules
+- Test API behavior
+- Verify database interactions
+- Support continuous integration
+
+---
+
+# 📊 Current Test Status
+
+Current automated testing status:
+
+```text
+154 Passing Tests
+```
+
+The project continues to expand its test coverage as new features are implemented.
+
+---
+
+# 🏗️ Testing Architecture
+
+The testing framework is organized into multiple independent layers.
+
+```text
+                 Pytest
+                    │
+     ┌──────────────┼──────────────┐
+     ▼              ▼              ▼
+ Unit Tests   Integration Tests   API Tests
+     │              │              │
+     └──────────────┼──────────────┘
+                    ▼
+             Business Services
+                    │
+                    ▼
+               AI Copilot
+                    │
+         ┌──────────┴──────────┐
+         ▼                     ▼
+  Mock Provider         Ollama Provider
+```
+
+---
+
+# 📂 Test Organization
+
+Automated tests are organized inside the **tests/** directory.
+
+Current test categories include:
+
+- AI Engine Tests
+- API Tests
+- Service Tests
+- Database Tests
+- Utility Tests
+
+This modular organization keeps the test suite maintainable and easy to extend.
+
+---
+
+# ✅ Unit Testing
+
+Unit tests verify individual components independently.
+
+Current unit testing includes:
+
+- Prompt Manager
+- LLM Factory
+- AI Providers
+- Career Advisor
+- Resume Improver
+- Resume Rewriter
+- Cover Letter Generator
+- Job Matcher
+- Utility Functions
+
+Each unit test focuses on a single component without relying on external dependencies.
+
+---
+
+# 🔄 Integration Testing
+
+Integration tests verify communication between different layers of the application.
+
+Current integration scenarios include:
+
+- API → Service Layer
+- Service → AI Engine
+- AI Engine → Provider
+- Service → Database
+- ORM → PostgreSQL
+
+These tests ensure that the complete workflow functions correctly.
+
+---
+
+# 🌐 API Testing
+
+API tests validate FastAPI endpoints.
+
+Current validation includes:
+
+- HTTP Status Codes
+- Request Validation
+- Response Validation
+- JSON Structure
+- Error Responses
+- Endpoint Behavior
+
+The goal is to verify that every endpoint returns predictable and consistent responses.
+
+---
+
+# 🤖 AI Provider Testing
+
+The application currently supports multiple AI providers.
+
+Each provider is tested independently.
+
+## Ollama Provider
+
+Current validation includes:
+
+- Provider Initialization
+- Prompt Execution
+- AI Response Generation
+- Response Processing
+- Error Handling
+
+---
+
+## Mock Provider
+
+The Mock Provider is primarily used during automated testing.
+
+Benefits include:
+
+- Fast Test Execution
+- Predictable Responses
+- Offline Testing
+- Continuous Integration Support
+
+The Mock Provider allows automated tests to run without requiring a local AI model.
+
+---
+
+# 📄 Prompt Validation
+
+Prompt templates are validated to ensure they generate consistent instructions for the configured AI provider.
+
+Current prompt categories include:
+
+- Resume Improvement
+- Resume Rewriting
+- Career Advice
+- Cover Letter Generation
+- Job Matching
+
+Centralized prompt validation reduces inconsistencies across AI modules.
+
+---
+
+# 🗄️ Database Testing
+
+Database-related tests verify persistence functionality.
+
+Current testing includes:
+
+- Database Sessions
+- ORM Models
+- CRUD Operations
+- Migration Compatibility
+
+Database tests help maintain reliable interactions between the application and PostgreSQL.
+
+---
+
+# 🚨 Error Handling Tests
+
+The application validates several failure scenarios.
+
+Current coverage includes:
+
+- Invalid Requests
+- Missing Parameters
+- Unsupported Providers
+- Invalid JSON
+- Database Errors
+- AI Provider Failures
+
+Proper error handling improves application reliability and user experience.
+
+---
+
+# ▶️ Running Tests
+
+Run the complete test suite.
+
+```bash
+pytest
+```
+
+Run all tests with verbose output.
+
+```bash
+pytest -v
+```
+
+Run a specific test file.
+
+```bash
+pytest tests/ai_engine/copilot/test_career_advisor.py -v
+```
+
+Run all AI Copilot tests.
+
+```bash
+pytest tests/ai_engine/copilot -v
+```
+
+Stop after the first failing test.
+
+```bash
+pytest -x
+```
+
+Display a test summary.
+
+```bash
+pytest -ra
+```
+
+---
+
+# 🔄 Continuous Testing
+
+The project is designed to support continuous validation throughout development.
+
+Testing is intended to verify:
+
+- New Features
+- Bug Fixes
+- Refactoring Changes
+- Database Updates
+- AI Module Improvements
+
+Regular automated testing helps maintain application stability as the project evolves.
+
+---
+
+# 📈 Future Testing Plans
+
+The following testing improvements are planned:
+
+- Performance Testing
+- Load Testing
+- Stress Testing
+- Security Testing
+- Authentication Testing
+- End-to-End Testing
+- Frontend Integration Testing
+
+These enhancements will be introduced as the corresponding application features are implemented.
+
+---
+
+# 📌 Testing Summary
+
+AI Resume Analyzer maintains a structured testing strategy that combines unit tests, integration tests, API validation, AI provider verification, and database testing. This approach helps ensure application stability, simplifies maintenance, and provides confidence when introducing new features or refactoring existing components.
+
+---
+
+# 🚀 Docker, Deployment & Continuous Integration
+
+AI Resume Analyzer is designed with deployment and maintainability in mind. The project includes containerization support, automated testing workflows, and a deployment-oriented project structure that simplifies local development while providing a foundation for future production environments.
+
+The deployment architecture separates application code, dependencies, configuration, and infrastructure, allowing the project to scale without major architectural changes.
+
+---
+
+# 🎯 Deployment Objectives
+
+The deployment strategy focuses on the following goals:
+
+- Consistent Development Environment
+- Simplified Deployment
+- Environment Isolation
+- Automated Testing
+- Reproducible Builds
+- Production Readiness
+- Scalable Infrastructure
+
+---
+
+# 🐳 Docker Support
+
+Docker is used to create a consistent runtime environment across different systems.
+
+Current Docker support includes:
+
+- Dockerfile
+- Dependency Installation
+- FastAPI Application Container
+- Environment-Based Configuration
+- Portable Development Environment
+
+Containerization reduces environment-specific issues and simplifies project setup.
+
+---
+
+# 📄 Dockerfile
+
+The project includes a Dockerfile for building the backend application.
+
+Current responsibilities include:
+
+- Creating the Python runtime
+- Installing project dependencies
+- Copying application source code
+- Configuring the application
+- Starting the FastAPI server
+
+Example build command:
+
+```bash
+docker build -t ai-resume-analyzer .
+```
+
+---
+
+# ▶️ Running the Application with Docker
+
+Build the Docker image.
+
+```bash
+docker build -t ai-resume-analyzer .
+```
+
+Run the container.
+
+```bash
+docker run -p 8000:8000 ai-resume-analyzer
+```
+
+After the container starts, the application will be available at:
+
+```text
+http://localhost:8000
+```
+
+---
+
+# ⚙️ Deployment Directory
+
+The project contains a dedicated **deployment/** directory.
+
+Its purpose is to keep deployment-related resources separate from the application source code.
+
+Typical responsibilities include:
+
+- Deployment Scripts
+- Environment Configurations
+- Infrastructure Resources
+- Production Deployment Assets
+
+This separation keeps deployment resources organized and easier to maintain.
+
+---
+
+# 🌐 Deployment Workflow
+
+The application follows a structured deployment process.
+
+```text
+Developer
+     │
+     ▼
+Git Commit
+     │
+     ▼
+GitHub Repository
+     │
+     ▼
+GitHub Actions
+     │
+     ▼
+Run Automated Tests
+     │
+     ▼
+Build Application
+     │
+     ▼
+Deployment Ready
+```
+
+Every code change is expected to pass automated validation before deployment.
+
+---
+
+# 🔄 Continuous Integration
+
+The project includes GitHub Actions for automated validation.
+
+Current workflow location:
+
+```text
+.github/workflows/python-tests.yml
+```
+
+The workflow is responsible for:
+
+- Installing project dependencies
+- Running automated tests
+- Validating project integrity
+- Detecting build failures
+
+Continuous Integration helps maintain application stability throughout development.
+
+---
+
+# 📋 Current CI Workflow
+
+The automated workflow currently performs:
+
+```text
+Source Code
+      │
+      ▼
+Install Dependencies
+      │
+      ▼
+Run Pytest
+      │
+      ▼
+Validate Build
+      │
+      ▼
+Workflow Status
+```
+
+Future CI improvements will be added as the project grows.
+
+---
+
+# 📂 Environment Management
+
+Application configuration is managed through environment variables.
+
+For security reasons:
+
+- Sensitive credentials are not stored in the repository.
+- Database passwords are not documented.
+- API keys are excluded from version control.
+- Local configuration remains outside the project documentation.
+
+This approach improves security while allowing different configurations for development and production environments.
+
+---
+
+# 🔐 Security Considerations
+
+Current deployment practices include:
+
+- Environment-Based Configuration
+- Dependency Isolation
+- Source Code Version Control
+- Automated Test Validation
+
+Planned improvements include:
+
+- HTTPS Configuration
+- JWT Authentication
+- Role-Based Access Control
+- API Rate Limiting
+- Secret Management
+
+These security enhancements are planned for future implementation.
+
+---
+
+# ☁️ Future Deployment Targets
+
+The current architecture is designed to support deployment on multiple platforms.
+
+Potential deployment environments include:
+
+- Docker
+- Railway
+- Render
+- Microsoft Azure
+- Amazon Web Services (AWS)
+- Google Cloud Platform (GCP)
+- DigitalOcean
+
+Platform-specific deployment has not yet been implemented.
+
+---
+
+# 📊 Deployment Benefits
+
+The current deployment approach provides several advantages.
+
+- Consistent Development Environment
+- Simplified Project Setup
+- Reproducible Builds
+- Improved Maintainability
+- Easier Collaboration
+- Automated Validation
+- Future Production Readiness
+
+---
+
+# 📈 Future DevOps Improvements
+
+Planned enhancements include:
+
+- Docker Compose Integration
+- Automated Release Pipeline
+- Container Registry Publishing
+- Continuous Deployment (CD)
+- Monitoring
+- Application Logging
+- Performance Metrics
+- Health Monitoring
+
+These improvements will be introduced as deployment requirements evolve.
+
+---
+
+# 📌 Deployment Summary
+
+AI Resume Analyzer includes a deployment-oriented foundation built around Docker, GitHub Actions, and environment-based configuration. The current infrastructure supports consistent local development and automated validation while providing a scalable base for future production deployments and DevOps enhancements.
+
+---
+
+# 🗺️ Development Roadmap & Future Scope
+
+AI Resume Analyzer is being developed incrementally with an emphasis on clean architecture, modular design, automated testing, and maintainable software engineering practices. Every milestone focuses on improving the backend foundation before introducing new user-facing features.
+
+The roadmap presented below distinguishes between completed work and planned enhancements. Planned items represent the intended direction of the project and are not currently implemented unless explicitly stated.
+
+---
+
+# ✅ Completed Milestones
+
+The following milestones have been completed during the current stage of development.
+
+## Project Foundation
+
+Completed:
+
+- Project Initialization
+- Repository Setup
+- Modular Folder Structure
+- FastAPI Backend
+- Development Environment
+- Dependency Management
+
+---
+
+## Artificial Intelligence Layer
+
+Completed:
+
+- Prompt Manager
+- LLM Factory
+- Provider-Based Architecture
+- Ollama Provider
+- Mock Provider
+- Llama 3.2 Integration
+
+---
+
+## AI Features
+
+Completed:
+
+- Resume Improver
+- Resume Rewriter
+- Career Advisor
+- Cover Letter Generator
+- Job Description Matcher
+- Explainability Module
+
+---
+
+## Database Layer
+
+Completed:
+
+- PostgreSQL Integration
+- SQLAlchemy ORM
+- Alembic Configuration
+- Database Sessions
+- Resume Model
+- Database Migrations
+
+---
+
+## Testing
+
+Completed:
+
+- Unit Tests
+- Integration Tests
+- API Tests
+- AI Provider Tests
+- Service Tests
+
+Current Status
+
+```text
+154 Passing Tests
+```
+
+---
+
+## Development Infrastructure
+
+Completed:
+
+- Docker Support
+- GitHub Actions Workflow
+- Swagger Documentation
+- ReDoc Documentation
+- Modular Project Structure
+
+---
+
+# 🚧 Current Development Focus
+
+The project is currently focused on strengthening the backend foundation.
+
+Active areas of development include:
+
+- Backend Architecture
+- AI Module Expansion
+- Database Improvements
+- API Refinement
+- Documentation
+- Automated Testing
+
+---
+
+# 📅 Planned Development Phases
+
+The following phases outline the planned progression of the project.
+
+---
+
+## Phase 1 — Resume Management
+
+Planned features:
 
 - Resume Upload
-- Resume Download
+- Resume Storage
+- Resume Retrieval
 - Resume Update
-- Resume Delete
-- Resume Version History
+- Resume Deletion
+- Resume History
 
 ---
 
-## ATS Analysis
+## Phase 2 — ATS Analysis
 
-- ATS Score Generation
-- Keyword Matching
+Planned features:
+
+- ATS Compatibility Score
+- Resume Keyword Analysis
 - Missing Skill Detection
-- Resume Quality Analysis
-- Improvement Suggestions
+- Resume Recommendations
+- ATS Optimization Suggestions
 
 ---
 
-## Resume Improvement
+## Phase 3 — Authentication
 
-- Resume Rewriting
-- Professional Language Enhancement
-- Achievement Optimization
-- Grammar Improvements
-- ATS Optimization
+Planned features:
+
+- User Registration
+- Secure Login
+- JWT Authentication
+- Password Hashing
+- Role-Based Authorization
 
 ---
 
-## AI Career Assistant
+## Phase 4 — Dashboard
 
-- Career Guidance
+Planned features:
+
+- Resume Dashboard
+- Career Dashboard
+- AI Activity Overview
+- Resume History
+- Analytics Dashboard
+
+---
+
+## Phase 5 — Frontend
+
+Planned technologies:
+
+- React
+- TypeScript
+- Tailwind CSS
+
+Planned pages:
+
+- Login
+- Dashboard
+- Resume Upload
+- AI Copilot
+- User Profile
+
+---
+
+## Phase 6 — AI Expansion
+
+Future AI capabilities:
+
+- Resume Builder
+- Portfolio Generator
+- LinkedIn Analysis
+- GitHub Repository Analysis
+- Interview Simulation
 - Learning Recommendations
-- Interview Preparation
-- Career Roadmaps
-- Resume Review Assistant
+- Salary Prediction
 
 ---
 
-## Job Intelligence
+## Phase 7 — Enterprise Features
 
-- Job Description Analysis
-- Resume Matching
-- Skill Gap Analysis
-- Company Recommendations
-- Career Suggestions
+Long-term objectives:
+
+- Multi-User Support
+- Team Collaboration
+- Organization Accounts
+- Admin Dashboard
+- Usage Analytics
 
 ---
 
 # 📈 Long-Term Vision
 
-The long-term objective is to transform AI Resume Copilot into a comprehensive career development platform.
+The long-term objective is to transform AI Resume Analyzer into a comprehensive career intelligence platform capable of assisting users throughout the job application lifecycle.
 
-Future capabilities may include:
+The intended ecosystem includes:
 
-- User Authentication
-- Personal Dashboards
-- Resume Versioning
-- Portfolio Analysis
-- LinkedIn Analysis
-- GitHub Profile Analysis
-- AI Career Coach
-- Personalized Learning Plans
-- Company-Specific ATS Analysis
-- Recruiter Dashboard
+- Resume Analysis
+- Resume Improvement
+- Career Guidance
+- ATS Evaluation
+- Job Matching
+- Interview Preparation
+- Learning Recommendations
+- Portfolio Assistance
+- Career Analytics
 
----
-
-# 🔄 Development Workflow
-
-Every new feature follows a structured workflow.
-
-```text
-Plan Feature
-      │
-      ▼
-Design Module
-      │
-      ▼
-Implement Code
-      │
-      ▼
-Test Feature
-      │
-      ▼
-Verify Database
-      │
-      ▼
-Create Migration (if required)
-      │
-      ▼
-Run All Tests
-      │
-      ▼
-Commit Changes
-      │
-      ▼
-Push to GitHub
-      │
-      ▼
-Continuous Integration
-```
+Each capability will be developed as an independent module while preserving the project's modular architecture.
 
 ---
 
-# 📊 Project Progress
+# 🏛️ Software Engineering Principles
 
-## Completed
+The future development of the project will continue to follow established engineering principles.
 
-- FastAPI Backend
-- AI Engine Architecture
-- Prompt Management
-- Ollama Integration
-- Mock Provider
-- Docker Support
-- GitHub Actions
+These include:
+
+- Clean Architecture
+- Separation of Concerns
+- Modular Development
+- Provider Independence
+- Database Version Control
 - Automated Testing
-- PostgreSQL Integration
-- SQLAlchemy ORM
-- Alembic Migration System
-- Resume Database Model
-- Database Connectivity
-- Initial Database Schema
+- Maintainable Codebase
+- Scalable Backend Design
+
+These principles guide every new feature introduced into the project.
 
 ---
 
-## In Progress
+# 📊 Future Technical Improvements
 
-- Resume CRUD APIs
-- Resume Storage Layer
-- AI Processing Services
-- Resume Upload Workflow
+Planned technical improvements include:
 
----
+- Redis Integration
+- Background Task Processing
+- Caching
+- Performance Optimization
+- Structured Logging
+- Monitoring
+- Metrics Collection
+- Production Configuration
 
-## Planned
-
-- ATS Analysis APIs
-- Resume Improvement APIs
-- Authentication System
-- User Management
-- Dashboard APIs
-- Analytics APIs
-- Deployment Preparation
+These improvements are intended to enhance scalability and operational reliability.
 
 ---
 
 # 🎯 Project Goals
 
-The primary goals of AI Resume Copilot are:
+The project aims to achieve the following objectives over time:
 
-- Build a scalable AI-powered backend.
-- Apply modern backend engineering practices.
-- Follow production-inspired software architecture.
-- Integrate Large Language Models effectively.
-- Maintain a clean, modular, and testable codebase.
-- Support continuous integration and future cloud deployment.
-- Provide an extensible foundation for AI-powered career services.
-
----
-
-# 📚 Learning Outcomes
-
-Developing AI Resume Copilot provides practical experience across multiple domains of software engineering, artificial intelligence, backend development, and database management.
+- Build a production-oriented backend
+- Expand AI capabilities
+- Improve resume intelligence
+- Support additional AI providers
+- Enhance developer experience
+- Maintain high code quality
+- Prepare for cloud deployment
+- Support future frontend integration
 
 ---
 
-## Backend Development
+# 📌 Roadmap Summary
 
-Skills gained:
-
-- FastAPI Application Development
-- REST API Design
-- Modular Project Architecture
-- Dependency Injection
-- Service Layer Design
-- Configuration Management
-- Environment Variable Management
-- Error Handling
-- Request Validation
-- Response Modeling
-
----
-
-## Artificial Intelligence
-
-Skills gained:
-
-- Large Language Model Integration
-- Ollama Deployment
-- Prompt Engineering
-- Provider-Based AI Architecture
-- Response Parsing
-- AI Service Design
-- Resume Intelligence
-- ATS Analysis Concepts
-
----
-
-## Database Engineering
-
-Skills gained:
-
-- PostgreSQL Database Design
-- SQLAlchemy ORM
-- Declarative Models
-- Database Sessions
-- Database Connectivity
-- Alembic Migration Management
-- Schema Version Control
-- Persistent Data Storage
-
-Current implementation includes:
-
-- Resume ORM Model
-- Database Engine
-- Session Factory
-- Migration Environment
-- Initial Database Schema
-
----
-
-## DevOps
-
-Current DevOps practices include:
-
-- Docker
-- GitHub Actions
-- Automated Testing
-- Continuous Integration
-- Environment Configuration
-
-Future DevOps goals include:
-
-- Docker Compose
-- Production Deployment
-- Monitoring
-- Logging
-- Cloud Deployment
-
----
-
-## Software Engineering Principles
-
-The project follows several software engineering best practices.
-
-Current principles:
-
-- Separation of Concerns
-- Modular Design
-- Reusable Components
-- Clean Architecture
-- Maintainable Code
-- Version Control
-- Database Versioning
-
----
-
-# 📈 Performance Goals
-
-The application is designed with scalability in mind.
-
-Target characteristics:
-
-- Fast API Response
-- Modular AI Components
-- Scalable Database Design
-- Independent Service Layer
-- Extensible AI Providers
-- Production-Ready Architecture
-
-Future optimization areas:
-
-- Background Task Processing
-- Response Caching
-- Database Query Optimization
-- Asynchronous Processing
-
----
-
-# 🔮 Future Enhancements
-
-The roadmap includes several planned enhancements.
-
-## Backend
-
-- Authentication
-- Authorization
-- User Profiles
-- Resume Versioning
-- File Management
-- Activity History
-
----
-
-## Artificial Intelligence
-
-- Multi-LLM Support
-- AI Career Coach
-- Personalized Resume Suggestions
-- Company-Specific Resume Optimization
-- AI Interview Simulator
-- AI Skill Gap Detection
-
----
-
-## Database
-
-Future tables may include:
-
-- users
-- resumes_history
-- cover_letters
-- interview_sessions
-- job_matches
-- activity_logs
-
-Future improvements:
-
-- Database Index Optimization
-- Backup Strategy
-- Soft Deletes
-- Audit Logs
-- Relationship Mapping
-
----
-
-## Frontend
-
-Planned frontend features:
-
-- Resume Upload Dashboard
-- ATS Score Visualization
-- Resume History
-- Analytics Dashboard
-- User Authentication
-- Profile Management
-
----
-
-# 🤝 Contribution Guidelines
-
-Contributions are welcome.
-
-Recommended workflow:
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Implement the feature.
-4. Run all tests.
-5. Commit changes.
-6. Push the branch.
-7. Open a Pull Request.
-
-All contributions should:
-
-- Follow the existing project structure.
-- Maintain code readability.
-- Include tests where applicable.
-- Keep documentation updated.
-
----
-
-# 📝 Coding Standards
-
-Development follows consistent coding practices.
-
-- PEP 8 Compliance
-- Type Hints
-- Clear Naming Conventions
-- Modular Functions
-- Reusable Components
-- Proper Documentation
-- Consistent Formatting
-
-Database standards:
-
-- SQLAlchemy ORM
-- Alembic Migrations
-- Environment-Based Configuration
-- No Hardcoded Credentials
-
----
-
-# 📊 Current Project Snapshot
-
-| Category | Status |
-|----------|--------|
-| FastAPI Backend | ✅ Completed |
-| AI Architecture | ✅ Completed |
-| Ollama Integration | ✅ Completed |
-| Prompt Management | ✅ Completed |
-| Mock Provider | ✅ Completed |
-| PostgreSQL Integration | ✅ Completed |
-| SQLAlchemy ORM | ✅ Completed |
-| Alembic Migration | ✅ Completed |
-| Resume Database Model | ✅ Completed |
-| Docker Support | ✅ Completed |
-| GitHub Actions CI | ✅ Completed |
-| Automated Testing | ✅ Completed |
-| Resume Upload API | 🚧 In Progress |
-| Resume CRUD APIs | 🚧 In Progress |
-| ATS Analysis API | 📅 Planned |
-| Authentication | 📅 Planned |
-| Dashboard | 📅 Planned |
-
----
-
-# 📖 Documentation
-
-AI Resume Copilot is documented to make development, maintenance, and future enhancements straightforward.
-
-Current documentation includes:
-
-- Project Overview
-- Architecture Overview
-- Project Structure
-- Technology Stack
-- Installation Guide
-- PostgreSQL Setup
-- Database Configuration
-- Alembic Migration Guide
-- Environment Variables
-- Docker Setup
-- Testing Guide
-- Development Roadmap
-
-Future documentation will include:
-
-- API Documentation
-- Database Schema Documentation
-- Deployment Guide
-- Developer Guide
-- Contribution Guide
-- Architecture Diagrams
-
----
-
-# 🔍 Quality Assurance
-
-The project emphasizes reliability through structured development and testing practices.
-
-Current quality measures:
-
-- Automated Testing
-- GitHub Actions Continuous Integration
-- Modular Code Structure
-- Environment-Based Configuration
-- Database Version Control
-- ORM-Based Database Access
-
-Every completed feature is verified before being committed to the repository.
-
----
-
-# 📦 Current Repository Contents
-
-The repository currently contains:
-
-- FastAPI Backend
-- AI Engine
-- PostgreSQL Integration
-- SQLAlchemy ORM
-- Alembic Migration System
-- Docker Configuration
-- GitHub Actions Workflow
-- Automated Tests
-- Project Documentation
-- Environment Configuration
-
-Supporting directories include:
-
-- Application Source Code
-- Database Layer
-- AI Modules
-- Documentation
-- Test Suite
-- Deployment Files
-- Upload Storage
-- Frontend
-- Notebooks
-
----
-
-# 📈 Repository Evolution
-
-The project has progressed through multiple development stages.
-
-### Phase 1
-
-- Backend Project Initialization
-- FastAPI Configuration
-- Project Architecture
-- Environment Configuration
-
-### Phase 2
-
-- AI Engine Development
-- Ollama Integration
-- Prompt Management
-- Mock Provider
-- Testing Infrastructure
-
-### Phase 3
-
-- Docker Integration
-- GitHub Actions
-- Automated Testing
-- Documentation Improvements
-
-### Phase 4
-
-- PostgreSQL Installation
-- SQLAlchemy Integration
-- Database Connection
-- Resume ORM Model
-- Alembic Configuration
-- Initial Database Migration
-- Database Schema Versioning
-
-### Upcoming Phase
-
-- Resume Upload APIs
-- Resume CRUD Operations
-- Resume Storage Services
-- ATS Analysis APIs
-- Resume Improvement APIs
-
----
-
-# 🎯 Why This Project?
-
-AI Resume Copilot combines several important software engineering concepts into a single production-inspired application.
-
-The project demonstrates practical knowledge of:
-
-- Backend Development
-- REST API Design
-- Artificial Intelligence Integration
-- Large Language Models
-- Database Engineering
-- Object Relational Mapping
-- Database Migration Management
-- Automated Testing
-- Docker
-- Continuous Integration
-- Software Architecture
-
-Rather than being a single-feature project, it is designed as a scalable platform that can continuously evolve as additional AI services and backend capabilities are implemented.
-
----
-
-# 🏆 Key Achievements
-
-Current milestones achieved:
-
-- Production-inspired FastAPI Architecture
-- Modular AI Engine
-- Provider-Based LLM Design
-- Ollama Integration
-- Prompt Management System
-- Automated Testing
-- Docker Support
-- GitHub Actions CI
-- PostgreSQL Database Integration
-- SQLAlchemy ORM Configuration
-- Alembic Migration System
-- Resume Database Model
-- Environment-Based Configuration
-- Initial Database Schema Creation
-
----
-
-# 🌟 Future Vision
-
-The long-term vision is to transform AI Resume Copilot into a complete AI-powered career platform.
-
-Planned capabilities include:
-
-- Resume Management
-- AI Resume Builder
-- ATS Optimization
-- Cover Letter Generator
-- AI Career Coach
-- Job Recommendation System
-- Interview Preparation
-- Learning Recommendations
-- Portfolio Analysis
-- LinkedIn Analysis
-- GitHub Profile Analysis
-- Recruiter Dashboard
-- Analytics Dashboard
-
-The architecture has been intentionally designed to support these future modules without requiring major structural changes.
-
----
-
-# ⭐ Support
-
-If you find this project useful:
-
-- Star the repository.
-- Fork the repository.
-- Report issues.
-- Suggest improvements.
-- Contribute new features.
-- Share feedback.
-
-Community contributions are welcome and help improve the project for everyone.
-
----
-
-# 👨‍💻 Author
-
-**Divesh Kate**
-
-B.Tech in Artificial Intelligence & Machine Learning
-
-AI Resume Copilot is a long-term backend engineering project focused on applying modern software engineering principles, artificial intelligence, and scalable backend development practices.
-
-GitHub: https://github.com/diveshkate11-collab
+AI Resume Analyzer is being developed through a structured, milestone-based approach that prioritizes backend stability, modular AI integration, automated testing, and scalable architecture. Future development will focus on expanding functionality while preserving the project's clean design and maintainability.
 
 ---
 
 # 🤝 Contributing
 
-Contributions are welcome.
-
-If you would like to improve the project:
-
-1. Fork the repository.
-2. Create a new feature branch.
-3. Commit your changes with meaningful commit messages.
-4. Push the branch to your fork.
-5. Open a Pull Request.
-
-Please ensure that:
-
-- Code follows the existing project structure.
-- New features include appropriate tests where applicable.
-- Documentation is updated alongside code changes.
+Contributions that improve the quality, maintainability, performance, or functionality of AI Resume Analyzer are welcome. Before contributing, please ensure that your changes follow the existing project architecture and coding standards.
 
 ---
 
-# 📄 License
+# Development Guidelines
 
-This project is licensed under the **MIT License**.
+Before submitting changes:
+
+- Follow the existing project structure.
+- Keep modules independent and reusable.
+- Maintain clean and readable code.
+- Write descriptive commit messages.
+- Update documentation when necessary.
+- Ensure all automated tests pass.
+
+---
+
+# Getting Started
+
+Clone the repository.
+
+```bash
+git clone https://github.com/diveshkate11-collab/ai-resume-analyzer.git
+```
+
+Move into the project directory.
+
+```bash
+cd ai-resume-analyzer
+```
+
+Create a feature branch.
+
+```bash
+git checkout -b feature/your-feature-name
+```
+
+After completing your work, commit the changes.
+
+```bash
+git add .
+
+git commit -m "Add your feature description"
+```
+
+Push the branch.
+
+```bash
+git push origin feature/your-feature-name
+```
+
+Open a Pull Request describing the implemented changes.
+
+---
+
+# Reporting Issues
+
+If you encounter a bug, please include:
+
+- Operating System
+- Python Version
+- Error Message
+- Steps to Reproduce
+- Expected Behaviour
+- Actual Behaviour
+
+Providing complete information makes debugging significantly easier.
+
+---
+
+# Feature Requests
+
+Feature requests should include:
+
+- Problem Statement
+- Proposed Solution
+- Expected Benefits
+- Additional Context (if applicable)
+
+---
+
+# Repository
+
+GitHub Repository
+
+https://github.com/diveshkate11-collab/ai-resume-analyzer
+
+---
+
+# Author
+
+**Divesh Kate**
+
+Artificial Intelligence & Machine Learning Engineering Student
+
+GitHub
+
+https://github.com/diveshkate11-collab
+
+---
+
+# License
+
+This project is licensed under the MIT License.
 
 See the **LICENSE** file for additional information.
 
 ---
 
-# 🧑‍💻 Developer Notes
+# Project Status
 
-AI Resume Copilot is being developed as a production-inspired backend application that combines Artificial Intelligence, FastAPI, PostgreSQL, SQLAlchemy, and modern backend engineering practices.
+Current Development Status
 
-The project emphasizes:
-
-- Clean Architecture
-- Modular Design
-- Scalable Development
-- Maintainable Code
-- Test-Driven Development
-- Database Version Control
-- Environment-Based Configuration
-
-Every completed feature is integrated into the existing architecture before new functionality is introduced, ensuring the project remains organized, scalable, and easy to extend.
-
----
-
-# 🚀 Recent Development Progress
-
-The latest development cycle introduced the complete database foundation.
-
-Recently completed:
-
-- PostgreSQL 18 Installation
-- PostgreSQL Database Creation
-- SQLAlchemy ORM Integration
-- Database Engine Configuration
-- Session Factory Configuration
-- Declarative Base Setup
-- Resume ORM Model
-- Alembic Initialization
-- Alembic Configuration
-- Automatic Migration Generation
-- Initial Database Migration
-- Resume Table Creation
-- Database Connection Verification
-
-These additions establish the persistence layer required for future resume management and AI-powered analysis.
-
----
-
-# 🎯 Next Development Targets
-
-Current focus:
-
-- Resume Upload API
-- Resume CRUD Operations
-- Resume Storage Service
-- Resume Processing Pipeline
-- ATS Analysis API
-- Resume Improvement API
-
-Upcoming features:
-
-- Authentication
-- JWT Authorization
-- User Profiles
-- Resume History
-- Dashboard
-- AI Career Coach
-- Portfolio Analysis
-- GitHub Profile Analysis
-- LinkedIn Profile Analysis
-
----
-
-# 📊 Current Project Statistics
-
-| Category | Status |
-|----------|--------|
-| FastAPI Backend | ✅ Completed |
-| AI Architecture | ✅ Completed |
-| Ollama Integration | ✅ Completed |
-| PostgreSQL Integration | ✅ Completed |
-| SQLAlchemy ORM | ✅ Completed |
-| Alembic Migration System | ✅ Completed |
-| Resume ORM Model | ✅ Completed |
-| Docker Support | ✅ Completed |
-| GitHub Actions CI | ✅ Completed |
-| Automated Testing | ✅ 154 Passing Tests |
-| Resume Upload API | 🚧 In Progress |
-| Resume CRUD APIs | 🚧 In Progress |
-| ATS Analysis API | 📅 Planned |
-| Authentication | 📅 Planned |
-
----
-
-# 🎓 Educational Objectives
-
-This project demonstrates practical implementation of:
-
-- Backend Engineering
-- REST API Development
-- Artificial Intelligence Integration
-- Large Language Models
-- PostgreSQL Database Engineering
-- SQLAlchemy ORM
-- Alembic Database Migrations
-- Docker
-- GitHub Actions
+- Active Development
+- Modular Backend Architecture
+- Local AI Integration
+- PostgreSQL Persistence
 - Automated Testing
-- Environment-Based Configuration
-- Production-Inspired Software Architecture
+- Continuous Integration Support
+
+Current Test Status
+
+```text
+154 Passing Tests
+```
+
+The project will continue evolving with additional AI capabilities, backend improvements, and production-oriented features while preserving its modular architecture and software engineering principles.
 
 ---
 
-# 🌟 Final Note
+# Conclusion
 
-AI Resume Copilot is an ongoing project designed to demonstrate modern backend engineering, AI integration, and scalable software architecture.
+AI Resume Analyzer demonstrates the integration of modern backend technologies with local Large Language Models to build an extensible Artificial Intelligence platform for resume analysis and career assistance.
 
-As development progresses, additional AI capabilities, database features, and production-ready services will continue to be added while maintaining a clean, modular, and maintainable codebase.
-
-If you find this project useful, consider giving it a ⭐ on GitHub.
+The project combines FastAPI, PostgreSQL, SQLAlchemy, Alembic, Ollama, and Llama 3.2 within a clean, layered architecture that emphasizes maintainability, scalability, and automated testing. As development progresses, new capabilities will continue to be introduced without compromising the overall architecture or code quality.
 
 ---
-
-**Built with ❤️ by Divesh Kate using FastAPI, PostgreSQL, SQLAlchemy, Alembic, Ollama, and Python.**
