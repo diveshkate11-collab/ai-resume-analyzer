@@ -13,3 +13,13 @@ def test_resume_rewriter():
     assert result["feature"] == "resume_rewriter"
     assert "Rewrite" in result["prompt"]
     assert "Mock AI Response" in result["response"]
+
+
+def test_resume_rewriter_empty_resume():
+    rewriter = ResumeRewriter(client=MockLLMClient())
+
+    result = rewriter.rewrite("")
+
+    assert result["success"] is False
+    assert result["feature"] == "resume_rewriter"
+    assert result["error"] == "Resume cannot be empty."

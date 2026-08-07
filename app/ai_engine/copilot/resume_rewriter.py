@@ -16,6 +16,13 @@ class ResumeRewriter:
         Rewrite a resume professionally using AI.
         """
 
+        if not resume or not resume.strip():
+            return {
+                "success": False,
+                "feature": "resume_rewriter",
+                "error": "Resume cannot be empty.",
+            }
+
         prompt = PromptManager.resume_rewriter(resume)
 
         response = ResponseParser.parse(
