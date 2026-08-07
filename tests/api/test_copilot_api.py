@@ -29,6 +29,23 @@ def test_rewrite_resume():
     assert response.json()["success"] is True
 
 
+def test_rewrite_resume_empty_resume():
+    response = client.post(
+        "/copilot/rewrite",
+        json={
+            "resume": ""
+        },
+    )
+
+    assert response.status_code == 200
+
+    data = response.json()
+
+    assert data["success"] is False
+    assert data["feature"] == "resume_rewriter"
+    assert data["error"] == "Resume cannot be empty."
+
+
 def test_job_match():
     response = client.post(
         "/copilot/job-match",
