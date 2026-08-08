@@ -85,3 +85,4 @@ htmlcov/
 # Database
 # ======================================
 *.sqlite3
+data/ml/artifacts/

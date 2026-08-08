@@ -12,3 +12,7 @@ python-dotenv
 sqlalchemy
 psycopg2-binary
 alembic
+numpy
+pandas
+scikit-learn
+joblib
