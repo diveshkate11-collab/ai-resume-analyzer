@@ -10,11 +10,9 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -28,8 +26,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Train ML Model
+        run: |
+          python -m app.ai_engine.training.train
+
       - name: Run Tests
-        env: 
+        env:
           LLM_PROVIDER: mock
         run: |
           python -m pytest
